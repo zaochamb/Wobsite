@@ -65,7 +65,9 @@ def logout():
     if request.method == 'GET':
         return render_template('logout.html')
 
-
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html')
 
 #------------------------------PHONE SYSTEM----------------------#
 

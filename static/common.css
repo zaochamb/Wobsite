@@ -13,7 +13,7 @@
 }
 
 
-.nav a {
+a {
     color: var(--header-footer-text-color) !important;
     display: inline-block;
     padding: 1% 1%;
@@ -22,17 +22,17 @@
     font-size: larger;
 }
 
-.nav a:visited {
+a:visited {
     color: var(--header-footer-text-color) !important;
 }
 
 
-.nav a:hover {
+a:hover {
     color: var(--hover-color) !important;
 }
 
 
-.nav a:active {
+a:active {
     color: var(--hover-color) !important;
 }
 
