@@ -9,9 +9,9 @@ import phone
 
 
 app = Flask(__name__)
-#sslify = SSLify(app)
+sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
-
+app.url_map.strict_slashes = False
 
 
 @app.route('/')
