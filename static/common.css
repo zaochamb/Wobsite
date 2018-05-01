@@ -22,17 +22,17 @@
 }
 
 .nav a:visited {
-    color: var(--header-footer-text-color);
+    color: var(--header-footer-text-color) !important;
 }
 
 
 .nav a:hover {
-    color: var(--hover-color);
+    color: var(--hover-color) !important;
 }
 
 
 .nav a:active {
-    color: var(--hover-color);
+    color: var(--hover-color) !important;
 }
 
 
