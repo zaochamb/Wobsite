@@ -5,9 +5,6 @@ from flask import Flask, request, render_template
 import phone
 import login_tools
 
-
-
-
 app = Flask(__name__)
 sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
@@ -18,28 +15,20 @@ login_tools.sql.make_database()
 def home():
     return render_template('home.html')
 
-@app.route('/articles')
-def articles():
-    return render_template('articles.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-
-@app.route('/employee')
-def employee():
-    return render_template('employee.html')
+@app.route('/<string:page_name>/')
+def static_page(page_name):
+    return render_template('%s.html' % page_name)
 
 
 @app.route('/get-estimate-or-apply')
-def get_estimate_or_apply():
-    return render_template('get_estimate_or_apply.html')
+@app.route('/products')
+@app.route('/products/<product>')
+def products(product=''):
+    if product == '':
+        return render_template('products.html')
+    return render_template('products/{}.html'.format(product ))
 
 
-@app.route('/partners')
-def partners():
-    return render_template('partners.html')
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
