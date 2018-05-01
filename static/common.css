@@ -13,8 +13,9 @@
 }
 
 .nav a {
-    padding: 0px 5%;
-   text-decoration: none;
+    padding: 1% 5%;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav a:visited {
@@ -38,7 +39,7 @@ h1 {
     align:center;
     text-align:center;
     font-size: xx-large;
-    color:green;
+    color:black;
 }
 
 
