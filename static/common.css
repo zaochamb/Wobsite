@@ -12,13 +12,9 @@
     text-align:center;
 }
 
-.nav li {
-    list-style-type: none;
-    display: inline;
-}
-
 
 .nav a {
+    display: inline-block;
     padding: 1% 5%;
     text-decoration: none;
     white-space: nowrap;
