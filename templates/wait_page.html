@@ -1,0 +1,19 @@
+<html style="margin: 0;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div style="height: 100%; width: 100%; ">
+
+    <p  style="text-align: center; position: relative; top: 50%; left: 0%;"> Try Again in <span id="countdowntimer">{{wait_time}}</span> Seconds</p>
+    <script type="text/javascript">
+        var timeleft = {{wait_time}};
+        var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0)
+            clearInterval(downloadTimer);
+        if(timeleft <= 0)
+            window.history.back()
+        },1000);
+    </script>
+
+</div>
+</html>

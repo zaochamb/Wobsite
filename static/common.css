@@ -56,3 +56,20 @@ footer {
     overflow: hidden;
     text-align:center;
 }
+
+
+#button {
+  border: .0;
+  background: lightgrey;
+  font-size: large;
+  color: grey;
+  font-weight: 100;
+}
+
+form {
+ text-align: left;
+ position: absolute;
+ top: 50vh;
+ left: 50vw;
+ z-index: 1;
+}

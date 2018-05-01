@@ -3,16 +3,16 @@ import flask as f
 from flask_sslify import SSLify
 from flask import Flask, request, render_template
 import phone
-
+import login_tools
 
 
 
 
 app = Flask(__name__)
-sslify = SSLify(app)
+#sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
-
+login_tools.sql.make_database()
 
 @app.route('/')
 def home():
@@ -40,6 +40,30 @@ def get_estimate_or_apply():
 @app.route('/partners')
 def partners():
     return render_template('partners.html')
+
+@app.route('/login', methods = ['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        name = login_tools.get_username(f.session)
+        if name == False:
+            return render_template('login.html')
+        if name != False:
+            return logout()
+        
+    if request.method == 'POST':
+        return login_tools.login_url(request, f.session)
+
+
+@app.route('/logout', methods=['POST', 'GET'])
+def logout():
+    if request.method == 'POST':
+        try:
+            del f.session['username']
+        except KeyError:
+            pass
+        return home()
+    if request.method == 'GET':
+        return render_template('logout.html')
 
 
 
