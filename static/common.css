@@ -15,9 +15,10 @@
 
 .nav a {
     display: inline-block;
-    padding: 1% 5%;
+    padding: 1% 1%;
     text-decoration: none;
     white-space: nowrap;
+    font-size: larger;
 }
 
 .nav a:visited {
