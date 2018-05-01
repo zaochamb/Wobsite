@@ -10,9 +10,9 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1em 1.618em;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 100%;
 }
 
 /* Change the color of links on hover */
@@ -21,10 +21,10 @@
     color: black;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
+
+.h1 {
+    text-align:center;
+    font-size: larger;
 }
 
 .body {
