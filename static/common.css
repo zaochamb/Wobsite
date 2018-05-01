@@ -1,7 +1,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #474747;
     overflow: hidden;
 }
 
@@ -27,8 +27,6 @@
     color: white;
 }
 
-
-
-* {
-font-family: 'Roboto', Helvetica,Arial,sans-serif !important;
+.body {
+    background-color: #000000;
 }
