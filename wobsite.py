@@ -29,7 +29,7 @@ def contact():
 
 @app.route('/employee')
 def employee():
-    return render_template('employee.html')dir
+    return render_template('employee.html')
 
 
 @app.route('/get-estimate-or-apply')
