@@ -17,7 +17,7 @@ def home():
 
 @app.route('/<string:page_name>/')
 def static_page(page_name):
-    return render_template('%s.html' % page_name)
+    return render_template('static/%s.html' % page_name)
 
 
 @app.route('/get-estimate-or-apply')
@@ -35,7 +35,7 @@ def login():
     if request.method == 'GET':
         name = login_tools.get_username(f.session)
         if name == False:
-            return render_template('login.html')
+            return render_template('login/login.html')
         if name != False:
             return logout()
         
@@ -52,11 +52,7 @@ def logout():
             pass
         return home()
     if request.method == 'GET':
-        return render_template('logout.html')
-
-@app.route('/privacy_policy')
-def privacy_policy():
-    return render_template('privacy_policy.html')
+        return render_template('login/logout.html')
 
 #------------------------------PHONE SYSTEM----------------------#
 
