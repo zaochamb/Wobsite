@@ -1,43 +1,55 @@
+:root {
+  --header-footer-color: #474747;
+  --header-footer-text-color: #f2f2f2;
+  --hover-color: #ddd;
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #474747;
-    overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
+.nav{
+    background-color:var(--header-footer-color);
+    list-style:none;
     padding: 1em 1.618em;
-    text-decoration: none;
-    font-size: 100%;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-
-.h1 {
     text-align:center;
-    font-size: larger;
 }
 
-.body {
-    background-color: #000000;
+.nav a {
+    padding: 0px 5%;
+   text-decoration: none;
 }
+
+.nav a:visited {
+    color: var(--header-footer-text-color);
+    text-decoration: none;
+}
+
+
+.nav a:hover {
+    color: var(--hover-color);
+    text-decoration: none;
+}
+
+
+.nav a:active {
+    color: var(--hover-color);
+}
+
+
+h1 {
+    align:center;
+    text-align:center;
+    font-size: xx-large;
+    color:green;
+}
+
 
 footer {
-    background-color: #474747;
-    color:#f2f2f2;
+    background-color: var(--header-footer-color);
+    color:var(--header-footer-text-color);
     position: absolute;
     left: 0;
     bottom: 0;
     height: 5%;
     width: 100%;
     overflow: hidden;
+    text-align:center;
 }
