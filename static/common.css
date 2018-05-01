@@ -22,13 +22,11 @@
 
 .nav a:visited {
     color: var(--header-footer-text-color);
-    text-decoration: none;
 }
 
 
 .nav a:hover {
     color: var(--hover-color);
-    text-decoration: none;
 }
 
 
