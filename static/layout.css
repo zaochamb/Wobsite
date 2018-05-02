@@ -11,7 +11,7 @@ p, h1, h2, h3, li, a:visited, a:hover, a.active, a {
     text-align:left;
     color:black;
     padding: 0 0;
-    margin: .4em 0;
+    margin:.4em .4em;
     color: inherit;
     text-decoration: none;
 }
@@ -38,6 +38,7 @@ h3{
     padding: 0 1%;
     color: var(--header-footer-color)
 }
+
 
 header h1, header h2, header h3 {
     align:center;
