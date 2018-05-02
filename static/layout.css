@@ -27,12 +27,7 @@ h3{
 }
 
 .nav{
-    background-color:var(--background-color);
-    list-style:none;
-    text-align:center;
-    padding: 1.618em 0 ;
-    color: var(--header-footer-color)
-
+    padding: 1.382em 0 ;
 }
 
 .nav li, footer li{
@@ -56,22 +51,16 @@ header a{
 
 
 
-body { margin: 0 1.5%;}
 
-@media only screen and (min-width: 20cm) {
-body {margin: 0 10%;}
+#content {
+    margin-bottom:2.5cm;
 }
 
-
-footer {
+footer, .nav {
     background-color: var(--background-color);
     color:var(--header-footer-color);
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
     text-align:center;
+    list-style:none;
 }
 
 
