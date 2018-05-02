@@ -28,7 +28,7 @@ def products(product=''):
     if product == '':
         products = ['a', 'b', 'c', 'd']
         return render_template('products.html', products = products)
-    return render_template('products/{}.html'.format(product ))
+    return render_template('products/{}.html'.format(product))
 
 
 

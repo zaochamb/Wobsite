@@ -54,6 +54,15 @@ header a{
     text-align:right;
 }
 
+
+
+body { margin: 0 1.5%;}
+
+@media only screen and (min-width: 20cm) {
+body {margin: 0 10%;}
+}
+
+
 footer {
     background-color: var(--background-color);
     color:var(--header-footer-color);
@@ -80,4 +89,13 @@ form {
  top: 50vh;
  left: 50vw;
  z-index: 1;
+}
+
+
+.showme{ 
+display: none;
+}
+
+.showhim:hover .showme{
+display : block;
 }
