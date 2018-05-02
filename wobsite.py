@@ -1,12 +1,12 @@
 import random
 import flask as f
 from flask_sslify import SSLify
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, abort
 import phone
 import login_tools
 
 app = Flask(__name__)
-sslify = SSLify(app)
+#sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
 login_tools.sql.make_database()
@@ -17,8 +17,9 @@ def home():
 
 @app.route('/<string:page_name>/')
 def static_page(page_name):
-    return render_template('static/%s.html' % page_name)
-
+    if page_name.lower() in ['articles','contact', 'employee', 'partners', 'privacy_policy']:
+        return render_template('static/%s.html' % page_name)
+    abort(404)
 
 @app.route('/get-estimate-or-apply')
 @app.route('/products')
@@ -53,6 +54,12 @@ def logout():
         return home()
     if request.method == 'GET':
         return render_template('login/logout.html')
+
+
+@app.route('/contact')
+def contact():
+    return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/EmailSubscription/formperma/EjHCagK__022JHhfA02F5_0g7')
+
 
 #------------------------------PHONE SYSTEM----------------------#
 

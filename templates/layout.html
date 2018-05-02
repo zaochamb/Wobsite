@@ -3,20 +3,23 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> tabname </title>
+<title> Aldora Capital </title>
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='reset.css') }}>
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='fonts.css') }}>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100">
-<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='common.css') }}>
 </head>
 
 <body>
-<h1> WEBSITE NAME </h1>
+<header>
+<h1> Aldora Capital Partners</h1>
+<a href="tel:14588888042 "> +1 458 888 8042 </a>
+</header>
 
 
 <ul class="nav">
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='layout.css') }}>
 <li><a href="/">Home</a></li>
 <li><a href="/products">Products</a></li>
 <li><a href="/articles">Articles</a></li>
@@ -29,7 +32,8 @@
 
 {% block content %}{% endblock %}
 <footer>
-  <a href="/privacy_policy">Privacy Policy Potato</a>
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='layout.css') }}>
+  <a href="/privacy_policy">Privacy Policy</a>
 </footer>
 
 
