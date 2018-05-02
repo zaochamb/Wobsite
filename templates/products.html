@@ -1,5 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<p>Product Catalog</p>
+    <ul>
+
+    {% for item in products%}
+        <li>{{item}}</li>
+    {% endfor %}
+
+    </ul>
 {% endblock %}

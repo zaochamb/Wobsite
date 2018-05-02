@@ -6,7 +6,7 @@ import phone
 import login_tools
 
 app = Flask(__name__)
-#sslify = SSLify(app)
+sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
 
@@ -26,7 +26,8 @@ def static_page(page_name):
 @app.route('/products/<product>')
 def products(product=''):
     if product == '':
-        return render_template('products.html')
+        products = ['a', 'b', 'c', 'd']
+        return render_template('products.html', products = products)
     return render_template('products/{}.html'.format(product ))
 
 
