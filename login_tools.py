@@ -1,5 +1,5 @@
 import hashlib
-import sql
+import user_sql as sql
 from flask import render_template
 import flask as f
 

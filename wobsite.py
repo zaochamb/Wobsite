@@ -6,10 +6,10 @@ import phone
 import login_tools
 
 app = Flask(__name__)
-sslify = SSLify(app)
+#sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
-login_tools.sql.make_database()
+
 
 @app.route('/')
 def home():
