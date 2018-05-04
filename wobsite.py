@@ -24,6 +24,7 @@ def get_app():
     app.register_blueprint(product.app)
     app.secret_key = str(random.random() + random.random())
     app.url_map.strict_slashes = False
+    return app
 
 app = get_app()
 sslify = SSLify(app) 
