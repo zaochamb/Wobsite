@@ -2,7 +2,6 @@ import random
 import flask as f
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
-from login_system import login_tools
 
 
 
@@ -16,17 +15,19 @@ from admin_system import admin
 from product_system import product
 
 # Register blueprints
-app = Flask(__name__)
-app.register_blueprint(login.app)
-app.register_blueprint(phone.app)
-app.register_blueprint(article.app)
-app.register_blueprint(admin.app)
-app.register_blueprint(product.app)
+def get_app():
+    app = Flask(__name__)
+    app.register_blueprint(login.app)
+    app.register_blueprint(phone.app)
+    app.register_blueprint(article.app)
+    app.register_blueprint(admin.app)
+    app.register_blueprint(product.app)
+    app.secret_key = str(random.random() + random.random())
+    app.url_map.strict_slashes = False
 
+app = get_app()
+sslify = SSLify(app) 
 
-#sslify = SSLify(app)
-app.secret_key = str(random.random() + random.random())
-app.url_map.strict_slashes = False
 
 
 @app.route('/')
@@ -52,4 +53,5 @@ def contact():
 
     
 if __name__ == "__main__":
+    app = get_app()
     app.run(debug = True)
