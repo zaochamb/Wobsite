@@ -33,7 +33,7 @@ def home():
 
 @app.route('/<string:page_name>/')
 def static_page(page_name):
-    if page_name.lower() in ['contact', 'employee', 'partners', 'privacy_policy']:
+    if page_name.lower() in ['employee', 'partners', 'privacy_policy']:
         return render_template('static/%s.html' % page_name)
     abort(404)
 
