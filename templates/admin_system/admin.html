@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2> Add Products </h2>
+<form action="/admin" method="post">
+      <br>
+      {% for i in product_columns%}
+      <input type="text" name="{{i}}" placeholder="{{i}}"><br>
+      {% endfor %}
+      <input type="submit" value="Save" id="button">
+</form>
+{% endblock %}

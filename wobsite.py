@@ -13,14 +13,14 @@ import product_tools
 from phone_system import phone
 from login_system import login
 from article_system import article
+from admin_system import admin
 
 # Register blueprints
 app = Flask(__name__)
 app.register_blueprint(login.app)
 app.register_blueprint(phone.app)
 app.register_blueprint(article.app)
-
-
+app.register_blueprint(admin.app)
 
 #sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
@@ -33,7 +33,7 @@ def home():
 
 @app.route('/<string:page_name>/')
 def static_page(page_name):
-    if page_name.lower() in ['articles','contact', 'employee', 'partners', 'privacy_policy']:
+    if page_name.lower() in ['contact', 'employee', 'partners', 'privacy_policy']:
         return render_template('static/%s.html' % page_name)
     abort(404)
 
@@ -54,32 +54,7 @@ def contact():
 
 
 
-@app.route('/admin', methods=['POST', 'GET'])
-def admin_panel():
-    if request.method == 'GET':
-        name = login_tools.get_username(f.session)
-        if name == False:
-            return render_template('login/login.html')
-        role = login_tools.get_role(name)
-        if role != 'admin':
-            return login_tools.alert('Admin Only.')
-        if role == 'admin':
-            cols = product_tools.get_product('').columns
-            return render_template('admin.html', product_columns = cols)
-    if request.method == 'POST':
-        name = login_tools.get_username(f.session)
-        role = login_tools.get_role(name)
-        if role == 'admin':
-            cols = product_tools.get_product('').columns
-            val_dict = {}
-            for col in cols:
-                val_dict[col] = request.form[col]
-            name = val_dict['name']
-            del val_dict['name']
-            result = product_tools.save_product_details(name, val_dict)
-            login_tools.alert('{}'.format(result))
-            return f.redirect('/admin')
-        
+
 
 
 
