@@ -1,0 +1,6 @@
+flask
+flask_sslify
+numpy
+pandas
+git+https://github.com/plivo/plivo-python
+requests
