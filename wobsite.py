@@ -5,7 +5,6 @@ from flask import Flask, request, render_template, abort
 from login_system import login_tools
 
 
-import product_tools
 
 
 
@@ -14,6 +13,7 @@ from phone_system import phone
 from login_system import login
 from article_system import article
 from admin_system import admin
+from product_system import product
 
 # Register blueprints
 app = Flask(__name__)
@@ -21,6 +21,8 @@ app.register_blueprint(login.app)
 app.register_blueprint(phone.app)
 app.register_blueprint(article.app)
 app.register_blueprint(admin.app)
+app.register_blueprint(product.app)
+
 
 #sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
@@ -36,16 +38,6 @@ def static_page(page_name):
     if page_name.lower() in ['employee', 'partners', 'privacy_policy']:
         return render_template('static/%s.html' % page_name)
     abort(404)
-
-@app.route('/get-estimate-or-apply')
-@app.route('/products')
-@app.route('/products/<product>')
-def products(product=''):
-    if product == '':
-        products = ['a', 'b', 'c', 'd']
-        return render_template('products.html', products = products)
-    return render_template('products/{}.html'.format(product))
-
 
 
 @app.route('/contact')

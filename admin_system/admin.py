@@ -1,7 +1,7 @@
 import flask as f
 from flask import Flask, request, render_template, abort
 from login_system import login_tools
-import product_tools
+from product_system import product_tools
 
 app = f.Blueprint('admin', __name__)
 
