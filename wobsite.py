@@ -3,10 +3,6 @@ import flask as f
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
 
-
-
-
-
 # blueprint imports
 from phone_system import phone
 from login_system import login
@@ -26,9 +22,15 @@ def get_app():
     app.url_map.strict_slashes = False
     return app
 
+ 
 app = get_app()
-sslify = SSLify(app) 
+sslify = SSLify(app)
 
+
+if __name__ == "__main__":
+    app = get_app()
+
+    
 
 
 @app.route('/')
@@ -49,10 +51,6 @@ def contact():
 
 
 
-
-
-
     
 if __name__ == "__main__":
-    app = get_app()
-    app.run(debug = True)
+        app.run(debug = True)
