@@ -12,13 +12,13 @@ import product_tools
 # blueprint imports
 from phone_system import phone
 from login_system import login
-
+from article_system import article
 
 # Register blueprints
 app = Flask(__name__)
 app.register_blueprint(login.app)
 app.register_blueprint(phone.app)
-
+app.register_blueprint(article.app)
 
 
 
