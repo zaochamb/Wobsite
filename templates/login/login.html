@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
 <form action="/login" method="post">
       <br>
       <input type="text" name="user_name" placeholder="Username">
       <br><br>
       <input type="password" name="password" placeholder="Password">
       <br><br>
-      <input type="submit" value="Login" id="button">
+      <input type="submit" value="login" id="button">
 </form>
 {% endblock %}

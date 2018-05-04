@@ -8,7 +8,7 @@ import product_tools
 
 
 app = Flask(__name__)
-sslify = SSLify(app)
+#sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
 
@@ -64,6 +64,33 @@ def contact():
     return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/EmailSubscription/formperma/EjHCagK__022JHhfA02F5_0g7')
 
 
+
+@app.route('/admin', methods=['POST', 'GET'])
+def admin_panel():
+    if request.method == 'GET':
+        name = login_tools.get_username(f.session)
+        if name == False:
+            return render_template('login/login.html')
+        role = login_tools.get_role(name)
+        if role != 'admin':
+            return login_tools.alert('Admin Only.')
+        if role == 'admin':
+            cols = product_tools.get_product('').columns
+            return render_template('admin.html', product_columns = cols)
+    if request.method == 'POST':
+        name = login_tools.get_username(f.session)
+        role = login_tools.get_role(name)
+        if role == 'admin':
+            cols = product_tools.get_product('').columns
+            val_dict = {}
+            for col in cols:
+                val_dict[col] = request.form[col]
+            name = val_dict['name']
+            del val_dict['name']
+            result = product_tools.save_product_details(name, val_dict)
+            login_tools.alert('{}'.format(result))
+            return f.redirect('/admin')
+        
 #------------------------------PHONE SYSTEM----------------------#
 
 @app.route('/ivr')
