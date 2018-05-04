@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px
+}
+</style>
+</head>
+<body>
+<title>Cost and Pricing Of Lending Products</title>
+<h2>Cost and Pricing Of Lending Products</h2>
+<p>Do you struggle to answer your clients’ questions regarding the pricing of the product? Are you losing deals due to concerns on cost?</p>
+<p>One of the most effective way to explain a lending product cost is through educating the client on the factors the product pricing is underwritten considering:</p>
+<ul>
+<li>Credit</li>
+<li>Background</li>
+<li>Financials and profitability</li>
+<li>History</li>
+<li>Industry</li>
+</ul>
+<p>Second most effective method is to compare pricing of different products. These comparisons give your client a better understanding of the structure and helps them have an idea of the situation.</p>
+<p>Here are some comparisons of business lending products:</p>
+<table>
+	<tr>
+		<th>Bank Loan</th>
+		<th>Leasing Product</th>
+		<th>Unsecured Term Loan</th>
+		<th>Merchant Cash Advance</th>
+	</tr>
+	<tr>
+		<td><b>Interest Rate:</b> 6.00%</td>
+		<td><b>Interest Rate:</b> 15.00%</td>
+		<td><b>Interest Rate:</b> 25.00%</td>
+		<td><b>Factor Rate:</b> 1.40</td>
+	</tr>
+	<tr>
+		<td><b>Term (months):</b> 60</td>
+		<td><b>Term (months):</b> 48</td>
+		<td><b>Term (months):</b> 12</td>
+		<td><b>Term (months):</b> 6</td>
+	</tr>
+	<tr>
+		<td><b>Amount:</b> $60,000</td>
+		<td><b>Amount:</b> $60,000</td>
+		<td><b>Amount:</b> $60,000</td>
+		<td><b>Amount:</b> $60,000</td>
+	</tr>
+	<tr>
+		<td><b>Total Payback:</b> $78,000</td>
+		<td><b>Total Payback:</b> $96,000</td>
+		<td><b>Total Payback:</b> $75,000</td>
+		<td><b>Total Payback:</b> $84,000</td>
+	</tr>
+	<tr>
+		<td><b>Interest Paid:</b> $18,000</td>
+		<td><b>Interest Paid:</b> $36,000</td>
+		<td><b>Interest Paid:</b> $15,000</td>
+		<td><b>Interest Paid:</b> $24,000</td>
+	</tr>
+</table>
+<p>These comparisons in the above chart will definitely vary from one lending company to another. In addition, terms, rates, and amounts will vary with credit, background, cash flow, and industry. However, it can definitely help you allow for that discussion with the merchant depending on their situation and needs.</p>
