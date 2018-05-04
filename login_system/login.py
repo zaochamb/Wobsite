@@ -10,7 +10,7 @@ def login():
     if f.request.method == 'GET':
         name = login_tools.get_username(f.session)
         if name == False:
-            return f.render_template('login/login.html')
+            return f.render_template('login_system/login.html')
         if name != False:
             return logout()
         
@@ -27,4 +27,4 @@ def logout():
             pass
         return 'logged out'
     if f.request.method == 'GET':
-        return f.render_template('login/logout.html')
+        return f.render_template('login_system/logout.html')
