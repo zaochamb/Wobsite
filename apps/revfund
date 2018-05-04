@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Revenue Funding Estimate</title>
+</head>
+<body>
+<h2>Revenue Funding Estimate</h2>
+<p>We do not charge for estimates. If you have any questions, please contact your assigned Aldora specialist or email <a href="mailto:help@aldoracap.com">help@aldoracap.com</a>.</p>
+<h3>Business Information</h3>
+<form action="{}">
+Business name (DBA):<br>
+<input type="text" name="business_name">
+<br><br>
+Type of entity:
+<select name="entity">
+	<option value="corporation">Corporation</option>
+	<option value="general_partnership">General Partnership</option>
+	<option value="llc">LLC</option>
+	<option value="lp">LP</option>
+	<option value="sole_prop">Sole Proprietorship</option>
+	<option value="llp">LLP</option>
+	<option value="s_corp">S Corporation</option>
+	<option value="nonprofit">Non Profit</option>
+	<option value="other">Other</option>
+</select>
+<br><br>
+Federal tax ID / EIN:<br>
+<input type="text" name="tax_id">
+<br><br>
+Business phone:<br>
+<input type="text" name="phone">
+<br><br>
+Business address:<br>
+<input type="text" name="address">
+<br><br>
+Number of employees:<br>
+<input type="text" name="number_employees">
+<br><br>
+Business fax (if any):<br>
+<input type="text" name="fax">
+<br><br>
+Business type (product/service offered):<br>
+<input type="text" name="business_type">
+<br><br>
+State of incorporation / registration:<br>
+<input type="text" name="state_inc"
+<br><br><br>
+Business start date:<br>
+<input type="text" name="start_date">
+<br><br>
+Length of ownership:<br>
+<input type="text" name="length_ownership">
+<br><br>
+Amount of money requested:<br>
+<input type="text" name="request_amount">
+<br><br>
+Use for funds:<br>
+<input type="text" name="funds_use">
+<br><br>
+Name of owner or corporate officer:<br>
+<input type="text" name="contact_firstname">
+<input type="text" name="contact_surname">
+<br><br>
+Date of birth:<br>
+<input type="text" name="contact_dob">
+<br><br>
+Social Security Number:<br>
+<input type="password" name="contact_ssn">
+<br><br>
+Last known credit score:<br>
+<input type="text" name="contact_fico">
+<br><br>
+Ownership percentage:<br>
+<input type="text" name="contact_ownpercent">
+<br><br>
+Email address:<br>
+<input type="text" name="contact_email>=">
+<br><br>
+Driver's license and state:<br>
+<input type="text" name="contact_idnumber">
+<br><br>
+Home phone number:<br>
+<input type="text" name="contact_homephone">
+<br><br>
+Home address:<br>
+<input type="text" name="contact_address">
+<br><br>
+<h3>Financial Information</h3>
+Average gross monthly revenue (USD):<br>
+<input type="text" name="revenue_monthly">
+<br><br>
+Monthly credit card processing volume (USD):<br>
+<input type="text" name="credit_monthly">
+<br><br>
+Credit card processing company:<br>
+<input type="text" name="credit_company">
+<br><br>
+Do you have any open tax liens or judgements? If yes, please provide details below:<br>
+<input type="text" name="liens_explanation">
+<br><br>
+Do you have current positions with any other funding institutions? If yes, please provide the company and current balance below:<br>
+<input type="text" name="other_funding">
+<br><br>
+Have you ever filed for bankruptcy? If yes, provide details on your current situation below:<br>
+<input type="text" name="bankrupt">
+<br><br>
+What is the financial status of the central business property?<br>
+<select name="property_financial">
+	<option value="rent">The property is rented.</option>
+	<option value="own">The property is owned and the mortgage is paid off.</option>
+	<option value="financing">The property is owned and the mortgage is in the process of being paid off.</option>
+	<option value="other">Other</option>
+</select>
+<br><br>
+Landlord/mortgage company:<br>
+<input type="text" name="landlord_mortgage">
+<br><br>
+Business property phone number:<br>
+<input type="text" name="business_phone">
+<br><br>
+Referred by:<br>
+<input type="text" name="referrer">
+<br><br>
+<p>Attachments <b>(WORK NEEDED)</b>:</p>
+<ul>
+<li>Current bank statements</li>
+<li>Bank statement - month 2</li>
+<li>Bank statement - month 3</li>
+<li>Bank statement - month 4</li>
+<br><br>
+<input type="submit">
+</form>
+</body>
+</html>
