@@ -26,7 +26,6 @@ def get_app():
 app = get_app()
 sslify = SSLify(app)
 
-
 if __name__ == "__main__":
     app = get_app()
 
