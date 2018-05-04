@@ -2,14 +2,26 @@ import random
 import flask as f
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
-import phone
 from login_system import login_tools
-from login_system import login
+
+
 import product_tools
 
 
+
+# blueprint imports
+from phone_system import phone
+from login_system import login
+
+
+# Register blueprints
 app = Flask(__name__)
 app.register_blueprint(login.app)
+app.register_blueprint(phone.app)
+
+
+
+
 #sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
@@ -68,15 +80,9 @@ def admin_panel():
             login_tools.alert('{}'.format(result))
             return f.redirect('/admin')
         
-#------------------------------PHONE SYSTEM----------------------#
 
-@app.route('/ivr')
-def ivr():
-    return phone.ivr(request)
 
-@app.route('/call_router/', methods = ['GET', 'POST'])
-def call_router():
-    return phone.call_router(request)
+
     
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)

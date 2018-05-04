@@ -1,6 +1,5 @@
 import flask as f
 from login_system import login_tools
-
 app = f.Blueprint('login', __name__)
 
 
