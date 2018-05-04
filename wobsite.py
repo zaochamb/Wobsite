@@ -3,11 +3,13 @@ import flask as f
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
 import phone
-import login_tools
+from login_system import login_tools
+from login_system import login
 import product_tools
 
 
 app = Flask(__name__)
+app.register_blueprint(login.app)
 #sslify = SSLify(app)
 app.secret_key = str(random.random() + random.random())
 app.url_map.strict_slashes = False
@@ -32,31 +34,6 @@ def products(product=''):
         return render_template('products.html', products = products)
     return render_template('products/{}.html'.format(product))
 
-
-
-@app.route('/login', methods = ['GET', 'POST'])
-def login():
-    if request.method == 'GET':
-        name = login_tools.get_username(f.session)
-        if name == False:
-            return render_template('login/login.html')
-        if name != False:
-            return logout()
-        
-    if request.method == 'POST':
-        return login_tools.login_url(request, f.session)
-
-
-@app.route('/logout', methods=['POST', 'GET'])
-def logout():
-    if request.method == 'POST':
-        try:
-            del f.session['username']
-        except KeyError:
-            pass
-        return home()
-    if request.method == 'GET':
-        return render_template('login/logout.html')
 
 
 @app.route('/contact')
