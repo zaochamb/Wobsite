@@ -3,10 +3,12 @@
 
     <ul>
     {% for item in products%}
-        <li class="showhim"><h2><a href="{{item.url}}">{{item.name}}</a></h2>
+        <li class="showhim"><h2>{{item.name}}</h2>
             <div class="showme">
                 <h3>Description<h3>  {{item.description}} 
                 <h3> Requirements<h3>  {{item.requirements}} 
+                <br>
+                <a href="{{item.url}}" >CLICK HERE TO APPLY </a>
             </div> 
         </li>
     {% endfor %}
