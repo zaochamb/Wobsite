@@ -2,10 +2,13 @@
 {% block content %}
 
     <ul>
-
     {% for item in products%}
-        <li class="showhim">{{item}} <p class="showme"> test {{item}} </p></li>
+        <li class="showhim"><h2><a href="{{item.url}}">{{item.name}}</a></h2>
+            <p class="showme">
+                <h3>Description<h3>  {{item.description}} 
+                <h3> Requirements<h3>  {{item.requirements}} 
+            </p> 
+        </li>
     {% endfor %}
-
     </ul>
 {% endblock %}
