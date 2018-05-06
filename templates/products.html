@@ -4,10 +4,10 @@
     <ul>
     {% for item in products%}
         <li class="showhim"><h2><a href="{{item.url}}">{{item.name}}</a></h2>
-            <p class="showme">
+            <div class="showme">
                 <h3>Description<h3>  {{item.description}} 
                 <h3> Requirements<h3>  {{item.requirements}} 
-            </p> 
+            </div> 
         </li>
     {% endfor %}
     </ul>
