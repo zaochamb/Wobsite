@@ -9,14 +9,13 @@ import pathlib
 
 app = f.Blueprint('product', __name__)
 
-
 @app.route('/get-estimate-or-apply')
 @app.route('/products')
 @app.route('/products/<product>')
 def products(product=''):
     if product == '':
         prods = get_product_list()
-        return render_template('products.html', products = prods)
+        return render_template('product_system/products.html', products = prods)
     if product == 'revenue_funding':
         return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
     return render_template('product_system/{}.html'.format(product))
