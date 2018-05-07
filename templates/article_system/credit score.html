@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-th, td {
-	padding: 5px
-}
-</style>
-</head>
-<body>
-<title>What is a credit score and why is it important?</title>
-<h2>What is a credit score and why is it important?</h2>
+{% extends "layout.html" %}
+{% block content %}
+
+
+<h1>What is a credit score and why is it important?</h1>
 <p>To illustrate the importance of credit scores, let’s begin with an example. Jane and Tom each take out a $160,000 home loan with a 30-year fixed mortgage. Jane has a credit score of 700, while Tom has a credit score of 600. Because she has good credit, Jane is able to secure a 4.2% mortgage rate. That means that over the course of her 30-year mortgage, she will pay a total of $121,674 in interest (or 76% of the value of the home). Tom, on the other hand, has subprime credit and gets a mortgage rate of 8.6%. Over the course of his 30-year mortgage, he will pay a total of $286,983 in interest (or 179.4% of the value of the home).</p>
 <p>So what is a credit score? When you take out a loan, the lender sends information about that transaction to a credit bureau, like Equifax, Experian, or TransUnion. The credit bureau then aggregates that data, along with information regarding other loans that you have taken out, into a credit report. Credit reports are used to calculate your credit score, which is a number from 300-850 that indicates how likely you are to repay a loan. When a lender is considering you for a new loan, they will use this number to determine loan eligibility and interest rates.</p>
 <p>Credit scores are generally calculated using five criteria:</p>
@@ -63,5 +52,5 @@ th, td {
 <p>Second, help yourself pay bills on time. Delinquent payments impact your credit score the most, so talk to your lenders and see if they offer auto-pay or payment reminders. This will not fix your credit overnight, but it will demonstrate more financial responsibility. Over time, this will translate to a higher credit score.</p>
 <p>Third, do your utmost to settle all of your accounts. The length of the delinquency (i.e. how late you were in the payment) matters, so pay off the most delinquent loans first and then work your way up. Some creditors may be willing to take the delinquencies off your reports if you pay them in full, so be sure to ask about that if you’re able. As tempting as it may be, don’t take out one loan to pay off another. It may be a quick fix, but it will definitely hurt you in the long run.</p>
 <p>Finally, don’t open new credit cards that you don’t need just to increase your available credit. This practice affects your Credit History and New Credit, and will likely lower your credit score. Instead, open new accounts responsibly and as needed.</p>
-</body>
-</html>
+
+{% endblock %}
