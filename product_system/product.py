@@ -21,7 +21,7 @@ def products(product=''):
     return render_template('product_system/{}.html'.format(product))
 
 def get_product_list():
-    dir = settings.get_dir(pathlib.Path('product_system','products.csv'))
+    dir = settings.get_dir_static(pathlib.Path('product_system', 'products.csv'))
     data = pd.read_csv(dir)
     data = data.set_index('product')
     prods = []

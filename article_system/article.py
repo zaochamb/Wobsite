@@ -16,7 +16,8 @@ def articles(art_name = ''):
 
 
 def get_article_list():
-    path = os.getcwd() + "/templates/article_system"
+    path = settings.get_dir_templates(pathlib.Path('article_system'))
+
     list_of_files = os.listdir(path)
 
     data = pd.DataFrame(data= {'name':list_of_files})
