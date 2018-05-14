@@ -2,6 +2,7 @@ import flask as f
 import settings
 import pandas as pd
 import pathlib
+import os
 
 app = f.Blueprint('article', __name__)
 
@@ -15,9 +16,13 @@ def articles(art_name = ''):
 
 
 def get_article_list():
-    dir = settings.get_dir(pathlib.Path('article_system', 'articles.csv'))
-    data = pd.read_csv(dir)
+    path = os.getcwd() + "/templates/article_system"
+    list_of_files = os.listdir(path)
+
+    data = pd.DataFrame(data= {'name':list_of_files})
+    data['name'] = data['name'].apply(lambda x: x.split('.')[0])
     data = data.set_index('name')
+    data = data[data.index !='Articles']
     arts = []
     for index in data.index:
         arts.append(make_article(index))
