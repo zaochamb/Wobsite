@@ -1,13 +1,12 @@
 import flask as f
-from flask import Flask, request, render_template, abort
-from login_system import login_tools
-from product_system import product_tools
+from flask import render_template
+
 import settings
 import pandas as pd
 import pathlib
 
-
 app = f.Blueprint('product', __name__)
+
 
 @app.route('/get-estimate-or-apply')
 @app.route('/products')
@@ -15,10 +14,12 @@ app = f.Blueprint('product', __name__)
 def products(product=''):
     if product == '':
         prods = get_product_list()
-        return render_template('product_system/products.html', products = prods)
+        return render_template('product_system/products.html', products=prods)
     if product == 'revenue_funding':
-        return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
+        return f.redirect(
+            'https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
     return render_template('product_system/{}.html'.format(product))
+
 
 def get_product_list():
     dir = settings.get_dir_static(pathlib.Path('product_system', 'products.csv'))
@@ -29,19 +30,22 @@ def get_product_list():
         prods.append(make_product(index, data.loc[index]))
     return prods
 
+
 def make_product(name, series):
     requirements = series['requirements']
     description = series['description']
     prod = Product(name, requirements, description)
     return prod
-    
+
+
 class Product():
     name = None
     requirements = None
     description = None
     url = None
+
     def __init__(self, name, requirements, description):
         self.name = name
         self.requirements = requirements
         self.description = description
-        self.url = 'products/' +   name.lower().replace(' ', '_') + ''
+        self.url = 'products/' + name.lower().replace(' ', '_') + ''
