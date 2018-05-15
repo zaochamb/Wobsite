@@ -1,10 +1,11 @@
 import sqlite3
 import pandas as pd
-import time
+import settings
 
-database_name = 'database.db'
 
-    
+
+database_name = settings.get_database_dir('database.db')
+
     
 def do_sql(sql):
     with sqlite3.connect(database_name) as con:
