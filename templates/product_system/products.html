@@ -2,15 +2,16 @@
 {% block content %}
 
     <ul>
-    {% for item in products%}
-        <li class="showhim"><h2>{{item.name}}</h2>
-            <div class="showme">
-                <h3>Description<h3>  {{item.description}} 
-                <h3> Requirements<h3>  {{item.requirements}} 
-                <br>
-                <a href="{{item.url}}" >CLICK HERE TO APPLY </a>
-            </div> 
-        </li>
-    {% endfor %}
+        {% for item in products %}
+            <li class="showhim"><h2>{{ item.name }}</h2>
+                <div class="showme">
+                    <h3>Description
+                    </h3> {{ item.description }}
+                    <h3> Requirements</h3> {{ item.requirements }}
+                    <br>
+                    <a href="{{ item.url }}"><h4>CLICK HERE TO APPLY </h4></a>
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 {% endblock %}
