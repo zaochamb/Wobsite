@@ -41,5 +41,4 @@ class Article():
     def __init__(self, name):
         self.name = name
         self.url = '/articles/{}'.format(name)
-        self.url = urllib.parse.quote_plus(self.url)
         return
