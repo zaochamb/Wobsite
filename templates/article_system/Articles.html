@@ -4,8 +4,10 @@
 
 <ul>
     {% for item in articles%}
-    <li><h3><a href="{{item.url}}"> {{item.name}} </a></h3>
-
+    <li>
+        <h3>
+            <a href="{{item.url}}"> {{item.name}} </a>
+        </h3>
     </li>
     {% endfor %}
 </ul>
