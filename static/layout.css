@@ -27,7 +27,7 @@ header a{
     display: inline-block;
     border-left:thin solid darkgrey;
     border-right:thin solid darkgrey;
-    border-collapse: collapse; 
+    border-collapse: collapse;
     padding: 0 1%;
     color: var(--header-footer-color)
 }
@@ -55,7 +55,16 @@ h3{
 
 
 #content {
+    margin-top:3%;
     margin-bottom:2.5cm;
+
+}
+
+@media (min-width: 30cm) {
+    #content {
+    margin-left:20%;
+    margin-right:20%;
+    }
 }
 
 footer, .nav {
@@ -75,7 +84,7 @@ footer, .nav {
 }
 
 
-.showme{ 
+.showme{
 display: none;
 }
 
