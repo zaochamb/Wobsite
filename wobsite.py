@@ -34,17 +34,23 @@ if __name__ == "__main__":
 def home():
     return render_template('home.html')
 
-@app.route('/<string:page_name>/')
-def static_page(page_name):
-    if page_name.lower() in ['employee', 'partners', 'privacy_policy']:
-        return render_template('static/%s.html' % page_name)
-    abort(404)
-
 
 @app.route('/contact')
 def contact():
     return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/EmailSubscription/formperma/EjHCagK__022JHhfA02F5_0g7')
 
+
+@app.route('/employee')
+def employee():
+    return render_template('employee.html')
+
+@app.route('/partners')
+def partners():
+    return render_template('partners.html')
+
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html')
 
 
 
