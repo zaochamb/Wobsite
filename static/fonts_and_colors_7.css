@@ -1,5 +1,8 @@
 
 
+:root {
+  --text-color: #7f7f7f;
+}
 
 * {
     font-family: 'Open Sans', sans-serif !important;
@@ -10,6 +13,9 @@ h1, h2, h3, h4, h5, h6 {
     color: darkred;
 }
 
+ul {
+    color: var(--text-color);
+}
 p, a, li{
     font-family: 'Open Sans', sans-serif !important;
     color: inherit;
@@ -38,5 +44,5 @@ body{
 }
 #content {
     background: white;
-    color: darkgrey;
+    color: var(--text-color);
 }
