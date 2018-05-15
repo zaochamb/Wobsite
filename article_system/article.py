@@ -11,7 +11,7 @@ app = f.Blueprint('article', __name__)
 def articles(art_name = ''):
     if art_name == '':
         articles = get_article_list()
-        return f.render_template('article_system/articles.html', articles = articles)
+        return f.render_template('article_system/Articles.html', articles = articles)
     return f.render_template('article_system/{}.html'.format(art_name))
 
 
@@ -39,5 +39,5 @@ class Article():
 
     def __init__(self, name):
         self.name = name
-        self.url = '/articles/{}'.format(name.lower())
+        self.url = '/articles/{}'.format(name)
         return
