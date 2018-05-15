@@ -24,6 +24,7 @@ def get_article_list():
     data['name'] = data['name'].apply(lambda x: x.split('.')[0])
     data = data.set_index('name')
     data = data[data.index !='Articles']
+    data = data.sort_index()
     arts = []
     for index in data.index:
         arts.append(make_article(index))
