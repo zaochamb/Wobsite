@@ -1,7 +1,21 @@
+#content {
+    padding-top:3%;
+    padding-bottom:60vh;
+}
+
+@media (min-width: 25cm) {
+    #content {
+    margin-left:20%;
+    margin-right:20%;
+    }
+}
+
+
 header h1, header h2, header h3 {
     align:center;
     text-align:center;
 }
+
 
 header a{
     align:right !important;
@@ -9,11 +23,11 @@ header a{
     display:block;
 }
 
-
-.nav{
+footer, .nav {
     padding: 1.382em 0 ;
+    text-align:center;
+    list-style:none;
 }
-
 .nav li, footer li{
     display: inline-block;
     border-left:thin solid darkgrey;
@@ -21,7 +35,6 @@ header a{
     border-collapse: collapse;
     padding: 0 1%;
 }
-
 
 p, h1, h2, h3, li, a:visited, a:hover, a.active, a {
     align:center;
@@ -31,40 +44,10 @@ p, h1, h2, h3, li, a:visited, a:hover, a.active, a {
     text-decoration: none;
 }
 
-h1{
-    font-size:xx-large;
-}
-h2{
-    font-size:x-large;
-}
-h3{
-    font-size:large;
-}
-
-
-#content {
-    padding-top:3%;
-    padding-bottom:60vh;
-
-}
-
-@media (min-width: 30cm) {
-    #content {
-    margin-left:20%;
-    margin-right:20%;
-    }
-}
-
-footer, .nav {
-    text-align:center;
-    list-style:none;
-}
-
 
 #button {
   border: .0;
   background: lightgrey;
-  font-size: large;
   font-weight: 100;
 }
 

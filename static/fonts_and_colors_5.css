@@ -16,12 +16,22 @@ p, a, li{
 }
 
 
+h1{
+    font-size:xx-large;
+}
+h2{
+    font-size:x-large;
+}
+h3{
+    font-size:large;
+}
+
+
+
 .nav, footer {
     background: #555555;
     color: white;
-
 }
-
 
 body{
     background: #fcfcfc;
