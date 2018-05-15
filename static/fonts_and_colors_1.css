@@ -43,6 +43,8 @@ h3{
 
 body{
     background: #fcfcfc;
+    background-image: url("backgrounds/what-the-hex.png");
+    background-repeat: repeat;
 }
 
 #button {
