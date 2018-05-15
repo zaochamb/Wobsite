@@ -1,0 +1,33 @@
+
+
+
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Sans', sans-serif !important;
+    color: darkred;
+}
+
+p, a, li{
+    font-family: 'Open Sans', sans-serif !important;
+    color: #474747;
+    color: inherit;
+}
+
+
+.nav, footer {
+    background: #474747;
+    color: #fcfcfc;
+
+}
+
+
+body{
+
+    background: #fcfcfc;
+}
+#content {
+    background: white;
+}
