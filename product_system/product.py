@@ -25,7 +25,9 @@ def get_product_list():
     dir = settings.get_dir_static(pathlib.Path('product_system', 'products.csv'))
     data = pd.read_csv(dir)
     data = data.set_index('product')
+    data = data.sort_index()
     prods = []
+
     for index in data.index:
         prods.append(make_product(index, data.loc[index]))
     return prods
