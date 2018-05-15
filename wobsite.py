@@ -7,7 +7,6 @@ from flask import Flask, request, render_template, abort
 from phone_system import phone
 from login_system import login
 from article_system import article
-from admin_system import admin
 from product_system import product
 
 # Register blueprints
@@ -16,7 +15,6 @@ def get_app():
     app.register_blueprint(login.app)
     app.register_blueprint(phone.app)
     app.register_blueprint(article.app)
-    app.register_blueprint(admin.app)
     app.register_blueprint(product.app)
     app.secret_key = str(random.random() + random.random())
     app.url_map.strict_slashes = False
