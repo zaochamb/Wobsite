@@ -3,7 +3,6 @@ import settings
 import pandas as pd
 import pathlib
 import os
-import urllib.parse
 
 app = f.Blueprint('article', __name__)
 
@@ -40,5 +39,5 @@ class Article():
 
     def __init__(self, name):
         self.name = name
-        self.url = '/articles/{}'.format(name)
+        self.url = '/articles/{}'.format(name).replace(' ', '%20')
         return
