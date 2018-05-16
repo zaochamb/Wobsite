@@ -41,7 +41,8 @@ h3{
 }
 
 footer li+li, .nav li+li {
-    border-left: 1px solid #d8d8d8
+    border-left: 1px solid #d8d8d8;
+    border-collapse: collapse;
 }
 
 body{

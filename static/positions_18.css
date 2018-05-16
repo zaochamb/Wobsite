@@ -29,7 +29,6 @@ footer, .nav {
 
 footer li, .nav li{
     display: inline-block;
-    border-collapse: collapse;
     padding: 0 0;
     margin: .5em 1em;
     text-decoration:  none;
