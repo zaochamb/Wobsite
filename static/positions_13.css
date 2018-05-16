@@ -27,6 +27,8 @@ footer, .nav {
     padding: 1.382em 0 ;
     text-align:center;
     list-style:none;
+    margin: .2em .4em;
+    text-decoration:  none;
 }
 .nav li, footer li{
     display: inline-block;
@@ -37,13 +39,17 @@ footer, .nav {
 }
 
 p, h1, h2, h3, li, a:visited, a:hover, a.active, a {
-    align:center;
-    text-align:left;
-    padding: 0 0;
-    margin:.2em .4em;
-    text-decoration: none;
+    text-align:inherit;
+    margin: inherit;
+    text-decoration: inherit;
 }
 
+
+#content a, #content p{
+    text-align: left;
+    padding-bottom: 0 0;
+    margin: 1em 1em;
+}
 
 .showme{
 display: none;
