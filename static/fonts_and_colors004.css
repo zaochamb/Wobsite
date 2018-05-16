@@ -19,6 +19,12 @@ p, a, li, ul{
     line-height: 1.7;
 }
 
+header {
+    background-color: darkslategrey;
+    color: deepskyblue;
+
+}
+
 #content{
     background: white;
     color: var(--text-color)
