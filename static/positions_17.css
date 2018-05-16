@@ -32,9 +32,9 @@ footer li, .nav li{
     border-collapse: collapse;
     padding: 0 0;
     margin: .5em 1em;
+    border: 1px solid #a1a1a1;
 }
 
-footer li+li, .nav li+li { border-left: 1px solid white }
 
 
 .showme{
