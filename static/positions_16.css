@@ -31,6 +31,7 @@ footer li, .nav li{
     display: inline-block;
     border-collapse: collapse;
     padding: 0 0;
+    margin: .5em 1em;
 }
 
 footer li+li, .nav li+li { border-left: 1px solid white }
