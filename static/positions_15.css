@@ -33,9 +33,7 @@ footer li, .nav li{
     padding: 0 0;
 }
 
-#navigation li:not(:first-child):before {
-    content: " | ";
-}
+footer li+li, .nav li+li { border-left: 1px solid white }
 
 
 .showme{
