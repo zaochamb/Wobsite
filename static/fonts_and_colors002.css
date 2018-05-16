@@ -36,8 +36,8 @@ h3{
 
 
 .nav, footer {
-    background: #555555;
-    color: white;
+    background: white;
+    color: darkred;
 }
 
 footer li+li, .nav li+li {
