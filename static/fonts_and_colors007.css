@@ -17,8 +17,8 @@ p, a, li, ul{
 }
 
 header, footer {
-    background-color: dimgray;
-    color: white;
+    background-color: white;
+    color: dimgray;
 
 }
 
