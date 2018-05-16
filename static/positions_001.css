@@ -1,6 +1,8 @@
 #content {
     padding-top:3%;
     padding-bottom:60vh;
+    margin-left:1%;
+    margin-right:1%;
 }
 
 @media (min-width: 25cm) {
