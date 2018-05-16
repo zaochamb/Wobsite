@@ -35,10 +35,13 @@ h3{
 }
 
 
-
 .nav, footer {
     background: #555555;
     color: white;
+}
+
+footer li+li, .nav li+li {
+    border-left: 1px solid #d8d8d8
 }
 
 body{
@@ -47,6 +50,6 @@ body{
 }
 
 #button {
-  border: .0;
+  border: none;
   background: lightgrey;
 }

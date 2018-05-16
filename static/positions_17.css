@@ -25,14 +25,14 @@ footer, .nav {
     text-align:center;
     list-style:none;
     margin: .2em .4em;
-    text-decoration:  none;
 }
+
 footer li, .nav li{
     display: inline-block;
     border-collapse: collapse;
     padding: 0 0;
     margin: .5em 1em;
-    border: 1px solid #a1a1a1;
+    text-decoration:  none;
 }
 
 
