@@ -10,46 +10,33 @@
     }
 }
 
-
 header h1, header h2, header h3 {
-    align:center;
     text-align:center;
 }
 
-
 header a{
-    align:right !important;
+    align:right ;
     text-align:right;
     display:block;
 }
 
 footer, .nav {
-    padding: 1.382em  ;
+    padding: 1em  ;
     text-align:center;
     list-style:none;
     margin: .2em .4em;
     text-decoration:  none;
 }
-.nav li, footer li{
+footer li, .nav li{
     display: inline-block;
-    border-left:thin solid darkgrey;
-    border-right:thin solid darkgrey;
     border-collapse: collapse;
-    padding: 0 1%;
+    padding: 0 0;
 }
 
-p, h1, h2, h3, a:visited, a:hover, a.active, a {
-    text-align:inherit;
-    margin: inherit;
-    text-decoration: inherit;
+#navigation li:not(:first-child):before {
+    content: " | ";
 }
 
-
-#content a, #content p{
-    text-align: left;
-    padding-bottom: 0 0;
-    margin: 1em 1em;
-}
 
 .showme{
 display: none;
