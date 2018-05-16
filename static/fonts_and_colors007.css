@@ -16,6 +16,9 @@ p, a, li, ul{
     line-height: 1.7;
 }
 
+#content a{
+    text-decoration: none;
+}
 header, footer {
     background-color: white;
     color: dimgray;
