@@ -30,11 +30,13 @@ footer, .nav {
 footer li, .nav li{
     display: inline-block;
     padding: 0 0;
-    margin: .5em 1em;
     text-decoration:  none;
 }
 
-
+footer li+li, .nav li+li {
+    margin-left: .5em;
+    padding-left: .5em;
+}
 
 .showme{
 display: none;
