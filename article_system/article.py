@@ -12,6 +12,7 @@ def articles(art_name = ''):
     if art_name == '':
         articles = get_article_list()
         return f.render_template('article_system/Articles.html', articles = articles)
+    art_name = art_name.replace('+', ' ')
     return f.render_template('article_system/{}.html'.format(art_name))
 
 
