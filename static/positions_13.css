@@ -24,7 +24,7 @@ header a{
 }
 
 footer, .nav {
-    padding: 1.382em 0 ;
+    padding: 1.382em  ;
     text-align:center;
     list-style:none;
     margin: .2em .4em;
@@ -38,7 +38,7 @@ footer, .nav {
     padding: 0 1%;
 }
 
-p, h1, h2, h3, li, a:visited, a:hover, a.active, a {
+p, h1, h2, h3, a:visited, a:hover, a.active, a {
     text-align:inherit;
     margin: inherit;
     text-decoration: inherit;
