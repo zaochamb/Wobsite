@@ -1,8 +1,5 @@
 
 
-:root {
-  --text-color: #7f7f7f;
-}
 
 * {
     font-family: 'Open Sans', sans-serif !important;
@@ -10,7 +7,7 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'PT Sans', sans-serif !important;
-    color: dimgray;
+    color: inherit;
 }
 
 p, a, li, ul{
@@ -19,15 +16,15 @@ p, a, li, ul{
     line-height: 1.7;
 }
 
-header {
+header, footer {
     background-color: darkslategrey;
     color: deepskyblue;
 
 }
 
-#content{
+#content {
     background: white;
-    color: var(--text-color)
+    color: dimgrey;
 }
 
 h1{
@@ -40,8 +37,7 @@ h3{
     font-size:large;
 }
 
-
-.nav, footer {
+.nav {
     background: white;
     color: darkred;
 }
@@ -52,8 +48,7 @@ footer li+li, .nav li+li {
 }
 
 body{
-    background: #fcfcfc;
-
+    background: white;
 }
 
 #button {
