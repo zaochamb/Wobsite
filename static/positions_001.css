@@ -5,10 +5,16 @@
     margin-right:3%;
 }
 
+
 @media (min-width: 25cm) {
     #content {
     margin-left:20%;
     margin-right:20%;
+    }
+
+    header a{
+        margin-right: 20%;
+
     }
 }
 
