@@ -5,6 +5,8 @@
     font-family: 'Open Sans', sans-serif !important;
 }
 
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'PT Sans', sans-serif !important;
     color: inherit;
@@ -14,7 +16,14 @@ p, a, li, ul{
     font-family: 'Open Sans', sans-serif !important;
     color: inherit;
     line-height: 1.7;
+    padding-top:0;
 }
+
+#content{
+    background-color:white;
+    box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
+}
+
 
 #content a{
     text-decoration: none;
@@ -22,14 +31,22 @@ p, a, li, ul{
 header, footer {
     background-color: white;
     color: dimgray;
+    box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
 
 }
 
-#content {
-    background: white;
+body {
+    background-image: url("backgrounds/download.png");
+    background-size: 200vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: dimgrey;
 }
-
+@media (min-width: 25cm) {
+    body {
+        background-size: 100vw 100vh;
+    }
+}
 #content h1,#content h2,#content h3,#content h4,#content h5,#content h6 {
     color: darkred;
 }
@@ -37,12 +54,19 @@ header, footer {
 
 h1{
     font-size:xx-large;
+    padding-top: 2em;
 }
 h2{
     font-size:x-large;
+    padding-top: 1.5em;
 }
 h3{
     font-size:large;
+    padding-top: 1.4em;
+}
+
+h4, h5, h6{
+    padding:1em;
 }
 
 .nav {
@@ -55,9 +79,6 @@ footer li+li, .nav li+li {
     border-collapse: collapse;
 }
 
-body{
-    background: white;
-}
 
 #button {
   border: none;

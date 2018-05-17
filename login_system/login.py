@@ -13,7 +13,7 @@ def login():
             return f.render_template('login_system/login.html')
         if name != False:
             return logout()
-        
+
     if f.request.method == 'POST':
         return login_tools.login_url(f.request, f.session)
 
