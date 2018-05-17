@@ -21,18 +21,11 @@ p, a, li, ul{
 
 #content{
     background-color:white;
-    opacity: .5;
+    opacity: 1;
     box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
-    color: white;
+    color: #4a4a4a;
 }
 
-@media (min-width: 30cm) {
-    #content {
-        background-color: white;
-        opacity: 1;
-        color: dimgray;
-    }
-}
 hr {
     border: 0;
     height: 1px;
