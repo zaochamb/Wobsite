@@ -5,41 +5,61 @@ import pathlib
 import os
 
 app = f.Blueprint('article', __name__)
+base_folder = 'Articles'
 
-@app.route('/articles/<art_name>')
+
 @app.route('/articles')
-def articles(art_name = ''):
-    if art_name == '':
-        articles = get_article_list()
-        return f.render_template('article_system/Articles.html', articles = articles)
-    art_name = art_name.replace('+', ' ')
-    return f.render_template('article_system/{}.html'.format(art_name))
+def re_routearticles():
+    return f.redirect('/Articles')
 
 
-def get_article_list():
-    path = settings.get_dir_templates(pathlib.Path('article_system'))
+@app.route('/Articles/<subcategory>')
+@app.route('/Articles')
+def articles(subcategory=''):
+    if '.html' not in subcategory:
+
+
+
+        links = get_links(subcategory)
+
+
+        if subcategory == '':
+            subcategory = 'Articles'
+        return f.render_template('/Articles/main.html', page_name=subcategory, links = links)
+
+    if '.html' in subcategory:
+        f.render_template(subcategory)
+
+    return
+
+
+def get_links(subcategory):
+    path = settings.add_paths(base_folder, subcategory)
+    path = settings.get_dir_templates(pathlib.Path(path))
 
     list_of_files = os.listdir(path)
 
-    data = pd.DataFrame(data= {'name':list_of_files})
+    data = pd.DataFrame(data={'name': list_of_files})
+    data['filename'] = data['name'].copy()
+    data['filename'] = subcategory + '/'+ data['filename'].str.replace('%20', ' ')
+
     data['name'] = data['name'].apply(lambda x: x.split('.')[0])
     data = data.set_index('name')
-    data = data[data.index !='Articles']
+    data = data[data.index != 'Articles']
     data = data.sort_index()
     arts = []
     for index in data.index:
-        arts.append(make_article(index))
+
+        filename = data.loc[index, 'filename']
+        arts.append(Article(index, filename))
     return arts
 
-def make_article(name):
-    art = Article(name)
-    return art
 
 class Article():
     name = None
-    url = None
+    filename = None
 
-    def __init__(self, name):
+    def __init__(self, name, filename):
         self.name = name
-        self.url = '/articles/{}'.format(name).replace(' ', '%20')
+        self.filename = filename.replace(' ', '%20')
         return
