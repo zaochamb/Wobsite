@@ -20,12 +20,18 @@ p, a, li, ul{
 }
 
 #content{
-    background-color:black;
+    background-color:white;
     opacity: .5;
     box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
     color: white;
 }
 
+@media (min-width: 30cm) {
+    #content {
+        background-color: white;
+        opacity: 1;
+    }
+}
 hr {
     border: 0;
     height: 1px;
