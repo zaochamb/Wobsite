@@ -20,8 +20,10 @@ p, a, li, ul{
 }
 
 #content{
-    background-color:white;
+    background-color:black;
+    opacity: .5;
     box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
+    color: white;
 }
 
 hr {
@@ -44,7 +46,6 @@ body {
     background-size: 200vw 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: dimgrey;
 }
 @media (min-width: 25cm) {
     body {
