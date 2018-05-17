@@ -30,6 +30,7 @@ p, a, li, ul{
     #content {
         background-color: white;
         opacity: 1;
+        color dimgray;
     }
 }
 hr {
