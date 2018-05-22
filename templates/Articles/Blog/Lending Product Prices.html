@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "layout.html" %}
+{% block content %}
+
 <style>
 table, th, td {
 	border: 1px solid black;
@@ -10,8 +10,6 @@ th, td {
 	padding: 5px
 }
 </style>
-</head>
-<body>
 <title>Cost and Pricing Of Lending Products</title>
 <h2>Cost and Pricing Of Lending Products</h2>
 <p>Do you struggle to answer your clients’ questions regarding the pricing of the product? Are you losing deals due to concerns on cost?</p>
@@ -64,3 +62,4 @@ th, td {
 	</tr>
 </table>
 <p>These comparisons in the above chart will definitely vary from one lending company to another. In addition, terms, rates, and amounts will vary with credit, background, cash flow, and industry. However, it can definitely help you allow for that discussion with the merchant depending on their situation and needs.</p>
+{% endblock %}
