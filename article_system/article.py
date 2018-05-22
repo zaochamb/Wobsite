@@ -8,29 +8,25 @@ app = f.Blueprint('article', __name__)
 base_folder = 'Articles'
 
 
+def get_main_template():
+    return base_folder + '/main.html'
+
+
 @app.route('/articles')
 def re_routearticles():
     return f.redirect('/Articles')
 
 
-@app.route('/Articles/<subcategory>')
-@app.route('/Articles')
-def articles(subcategory=''):
-    if '.html' not in subcategory:
+@app.route('/Articles/<path:path>')
+@app.route('/Articles', defaults={'path': ''})
+def articles(path):
+    if '.html' in path:
+        return f.render_template(base_folder + '/' +  path)
 
+    if '.html' not in path:
+        links = get_links(path)
+        return f.render_template(get_main_template(),links = links )
 
-
-        links = get_links(subcategory)
-
-
-        if subcategory == '':
-            subcategory = 'Articles'
-        return f.render_template('/Articles/main.html', page_name=subcategory, links = links)
-
-    if '.html' in subcategory:
-        f.render_template(subcategory)
-
-    return
 
 
 def get_links(subcategory):
@@ -40,12 +36,15 @@ def get_links(subcategory):
     list_of_files = os.listdir(path)
 
     data = pd.DataFrame(data={'name': list_of_files})
-    data['filename'] = data['name'].copy()
-    data['filename'] = subcategory + '/'+ data['filename'].str.replace('%20', ' ')
+    data['filename'] = data['name'].copy().str.replace('%20', ' ')
+    if subcategory != '':
+        data['filename'] = subcategory + '/' + data['filename']
 
-    data['name'] = data['name'].apply(lambda x: x.split('.')[0])
+    def remove_html(name):
+        return name.replace('.html', '')
+    data['name'] = data['name'].apply(remove_html)
     data = data.set_index('name')
-    data = data[data.index != 'Articles']
+    data = data[data.index != 'main']
     data = data.sort_index()
     arts = []
     for index in data.index:

@@ -6,7 +6,7 @@
     {% for item in links%}
     <li>
         <h3>
-            <a href="{{ url_for('article.articles', path = path, subcategory = item.filename) }}"> {{item.name}} </a>
+            <a href="{{ url_for('article.articles', path = item.filename) }}"> {{item.name}} </a>
         </h3>
     </li>
     {% endfor %}
