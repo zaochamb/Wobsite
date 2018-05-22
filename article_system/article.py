@@ -21,7 +21,7 @@ def re_routearticles():
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
     if '.html' in path:
-        return f.render_template(base_folder + '/' +  path)
+        return f.render_template(base_folder + '/' +  path.replace('%20', ' '))
 
     if '.html' not in path:
         links = get_links(path)
