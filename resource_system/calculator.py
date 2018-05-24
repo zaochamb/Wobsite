@@ -1,6 +1,7 @@
 import flask as f
 import numpy as np
 
+
 def compound_interest_calculator():
     page_url = 'resource_system/compound_interest_calculator.html'
     if f.request.method == 'GET':
@@ -11,8 +12,17 @@ def compound_interest_calculator():
         n = f.request.form['n']
         t = f.request.form['t']
 
+        p = float(p)
+        r = float(r)/100
+        n = float(n)
+        t = float(t)
+
+
+
         cost ,pmt_size= calculate(p, r, n, t)
-        return f.render_template(page_url, cost = cash_format(cost), pmt_size = cash_format(pmt_size))
+        return f.render_template(page_url, cost = cash_format(cost),
+                                 pmt_size = cash_format(pmt_size),
+                                 interest_rate = '{:.2f} %'.format(r * 100) )
 
 
 def cash_format(num):
@@ -38,17 +48,13 @@ def get_cost(periods, interest, initial, payment):
             payment = owed
         owed = owed - payment
         if owed > last_owed:
-            return 'inf'
+            return np.inf
         last_owed = owed
 
     return cost
 
 
 def calculate(p, r, n, t):
-    p = float(p)
-    r = float(r)
-    n = float(n)
-    t = float(t)
     periods = n * t
     interest = r / n
     initial = p
