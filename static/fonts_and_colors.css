@@ -22,7 +22,7 @@ p, a, li, ul{
 #content{
     background-color:white;
     opacity: 1;
-    box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
     color: #4a4a4a;
 }
 
@@ -37,21 +37,26 @@ hr {
 header, footer {
     background-color: white;
     color: dimgray;
-    box-shadow: 2px 4px 21px 0px rgba(0,0,0,0.48);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
 
 }
 
+
+
 body {
-    background-image: url("backgrounds/download.png");
+    background-image: url("backgrounds/main.png");
     background-size: 200vw 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
 @media (min-width: 25cm) {
     body {
         background-size: 100vw 100vh;
     }
 }
+
 #content h1,#content h2,#content h3,#content h4,#content h5,#content h6 {
     color: darkred;
 }
