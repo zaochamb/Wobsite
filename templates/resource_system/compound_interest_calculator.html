@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>
+    Business Loan - Compound Interest Calculator
+</h2>
+<p>
+If you would like to calculate what your interest rate is going to cost you and what your payments are going to look like then this calculator will do that for you.
+These calculations should be the best estimate for the following kinds of loans: Traditional Loans, SBA Loans, and Term Loans.
+
+</p>
+<form action="{{ url_for('resources.compound_interest_calculator')}}" method="post">
+      <br>
+      <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
+      <br><br>
+      <input type="number" name="r" placeholder="APR" step="0.01"  min = 0 required="required">
+      <br><br>
+      <input type="number" name="n" placeholder="Compound Per Year" min = 0 required="required">
+      <br><br>
+      <input type="number" name="t" placeholder="Number of Years" min = 0 required="required">
+      <input type="submit" value="Calculate" id="button">
+</form>
+
+{% if cost is defined %}
+    <hr>
+    <p> {{ cost }} Total Extra Cost </p>
+    <p> {{ pmt_size }} Payment size per compounding period</p>
+    <p> Interest Rate is: {{ interest_rate }} </p>
+
+
+    <h3>Assumptions</h3>
+    <p>
+    <ul>
+    <li> -Payments are are made right after interest is calculated.  </li>
+    <li> -Interest is calculated at the end of each compounding period.  </li>
+    </ul>
+    </p>
+
+    <br>
+<p> This assumes a very straightforward loan. As such this is only an estimate of what the costs are going to be like.
+    Please talk to your loan provider to figure out exactly what the conditions of your loan are.</p>
+
+{% endif %}
+
+{% endblock %}
