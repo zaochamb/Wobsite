@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>
+    Compound Interest Calculator
+</h2>
+
+<form action="{{ url_for('resources.compound_interest_calculator')}}" method="post">
+      <br>
+      <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
+      <br><br>
+      <input type="number" name="r" placeholder="APR (0-1)" step="0.01" max = 1 min = 0 required="required">
+      <br><br>
+      <input type="number" name="n" placeholder="Compound Per Year" min = 0 required="required">
+      <br><br>
+      <input type="number" name="t" placeholder="Number of Years" min = 0 required="required">
+      <input type="submit" value="Calculate" id="button">
+</form>
+
+{% if cost is defined %}
+    <hr>
+    <p> {{ cost }} Extra Dollars Paid Back </p>
+    <p> {{ pmt_size }} Yearly Payment Size </p>
+{% endif %}
+
+{% endblock %}
