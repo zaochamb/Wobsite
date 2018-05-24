@@ -45,6 +45,10 @@ def get_cost(periods, interest, initial, payment):
 
 
 def calculate(p, r, n, t):
+    p = float(p)
+    r = float(r)
+    n = float(n)
+    t = float(t)
     periods = n * t
     interest = r / n
     initial = p
@@ -52,6 +56,6 @@ def calculate(p, r, n, t):
 
     cost = get_cost(periods, interest, initial, pmt_size)
 
-    return cost, pmt_size
+    return -1  * cost, pmt_size
 
 
