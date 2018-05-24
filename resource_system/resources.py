@@ -11,5 +11,5 @@ def resources():
 
 
 @app.route('/compound_interest_calculator', methods=['GET', 'POST'])
-def mcalculator():
+def compound_interest_calculator():
     return calculator.compound_interest_calculator()

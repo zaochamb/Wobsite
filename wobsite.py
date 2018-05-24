@@ -30,7 +30,7 @@ sslify = SSLify(app)
 
 if __name__ == "__main__":
     app = get_app()
-
+    
 
 @app.route('/')
 def home():
