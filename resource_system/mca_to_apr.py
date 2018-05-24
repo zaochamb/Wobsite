@@ -20,6 +20,6 @@ def main_calc():
 
 def calculate(time, fee):
     fee = fee -1
-    times_per_year = 365/time
+    times_per_year = 240/time
     apr = times_per_year * fee
     return apr * 100
