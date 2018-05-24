@@ -2,7 +2,7 @@ import flask as f
 import numpy as np
 
 
-def compound_interest_calculator():
+def main_calc():
     page_url = 'resource_system/compound_interest_calculator.html'
     if f.request.method == 'GET':
         return f.render_template(page_url)

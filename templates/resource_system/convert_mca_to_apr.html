@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>
+    Convert Revenue Funding Rate to APR
+</h2>
+<p>
+What would your Revenue Funding or MCA (Merchant Cash Advance) Rate be if it was an annual loan.
+
+</p>
+<form action="{{ url_for('resources.convert_revenue_funding_to_apr')}}" method="post">
+      <br>
+      <input type="number" name="time" placeholder=" Term(Days)" step = 1 min = 0 required="required">
+      <br><br>
+      <input type="number" name="fee" placeholder="FEE Rate" step="0.01"  min = 1 required="required"> <p> This number is usually between 1 and 2 </p>
+      <br><br>
+      <input type="submit" value="Calculate" id="button">
+</form>
+
+{% if apr is defined %}
+    <hr>
+    <p> {{ apr }} Annual APR </p>
+    <br>
+
+{% endif %}
+
+{% endblock %}
