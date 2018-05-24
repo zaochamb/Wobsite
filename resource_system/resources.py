@@ -1,7 +1,7 @@
 import flask as f
 
-from resource_system import compound_interest_calculator
-from resource_system import convert_mca_to_apr
+from resource_system import compound_interest
+from resource_system import mca_to_apr
 app = f.Blueprint('resources', __name__)
 
 
@@ -11,8 +11,8 @@ def resources():
 
 @app.route('/compound_interest_calculator', methods=['GET', 'POST'])
 def compound_interest_calculator():
-    return compound_interest_calculator.main_calc()
+    return compound_interest.main_calc()
 
 @app.route('/convert_revenue_funding_to_apr', methods = ['GET', 'POST'])
 def convert_revenue_funding_to_apr():
-    return convert_mca_to_apr.main_calc()
+    return mca_to_apr.main_calc()
