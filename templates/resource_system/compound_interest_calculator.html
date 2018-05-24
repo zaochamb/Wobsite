@@ -3,9 +3,13 @@
 {% block content %}
 
 <h2>
-    Compound Interest Calculator
+    Business Loan - Compound Interest Calculator
 </h2>
+<p>
+If you would like to calculate what your interest rate is going to cost you and what your payments are going to look like then this calculator will do that for you.
+These calculations should be the best estimate for the following kinds of loans: Traditional Loans, SBA Loans, and Term Loans.
 
+</p>
 <form action="{{ url_for('resources.compound_interest_calculator')}}" method="post">
       <br>
       <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
