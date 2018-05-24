@@ -18,7 +18,7 @@ def get_app():
     app.register_blueprint(phone.app)
     app.register_blueprint(article.app)
     app.register_blueprint(product.app)
-    app.register_blueprint(resources.app, url_prefix='/resources/')
+    app.register_blueprint(resources.app, url_prefix='/resources')
 
     app.secret_key = str(random.random() + random.random())
     app.url_map.strict_slashes = False
@@ -30,7 +30,7 @@ sslify = SSLify(app)
 
 if __name__ == "__main__":
     app = get_app()
-    
+
 
 @app.route('/')
 def home():
