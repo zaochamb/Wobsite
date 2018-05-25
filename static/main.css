@@ -128,6 +128,7 @@ body {
 
 }
 
+
 /* Light and Dark Color Systems */
 
 .light, .dark {
@@ -135,6 +136,9 @@ body {
     padding: .5em;
 }
 
+.light:last-child{
+    padding-bottom: 10em;
+}
 .light {
     background-color: var(--lightback);;
     color: var(--lighttext);
@@ -142,6 +146,11 @@ body {
 
 .light h1, .light h2, .light h3, .light h4, .light h5, .light h6  {
     color: var(--lightheader);
+}
+
+
+.light a:hover{
+    color: var(--lightheader)
 }
 
 .dark{
@@ -155,6 +164,10 @@ body {
 
 .dark p{
     font-size: smaller;
+}
+
+.dark a:hover{
+    color: var(--darkheader)
 }
 
 
@@ -174,8 +187,13 @@ a{
 
 /* Buttons */
 #button {
-  border: none;
-  background: lightgrey;
+    border: none;
+    background: var(--darkback);
+    padding-left:  4em;
+    padding-right:  4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: var(--darktext)
 }
 
 

@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <div class="light">
+    <div class="light" style="padding-bottom: 20em">
     {% block article %}{% endblock %}
     </div>
 
-    <section class="dark">
-    <a href="{{ url_for('apply') }}"> CLICK HERE TO APPLY</a>
+    <section class="dark" style="text-align: right" >
+
+    <a href="{{ url_for('apply') }}" > CLICK HERE TO APPLY</a>
     </section>
 {% endblock %}
 

@@ -1,11 +1,16 @@
-{% extends "article_layout.html" %}
-{% block article %}
-<h2> R E S O U R C E S </h2>
-    <nav>
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <h2 class="dark"> R E S O U R C E S </h2>
+
+
+
+    <nav class="light">
         <ul>
-            <li><a href="{{ url_for('resources.compound_interest_calculator') }}"><h2>Compound Interest Calculator</h2></a></li>
-            <li><a href="{{ url_for('resources.convert_revenue_funding_to_apr') }}"><h2>Convert Revenue Funding to APR</h2></a></li>
-            <li><a href="{{ url_for('resources.calculate_mca_costs') }}"><h2>Compare Two Revenue Funding Deals</h2></a></li>
+            <li><a href="{{ url_for('resources.compound_interest_calculator') }}">Compound Interest Calculator</a></li>
+            <li><a href="{{ url_for('resources.convert_revenue_funding_to_apr') }}">Convert Revenue Funding to APR</a></li>
+            <li><a href="{{ url_for('resources.calculate_mca_costs') }}">Compare Two Revenue Funding Deals</a></li>
         </ul>
     </nav>
 
