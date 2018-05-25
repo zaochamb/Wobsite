@@ -36,6 +36,10 @@ if __name__ == "__main__":
 def home():
     return render_template('home.html')
 
+@app.route('/apply')
+def apply():
+    return contact()
+
 
 @app.route('/contact')
 def contact():

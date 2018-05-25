@@ -30,7 +30,6 @@ def articles(path):
         return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
 
 
-
 def get_links(subcategory):
     path = settings.add_paths(base_folder, subcategory)
     path = settings.get_dir_templates(pathlib.Path(path))
