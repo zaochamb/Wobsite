@@ -48,7 +48,7 @@ header, footer {
 
 
 .dark{
-    background-color: teal;
+    background-color: rgb(34,129,58);
     color: white
 }
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6  {
