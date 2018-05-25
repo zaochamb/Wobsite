@@ -1,26 +1,36 @@
 #content {
     margin-top:3vh;
-    margin-bottom:3vh;
-    padding: .5em;
-    padding-bottom:60vh;
+    margin-bottom:60vh;
     margin-left:.25em;
     margin-right:.25em;
 }
+
+.light, .dark{
+        padding: .5em;
+}
+
 
 
 @media (min-width: 30cm) {
     #content {
     margin-left:20%;
     margin-right:20%;
-    padding-left:3%;
-    padding-right:3%;
     }
 
     header a{
         margin-right: 20%;
 
     }
+    .light, .dark{
+        padding-left:3%;
+        padding-right:3%;
+
+    }
+
 }
+
+
+
 
 
 
