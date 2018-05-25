@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>
+    How do my Revenue Funding or MCA Deals compare?
+</h2>
+<p>
+Compare Two Revenue Funding Deals with this Calculator.
+
+</p>
+<form action="{{ url_for('resources.calculate_mca_costs')}}" method="post">
+      <h3> Deal X </h3>
+      <br>
+      <input type="number" name="x_money" placeholder=" Money Offered " step = 0.01 min = 0 required="required">
+      <br><br>
+      <input type="number" name="x_time" placeholder=" Term(Days)" step = 1 min = 0 required="required">
+      <br><br>
+      <input type="number" name="x_fee" placeholder="FEE Rate" step="0.01"  min = 1 required="required">
+      <br><br>
+      <h3> Deal Y </h3>
+      <br>
+      <input type="number" name="y_money" placeholder=" Money Offered " step = 0.01 min = 0 required="required">
+      <br><br>
+      <input type="number" name="y_time" placeholder=" Term(Days)" step = 1 min = 0 required="required">
+      <br><br>
+      <input type="number" name="y_fee" placeholder="FEE Rate" step="0.01"  min = 1 required="required">
+      <br><br>
+
+      <input type="submit" value="Calculate" id="button">
+</form>
+
+{% if mcas is defined %}
+    <h3> Deal X </h3>
+    <p> Total Cost: {{ mcas[0].cost }} </p>
+    <p> Daily Payment: {{ mcas[0].daily }} </p>
+
+    <h3> Deal Y </h3>
+    <p> Total Cost: {{ mcas[1].cost }} </p>
+    <p> Daily Payment: {{ mcas[1].daily }} </p>
+{% endif %}
+
+{% endblock %}
