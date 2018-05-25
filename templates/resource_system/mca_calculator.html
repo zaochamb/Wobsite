@@ -32,11 +32,13 @@ Compare Two Revenue Funding Deals with this Calculator.
 
 {% if mcas is defined %}
     <h3> Deal X </h3>
-    <p> Total Cost: {{ mcas[0].cost }} </p>
+    <p> Principal : {{ mcas[0].principal }}</p>
+    <p> Cost: {{ mcas[0].cost }} </p>
     <p> Daily Payment: {{ mcas[0].daily }} </p>
 
     <h3> Deal Y </h3>
-    <p> Total Cost: {{ mcas[1].cost }} </p>
+    <p> Principal : {{ mcas[1].principal }}</p>
+    <p> Cost: {{ mcas[1].cost }} </p>
     <p> Daily Payment: {{ mcas[1].daily }} </p>
 {% endif %}
 

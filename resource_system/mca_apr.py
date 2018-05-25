@@ -58,6 +58,8 @@ class MCA():
 
     def __init__(self, money, time, fee):
         self.daily = money/time
-        self.cost = fee * money
+        self.cost = (fee * money) - money
+
+        self.principal = '$ {:,.2f}'.format(money)
         self.daily = '$ {:,.2f}'.format(self.daily)
         self.cost = '$ {:,.2f}'.format(self.cost)
