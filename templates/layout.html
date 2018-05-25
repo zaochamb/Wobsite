@@ -3,69 +3,74 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99082099-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-99082099-2');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99082099-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Aldora Capital </title>
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-99082099-2');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aldora Capital </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 </head>
 
 <body>
 <header>
-<h1> Aldora Capital Partners</h1>
-<h2> Business Financing and Startup Capital</h2>
-<a href="tel:14588888042 "> +1 458 888 8042 </a>
+    <h1> Aldora Capital Partners</h1>
+    <h2> Business Financing and Startup Capital</h2>
+    <a href="tel:14588888042 "> +1 458 888 8042 </a>
 
-<div>
-<ul class="nav">
-    <li><a href="/articles">Articles</a></li>
-    <li><a href="/contact">Contact Us</a></li>
-    <li><a href="/employee">Employee Portal</a></li>
-    <li><a href="/">Home</a></li>
-    <li><a href="/login" style ="text-align: right;">Login or Logout</a></li>
-    <li><a href="/partners">Partners</a></li>
-    <li><a href="/products">Products</a></li>
-    <li><a href="/resources">Resources</a></li>
-</ul>
-</div>
+    <div>
+        <ul class="nav">
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/employee">Employee Portal</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login" style="text-align: right;">Login or Logout</a></li>
+            <li><a href="/partners">Partners</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/resources">Resources</a></li>
+        </ul>
+    </div>
 </header>
 
 
-
 <div id='content'>
-{% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 </div>
 
 
-
-
 <footer>
-<address>
-<ul>
-<li>Address:
-Portland Oregon 97209,United States</li>
+    <address>
+        <ul>
+            <li>Address:
+                Portland Oregon 97209,United States
+            </li>
 
-<li>Email:
-admin@aldoracap.com</li>
+            <li>Email:
+                admin@aldoracap.com
+            </li>
 
-<li>Phone:
-+1 458-888-8042</li>
+            <li>Phone:
+                +1 458-888-8042
+            </li>
 
-<li>Managing Partners
-Ryan Francis,
-Fazley Chowdhury</li>
-<li>
-<a href="/privacy_policy">Privacy Policy</a>
-    </li>
-    </ul>
-</address>
+            <li>Managing Partners
+                Ryan Francis,
+                Fazley Chowdhury
+            </li>
+            <li>
+                <a href="/privacy_policy">Privacy Policy</a>
+            </li>
+        </ul>
+    </address>
 
 </footer>
 
