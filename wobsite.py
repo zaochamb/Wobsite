@@ -56,6 +56,11 @@ def privacy_policy():
 
 
 
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return f.send_from_directory(app.static_folder, request.path[1:])
+
 
 if __name__ == "__main__":
         app.run(debug = True)
