@@ -1,8 +1,10 @@
-{% extends "article_layout.html" %}
-{% block article %}
-<h2> {{ page_name }} </h2>
+{% extends "layout.html" %}
+{% block content %}
 
-<ul>
+
+<h2 class="light"> {{ page_name }} </h2>
+
+<ul class="dark">
     {% for item in links%}
     <li>
         <h3>
