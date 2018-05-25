@@ -48,11 +48,13 @@ header, footer {
 
 
 .dark{
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
     background-color: rgb(34,129,58);
     color: white
 }
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6  {
     color: white;
+
 }
 
 
