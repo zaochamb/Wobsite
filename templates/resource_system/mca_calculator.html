@@ -9,6 +9,9 @@
 Compare Two Revenue Funding Deals with this Calculator.
 
 </p>
+
+
+
 <form action="{{ url_for('resources.calculate_mca_costs')}}" method="post">
       <h3> Deal X </h3>
       <br>
@@ -31,6 +34,7 @@ Compare Two Revenue Funding Deals with this Calculator.
 </form>
 
 {% if mcas is defined %}
+    <hr>
     <h3> Deal X </h3>
     <p> Principal : {{ mcas[0].principal }}</p>
     <p> Cost: {{ mcas[0].cost }} </p>
@@ -41,5 +45,6 @@ Compare Two Revenue Funding Deals with this Calculator.
     <p> Cost: {{ mcas[1].cost }} </p>
     <p> Daily Payment: {{ mcas[1].daily }} </p>
 {% endif %}
+
 
 {% endblock %}
