@@ -1,0 +1,210 @@
+:root {
+    --lightback: white;
+    --lighttext: dimgrey;
+    --lightheader: darkred;
+
+    --darkback: #6DA2BC;
+    --darktext: white;
+    --darkheader: white;
+
+    --headerback: white;
+    --headertext: dimgrey;
+
+    --footerback: white;
+    --footertext: dimgrey;
+
+}
+
+
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Sans', sans-serif !important;
+    color: inherit;
+}
+
+p, a, li, ul{
+    font-family: 'Open Sans', sans-serif !important;
+    color: inherit;
+    line-height: 1.7;
+    padding-top:0;
+}
+
+#content{
+    background-color:transparent;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+header {
+    background-color: var(--headerback);
+    color: var(--headertext);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+}
+
+footer{
+    background-color: var(--footerback);
+    color: var(--footertext);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.light {
+    background-color: var(--lightback);;
+    color: var(--lighttext);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+}
+
+
+.dark{
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+    background-color: var(--darkback);
+    color: var(--darktext);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6  {
+    color: var(--darkheader);
+}
+
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6  {
+    color: var(--lightheader);
+}
+
+
+body {
+    background-image: url("backgrounds/main.png");
+    background-size: 300vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+@media (min-width: 25cm) {
+    body {
+        background-size: 100vw 100vh;
+    }
+}
+
+
+h1{
+    font-size:xx-large;
+    padding-top: 2em;
+}
+h2{
+    font-size:x-large;
+    padding-top: 1.5em;
+}
+h3{
+    font-size:large;
+    padding-top: 1.4em;
+}
+
+h4, h5, h6{
+    padding:1em;
+}
+
+#content .nav {
+    background: var(--darkback);
+    color: var(--darkheader)
+}
+
+footer li+li, .nav li+li {
+    border-left: 1px solid #d8d8d8;
+    border-collapse: collapse;
+}
+
+
+#button {
+  border: none;
+  background: lightgrey;
+}
+
+
+.showme{
+display: none;
+}
+
+.showhim:hover .showme{
+display : block;
+}
+
+footer li, .nav li{
+    display: inline-block;
+    padding: 0 0;
+}
+
+footer li+li, .nav li+li {
+    margin-left: .5em;
+    padding-left: .5em;
+    white-space: nowrap;
+}
+
+
+#content {
+    margin-top:3vh;
+    margin-bottom:60vh;
+    margin-left:.25em;
+    margin-right:.25em;
+}
+
+.light, .dark{
+        padding: .5em;
+}
+
+
+
+@media (min-width: 30cm) {
+    #content {
+    margin-left:20%;
+    margin-right:20%;
+    }
+
+    header a{
+        margin-right: 20%;
+
+    }
+    .light, .dark{
+        padding-left:3%;
+        padding-right:3%;
+
+    }
+
+}
+
+
+header{
+    padding-bottom:1em;
+}
+header h1, header h2, header h3 {
+    padding-top: .7em;
+    text-align:center;
+}
+
+header a{
+    align:right ;
+    text-align:right;
+    display:block;
+}
+
+footer, .nav {
+    text-align:center;
+    list-style:none;
+}
+
+footer{
+    margin-bottom:0;
+    padding-left:0;
+    padding-right:0;
+}
