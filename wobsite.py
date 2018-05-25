@@ -8,6 +8,8 @@ from phone_system import phone
 from login_system import login
 from article_system import article
 from product_system import product
+from resource_system import resources
+
 
 # Register blueprints
 def get_app():
@@ -16,11 +18,13 @@ def get_app():
     app.register_blueprint(phone.app)
     app.register_blueprint(article.app)
     app.register_blueprint(product.app)
+    app.register_blueprint(resources.app, url_prefix='/resources')
+
     app.secret_key = str(random.random() + random.random())
     app.url_map.strict_slashes = False
     return app
 
- 
+
 app = get_app()
 sslify = SSLify(app)
 
@@ -52,6 +56,6 @@ def privacy_policy():
 
 
 
-    
+
 if __name__ == "__main__":
         app.run(debug = True)
