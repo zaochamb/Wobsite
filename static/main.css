@@ -183,10 +183,17 @@ a{
     text-decoration: none;
 }
 /*Form*/
-form {
-    text-align: justify; text-align-last: center;
+form, input {
+    text-align: justify;
+    text-align-last: center;
+    width:100% ;
 }
-
+@media (min-width: 15cm) {
+    form {
+        width:  50%;
+        margin: 0 auto;
+    }
+}
 
 
 /* Buttons */
@@ -194,10 +201,9 @@ form {
     border: none;
     background: var(--darkback);
     color: var(--darktext);
-    text-align: justify;
-    text-align-last: center;
-    padding: .4em 2em;
+    width: 100%;
 }
+
 
 
 
