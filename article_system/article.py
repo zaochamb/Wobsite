@@ -25,8 +25,9 @@ def articles(path):
 
     if '.html' not in path:
         links = get_links(path)
-        return f.render_template(get_main_template(),links = links )
-
+        if path == '':
+            path = 'Articles'
+        return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
 
 
 def get_links(subcategory):

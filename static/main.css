@@ -1,0 +1,227 @@
+/* Color Palette Picking! */
+:root {
+    --lightback: white;
+    --lighttext: dimgrey;
+    --lightheader: darkred;
+
+    --darkback: #6DA2BC;
+    --darktext: white;
+    --darkheader: #c9ddff;
+
+    --headerback: white;
+    --headertext: dimgrey;
+
+    --footerback: white;
+    --footertext: dimgrey;
+}
+
+
+/* Everything is Sanserif */
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Sans', sans-serif !important;
+    color: inherit;
+}
+
+p, a, li, ul{
+    font-family: 'Open Sans', sans-serif !important;
+    color: inherit;
+    line-height: 1.7;
+    padding-top:0;
+}
+
+#content{
+    background-color:transparent;
+}
+
+/* Horizontal lines*/
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* HEADER RELATED*/
+header {
+    background-color: var(--headerback);
+    color: var(--headertext);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+    padding-bottom:1em;
+}
+
+header h1, header h2, header h3 {
+    padding-top: .7em;
+    text-align:center;
+}
+
+header a{
+    align:right ;
+    text-align:right;
+    display:block;
+}
+
+/* FOOTER RELATED*/
+
+footer{
+    background-color: var(--footerback);
+    color: var(--footertext);
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+
+    text-align:center;
+    list-style:none;
+
+    margin-bottom:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+footer li+li, .nav li+li {
+    border-left: 1px solid #d8d8d8;
+    border-collapse: collapse;
+
+    margin-left: .5em;
+    padding-left: .5em;
+    white-space: nowrap;
+}
+
+footer li, .nav li{
+    display: inline-block;
+    padding: 0 0;
+}
+
+/* BODY & CONTENT RELATED CONTENT IS JUST THE STUFF IN THE SHEETS ON EACH PAGE*/
+body {
+    background-image: url("backgrounds/main.png");
+    background-size: 300vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+#content {
+    margin-top:3vh;
+    margin-bottom:60vh;
+    margin-left:.25em;
+    margin-right:.25em;
+}
+
+#content .nav {
+    background: var(--darkback);
+    color: var(--darkheader)
+}
+
+
+@media (min-width: 25cm) {
+    body {
+        background-size: 100vw 100vh;
+    }
+
+    #content {
+    margin-left:20%;
+    margin-right:20%;
+    }
+
+}
+
+
+/* Light and Dark Color Systems */
+
+.light, .dark {
+    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
+    padding: .5em;
+}
+
+.light:last-child{
+    padding-bottom: 10em;
+}
+.light {
+    background-color: var(--lightback);;
+    color: var(--lighttext);
+}
+
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6  {
+    color: var(--lightheader);
+}
+
+
+.light a:hover{
+    color: var(--lightheader)
+}
+
+.dark{
+    background-color: var(--darkback);
+    color: var(--darktext);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6  {
+    color: var(--darkheader);
+}
+
+.dark p{
+    font-size: smaller;
+}
+
+.dark a:hover{
+    color: var(--darkheader)
+}
+
+
+
+/* Navigation Items */
+
+.nav {
+    text-align:center;
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+/* Buttons */
+#button {
+    border: none;
+    background: var(--darkback);
+    padding-left:  4em;
+    padding-right:  4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: var(--darktext)
+}
+
+
+/* Hide Show Items */
+
+.showme{
+display: none;
+}
+
+.showhim:hover .showme{
+display : block;
+}
+
+/* Headings Always have headspace */
+h1{
+    font-size:xx-large;
+    padding-top: 2em;
+}
+h2{
+    font-size:x-large;
+    padding-top: 1.5em;
+}
+h3{
+    font-size:large;
+    padding-top: 1.4em;
+}
+
+h4, h5, h6{
+    font-size: medium;
+    padding-top:1em;
+}

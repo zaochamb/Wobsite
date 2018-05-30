@@ -1,18 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <nav>
+    <nav class="dark">
         <ul>
-            <li><a href="/articles"><h2>Articles</h2></a></li>
-            <li><a href="/products"><h2>Products</h2></a></li>
-            <li><a href="/contact"><h2>Get Me a Free Specialist</h2></a></li>
+            <li><a href="/articles">Articles</a></h2></li>
+            <li><a href="/products">Products</a></h2></li>
+            <li><a href="/contact">Get Me a Free Specialist</a></li>
         </ul>
     </nav>
 
 
-    <hr>
+    <article class='light'>
 
-    <article>
         <h2> Why work with Aldora? </h2>
         <p>Even the best of plans often require a little financing to take flight.
             In a credit driven society, it can sometimes be surprisingly difficult to find a financing package that
@@ -28,9 +27,12 @@
             purchases and we also
             specialize in selecting packages that are tailored to realistically fit the needs of borrowers.
         </p>
-        <hr>
 
-        <h3>The direct micro-financing</h3>
+        </article>
+        <hr>
+        <article class='light'>
+        <h2> What do we do?</h2>
+        <h3> Direct micro-financing</h3>
         <p>
             This product tends to take a little more time for approval but we can fund people that no one else would be
             willing to
@@ -65,7 +67,6 @@
             </li>
         </ul>
 
-        </p>
         <hr>
         <h3>Small business financing</h3>
         <p>
@@ -84,15 +85,16 @@
             Part of the freedom we offer to our clients is the freedom to choose between collateralized or
             uncollateralized options.
         </p>
-        <hr>
+
+
+    </article>
+
+        <aside class="dark">
         <h4> and while you're here... </h4>
         <p>
             We're here to help you explore your options. Explore our growing library of articles and ask us anything you
             like. Don't be shy--we won't shoehorn you into anything that doesn't fit your needs. If we don't have the
             right options for you, we'll know right where to point you.
         </p>
-
-    </article>
-
-
+        </aside>
 {% endblock %}
