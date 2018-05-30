@@ -187,16 +187,18 @@ form {
     text-align: justify; text-align-last: center;
 }
 
+
+
 /* Buttons */
-#button {
+#button, select {
     border: none;
     background: var(--darkback);
-    padding-left:  4em;
-    padding-right:  4em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    color: var(--darktext)
+    color: var(--darktext);
+    text-align: justify;
+    text-align-last: center;
+    padding: .4em 2em;
 }
+
 
 
 /* Hide Show Items */
