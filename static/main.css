@@ -204,6 +204,11 @@ form, input {
     width: 100%;
 }
 
+#button{
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
 
 
 
