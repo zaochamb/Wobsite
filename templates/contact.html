@@ -5,18 +5,37 @@
 {% endblock %}
 
 
-{% block article %}
-
+{% block content %}
+<div class="dark">
 <h2>
-    Login to your AldoraCapital account here.
+    Contact
 </h2>
+</div>
+    <div class="light">
+<form action="https://formspree.io/submissions@aldoracap.com" method="post">
+        <br>
+        <input type="text" name="First Name" placeholder="First Name*" required>
+        <input type="text" name="Last Name" placeholder="Last Name*" required>
+        <br><br>
+        <input type="text" name="Company" placeholder="Company Name">
+        <br><br>
+            <select name="Product" required>
+                <option value="" disabled selected>Select your Product</option>
+                <option value="Line of Credit">Line of Credit</option>
+                <option value="Personal Loan">Personal Loan</option>
+                <option value="Revenue Funding">Revenue Funding</option>
+                <option value="SBA">SBA</option>
+                <option value="Term Loan">Term Loan</option>
 
-<form action="/login" method="post">
-      <br>
-      <input type="text" name="user_name" placeholder="Username">
-      <br><br>
-      <input type="password" name="password" placeholder="Password">
-      <br><br>
-      <input type="submit" value="login" id="button">
+                <option value="I am a Broker">I am a Broker</option>
+                <option value="Other/Unsure">Other/Unsure</option>
+            </select>
+    <br><br>
+        <input type="tel" name="Phone" placeholder="Phone*" required>
+    <br><br>
+        <input type="email" name="Email" placeholder="Email*" required>
+    <br><br>
+      <input type="submit" value="Enter" id="button">
 </form>
+</div>
 {% endblock %}

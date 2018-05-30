@@ -43,7 +43,7 @@ def apply():
 
 @app.route('/contact')
 def contact():
-    return f.redirect('https://forms.zohopublic.com/virtualoffice9660/form/EmailSubscription/formperma/EjHCagK__022JHhfA02F5_0g7')
+    return render_template('contact.html')
 
 
 @app.route('/employee')
