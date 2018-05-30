@@ -15,15 +15,15 @@ These calculations should be the best estimate for the following kinds of loans:
 
 </p>
 <form action="{{ url_for('resources.compound_interest_calculator')}}" method="post">
-      <br>
-      <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
-      <br><br>
-      <input type="number" name="r" placeholder="APR" step="0.01"  min = 0 required="required">
-      <br><br>
-      <input type="number" name="n" placeholder="Compound Per Year" min = 0 required="required">
-      <br><br>
-      <input type="number" name="t" placeholder="Number of Years" min = 0 required="required">
-      <input type="submit" value="Calculate" id="button">
+    <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
+    <br><br>
+    <input type="number" name="r" placeholder="APR" step="0.01"  min = 0 required="required">
+    <br><br>
+    <input type="number" name="n" placeholder="Compound Per Year" min = 0 required="required">
+    <br><br>
+    <input type="number" name="t" placeholder="Number of Years" min = 0 required="required">
+    <br><br>
+    <input type="submit" value="Calculate" id="button">
 </form>
 
 {% if cost is defined %}
