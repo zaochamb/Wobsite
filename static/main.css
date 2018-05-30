@@ -182,8 +182,10 @@ body {
 a{
     text-decoration: none;
 }
-
-
+/*Form*/
+form {
+    text-align: justify; text-align-last: center;
+}
 
 /* Buttons */
 #button {
