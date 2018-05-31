@@ -32,6 +32,22 @@ if __name__ == "__main__":
     app = get_app()
 
 
+@app.route('/get_image')
+def get_image():
+    kind = request.args.get('kind', '')
+    image_path = request.args.get('image_path', None)
+    image_path = image_path.replace('%20', ' ')
+    image_path = image_path.replace('.html', '')
+    image_path = kind + image_path
+    try:
+        return f.send_from_directory('static',  filename=image_path + '.png')
+    except Exception as E:
+        if '404' in str(E):
+            return f.send_from_directory('static', filename=image_path + '.jpg')
+        raise E
+
+
+
 @app.route('/')
 def home():
     return render_template('home.html')
