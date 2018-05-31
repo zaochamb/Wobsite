@@ -3,6 +3,7 @@
 
 {% block head %}
     {% block article_head %}{% endblock %}
+    <meta property="og:image" content={{ url_for('get_image',kind = 'social_images',  image_path = request.path) }}>
     <meta property="og:image:secure_url" content={{ url_for('get_image',kind = 'social_images',  image_path = request.path) }}>
 {% endblock %}
 
