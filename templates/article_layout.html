@@ -8,13 +8,17 @@
 
 {% block content %}
 
-    <div class="light" style="padding-bottom: 20em">
-    {% block article %}{% endblock %}
-    </div>
+{% block article_style %}
+<div class="light">
+{% block article %}
+{% endblock %}
+ </div>
+{% endblock %}
 
-    <section class="dark" style="text-align: right" >
+<section class="dark" style="text-align: right" >
+<a href="{{ url_for('apply') }}" > CLICK HERE TO APPLY</a>
+</section>
 
-    <a href="{{ url_for('apply') }}" > CLICK HERE TO APPLY</a>
-    </section>
+
 {% endblock %}
 
