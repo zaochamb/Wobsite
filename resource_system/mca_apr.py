@@ -26,7 +26,7 @@ def calculate_mca_to_apr(time, fee):
 
 
 def compare_calc():
-    page_url = 'resource_system/mca_calculator.html'
+    page_url = 'resource_system/compare_mca_calculator.html'
     if f.request.method == 'GET':
         return f.render_template(page_url)
 

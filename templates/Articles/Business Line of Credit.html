@@ -1,6 +1,8 @@
 {% extends "article_layout.html" %}
 {% block article_head %}
-    <title>  Business Line of Credit</title>
+    <title> Unsecured Business Line of Credit </title>
+    <meta property="og:title" content=" Unsecured Business Line of Credit ">
+    <meta property="og:description" content=" What is an unsecured business line of credit? How does it work? Get one here. ">
 {% endblock %}
 
 
@@ -51,7 +53,7 @@
 </ul>
 <p>In order to apply, you must have a business bank account and be able to provide at least 6 months of revenue statements. An ideal borrower is a business that has been in operation for at least 9 months and generates $100,000 or more in revenue annually. If this sounds like you, contact one of our specialists and we can get you a credit limit of up to $100,000!</p>
 <p>At Aldora, we are committed to guiding you through the application process. By leveraging our network of partners, we aim to get you the best possible terms for your line of credit.</p>
-<p>To learn more about the application process, submit a written inquiry <a href="https://forms.zohopublic.com/virtualoffice9660/form/EmailSubscription/formperma/EjHCagK__022JHhfA02F5_0g7">here</a> or call (458)-888-8042.</p>
+<p>To learn more about the application process, submit a written inquiry <a href="{{ url_for('contact') }}">here</a> or call (458)-888-8042.</p>
 <p>To begin the application process,  <a href="{{  url_for('product.products', product = 'small_business_line_of_credit')}}">click here</a>.</p>
 <p>* - Costs and fees differ from client to client. Please contact a specialist if you would like to receive a tailored estimate.</p>
 {% endblock %}
