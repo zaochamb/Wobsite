@@ -21,3 +21,7 @@ def convert_revenue_funding_to_apr():
 @app.route('/compare_two_revenue_funding_deals', methods = ['GET', 'POST'])
 def calculate_mca_costs():
     return mca_apr.compare_calc()
+
+@app.route('/revenue_funding_calc', methods = ['GET', 'POST'])
+def mca_calc():
+    return mca_apr.single_calc()

@@ -24,6 +24,22 @@ def calculate_mca_to_apr(time, fee):
     apr = times_per_year * fee
     return apr * 100
 
+def single_calc():
+    page_url = 'resource_system/mca_calc.html'
+    if f.request.method == 'GET':
+        return f.render_template(page_url)
+
+    if f.request.method == 'POST':
+        form  = {}
+        for thing in ['money', 'time', 'fee']:
+            form[thing] = float(f.request.form[thing])
+
+
+        money = form['money']
+        time = form['time']
+        fee = form['fee']
+
+    return f.render_template(page_url, mca =MCA(money, time, fee))
 
 def compare_calc():
     page_url = 'resource_system/compare_mca_calculator.html'

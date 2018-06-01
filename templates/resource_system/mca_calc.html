@@ -1,0 +1,45 @@
+{% extends "article_layout.html" %}
+
+{% block article_head %}
+    <title> Revenue Funding Calculator </title>
+    <meta property="og:title" content=" Revenue Funding Calculator">
+    <meta property="og:description" content=" Business Revenue based loan calculator, calculates your payments, and total money owed.">
+{% endblock %}
+
+
+{% block article %}
+
+    <h1>What will the revenue based financing cost me?   </h1>
+<h2>
+
+</h2>
+<p>
+This calculator does it all.
+
+</p>
+
+
+
+<form action="{{ url_for('resources.mca_calc')}}" method="post">
+      <h3> Deal </h3>
+      <br>
+      <input type="number" name="money" placeholder=" Money Offered " step = 0.01 min = 0 required="required">
+      <br><br>
+      <input type="number" name="time" placeholder=" Term(Days)" step = 1 min = 0 required="required">
+      <br><br>
+      <input type="number" name="fee" placeholder="Factor Rate" step="0.01"  min = 1 max = 2 required="required">
+      <br><br>
+      <input type="submit" value="Calculate" id="button">
+</form>
+
+{% if mca is defined %}
+    <hr>
+    <h3> Deal </h3>
+    <p> Principal : {{ mca.principal }}</p>
+    <p> Cost: {{ mca.cost }} </p>
+    <p> Daily Payment: {{ mca.daily }} </p>
+
+{% endif %}
+
+
+{% endblock %}
