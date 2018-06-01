@@ -2,13 +2,18 @@
 
 {% block article_head %}
     <title> Business Loan - Compound Interest Calculator</title>
+    <meta property="og:title" content=" Business Loan - Compound Interest Calculator">
+    <meta property="og:description" content=" This calculator calculates payments, interest, total cost, accounts for inflation and generally does everything you need to.   ">
 {% endblock %}
 
-{% block article %}
+{% block article_style %}
 
-<h2>
+<h2 class="dark">
     Business Loan - Compound Interest Calculator
 </h2>
+
+    <div class="light">
+
 <p>
 If you would like to calculate what your interest rate is going to cost you and what your payments are going to look like then this calculator will do that for you.
 These calculations should be the best estimate for the following kinds of loans: Traditional Loans, SBA Loans, and Term Loans.
@@ -23,28 +28,42 @@ These calculations should be the best estimate for the following kinds of loans:
     <br><br>
     <input type="number" name="t" placeholder="Number of Years" min = 0 required="required">
     <br><br>
+    <input type="number" name="inflation" placeholder="Inflation (Usually 3.25) Optional" min = 0 step="0.01">
+    <br><br>
     <input type="submit" value="Calculate" id="button">
 </form>
+</div>
 
 {% if cost is defined %}
-    <hr>
-    <p> {{ cost }} Total Extra Cost </p>
-    <p> {{ pmt_size }} Payment size per compounding period</p>
-    <p> Interest Rate is: {{ interest_rate }} </p>
+    <div class="dark">
+    <h5> Gross Total Cost</h5>
+     {{ cost }}
+    <h5> Payment Size </h5>
+     {{ pmt_size }}
+    <h5> Interest Rate </h5>
+     {{ interest_rate }}
 
+    {% if inflation_savings is defined %}
+        <h5> Cost reduced by Inflation </h5>
+        - {{ inflation_savings }}
+        <h5> Real cost after accounting for inflation</h5>
+        {{ real_cost }}
+    {% endif %}
+    </div>
 
+    <div class="light">
     <h3>Assumptions</h3>
     <p>
     <ul>
     <li> -Payments are are made right after interest is calculated.  </li>
     <li> -Interest is calculated at the end of each compounding period.  </li>
     </ul>
-    </p>
+
 
     <br>
 <p> This assumes a very straightforward loan. As such this is only an estimate of what the costs are going to be like.
     Please talk to your loan provider to figure out exactly what the conditions of your loan are.</p>
-
+    </div>
 {% endif %}
 
 {% endblock %}

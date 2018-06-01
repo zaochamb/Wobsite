@@ -16,13 +16,23 @@ def main_calc():
         r = float(r)/100
         n = float(n)
         t = float(t)
+        try:
+            inflation = float(f.request.form.get('inflation', 0))
+        except ValueError:
+            inflation = 0
 
+        if inflation != 0:
+            saved,x = calculate(p, inflation/365, 365, t )
+            cost ,pmt_size= calculate(p, r, n, t)
+            return f.render_template(page_url, cost = cash_format(cost),
+                                     pmt_size = cash_format(pmt_size),
+                                     interest_rate = '{:.2f} %'.format(r * 100), inflation_savings = cash_format(saved), real_cost = cash_format(cost - saved ))
 
+        cost, pmt_size = calculate(p, r, n, t)
+        return f.render_template(page_url, cost=cash_format(cost),
+                                 pmt_size=cash_format(pmt_size),
+                                 interest_rate='{:.2f} %'.format(r * 100))
 
-        cost ,pmt_size= calculate(p, r, n, t)
-        return f.render_template(page_url, cost = cash_format(cost),
-                                 pmt_size = cash_format(pmt_size),
-                                 interest_rate = '{:.2f} %'.format(r * 100) )
 
 
 def cash_format(num):
