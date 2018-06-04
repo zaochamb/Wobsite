@@ -56,11 +56,13 @@ def home():
 
 @app.route('/apply')
 def apply():
-    return contact()
+    return contact(msg = "Apply Now!")
 
 
 @app.route('/contact')
-def contact():
+def contact(msg = False):
+    if msg != False:
+        return render_template('contact.html', greeting = msg)
     return render_template('contact.html')
 
 
