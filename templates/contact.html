@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% if request.args.get('greeting') is defined %}
+{% if request.args.get('greeting') is not none  %}
     {% set greeting =  request.args.get('greeting') %}
 {% endif %}
 {% block head %}
