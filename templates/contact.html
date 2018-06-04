@@ -1,14 +1,30 @@
 {% extends "layout.html" %}
 
 {% block head %}
-    <title> Login </title>
+
+    {% if greeting is defined %}
+    <title> {{  greeting }} </title>
+    <meta property="og:title" content="{{  greeting }} ">
+
+    {% else %}
+        <title> Contact </title>
+        <meta property="og:title" content=" Contact  ">
+    {% endif %}
+
+
+
+    <meta property="og:description" content=" The best place to begin your application with Aldora Capital.">
 {% endblock %}
 
 
 {% block content %}
 <div class="dark">
 <h2>
-    Contact
+    {% if greeting is defined %}
+        {{  greeting }}
+    {% else %}
+        Contact
+    {% endif %}
 </h2>
 </div>
 
