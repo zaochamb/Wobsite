@@ -24,6 +24,7 @@ def articles(path):
         return f.render_template(base_folder + '/' +  path.replace('+', ' '))
 
     if '.html' not in path:
+        path = path.replace('+', ' ')
         links = get_links(path)
         if path == '':
             path = 'Articles'
