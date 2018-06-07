@@ -21,7 +21,7 @@ def re_routearticles():
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
     if '.html' in path:
-        return f.render_template(base_folder + '/' +  path.replace('%20', ' '))
+        return f.render_template(base_folder + '/' +  path.replace('+', ' '))
 
     if '.html' not in path:
         links = get_links(path)
@@ -37,7 +37,7 @@ def get_links(subcategory):
     list_of_files = os.listdir(path)
 
     data = pd.DataFrame(data={'name': list_of_files})
-    data['filename'] = data['name'].copy().str.replace('%20', ' ')
+    data['filename'] = data['name'].copy().str.replace('+', ' ')
     if subcategory != '':
         data['filename'] = subcategory + '/' + data['filename']
 
@@ -61,5 +61,5 @@ class Article():
 
     def __init__(self, name, filename):
         self.name = name
-        self.filename = filename.replace(' ', '%20')
+        self.filename = filename.replace(' ', '+')
         return
