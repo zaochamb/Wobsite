@@ -11,6 +11,11 @@
 {% block article_style %}
 <article class="light">
 {% block article %}
+
+    {% if last_modified_date is defined %}
+    Last Updated Date: {{ last_modified_date }}
+    {% endif %}
+
 {% endblock %}
  </article>
 {% endblock %}

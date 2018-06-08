@@ -3,6 +3,7 @@ import settings
 import pandas as pd
 import pathlib
 import os
+import datetime
 
 app = f.Blueprint('article', __name__)
 base_folder = 'Articles'
@@ -17,14 +18,24 @@ def re_routearticles():
     return f.redirect('/Articles')
 
 
+def get_last_modified_date(path):
+    x = base_folder + '/' + path
+    x = os.path.getmtime(x)
+    x = datetime.datetime.fromtimestamp(x).strftime('%Y-%m-%d')
+    return x
+
+
 @app.route('/Articles/<path:path>')
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
+    path = path.replace('+', ' ')
     if '.html' in path:
-        return f.render_template(base_folder + '/' +  path.replace('+', ' '))
+
+
+        last_modified_date = get_last_modified_date(path)
+        return f.render_template(base_folder + '/' +  path, last_modified_date = last_modified_date)
 
     if '.html' not in path:
-        path = path.replace('+', ' ')
         links = get_links(path)
         if path == '':
             path = 'Articles'
