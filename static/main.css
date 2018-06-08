@@ -59,7 +59,6 @@ header h1, header h2, header h3 {
 }
 
 header a{
-    align:right ;
     text-align:right;
     display:block;
 }
