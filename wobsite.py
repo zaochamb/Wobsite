@@ -36,7 +36,7 @@ if __name__ == "__main__":
 def get_image():
     kind = request.args.get('kind', '')
     image_path = request.args.get('image_path', None)
-    image_path = image_path.replace('%20', ' ')
+    image_path = image_path.replace('%20', ' ').replace('+', ' ')
     image_path = image_path.replace('.html', '')
     image_path = kind + image_path
     for ext in ['.png', '.jpg']:
