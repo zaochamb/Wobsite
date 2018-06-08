@@ -12,15 +12,15 @@
 <article class="light">
 {% block article %}
 
-    {% if last_modified_date is defined %}
-    Last Updated Date: {{ last_modified_date }}
-    {% endif %}
-
 {% endblock %}
  </article>
 {% endblock %}
 
 <section class="dark" style="text-align: right" >
+    {% if last_modified_date is defined %}
+        <p> Last Updated Date: {{ last_modified_date }} </p>
+    {% endif %}
+
 <a href="{{ url_for('apply') }}" > CLICK HERE TO APPLY</a>
 </section>
 

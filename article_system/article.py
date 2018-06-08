@@ -19,7 +19,8 @@ def re_routearticles():
 
 
 def get_last_modified_date(path):
-    x = base_folder + '/' + path
+    x = settings.add_paths(base_folder, path)
+    x = settings.get_dir_templates(pathlib.Path(x))
     x = os.path.getmtime(x)
     x = datetime.datetime.fromtimestamp(x).strftime('%Y-%m-%d')
     return x
