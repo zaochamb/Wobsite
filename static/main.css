@@ -193,14 +193,12 @@ form, input {
     }
 }
 
-
-/* List Items that are actually Options*/
-#options {
-    box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
-    text-align: justify;
-    text-align-last: center;
-    width: 100% ;
+input, select {
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
+
+
 
 
 /* Buttons */
