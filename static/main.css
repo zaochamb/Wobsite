@@ -130,7 +130,8 @@ body {
 #content li {
     outline-style: solid;
     outline-color: darkgrey;
-    margin: -.5em;
+    margin-left: -.5em;
+    margin-right: -.5em;
 }
 
 /* Light and Dark Color Systems */
