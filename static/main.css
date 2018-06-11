@@ -127,6 +127,10 @@ body {
 
 }
 
+#content li {
+    outline-style: solid;
+    outline-color: darkgrey;
+}
 
 /* Light and Dark Color Systems */
 
