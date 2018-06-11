@@ -22,7 +22,7 @@ These calculations should be the best estimate for the following kinds of loans:
 <form action="{{ url_for('resources.compound_interest_calculator')}}" method="post">
     <input type="number" name="p" placeholder="Principal" step = 0.01 min = 0 required="required">
     <br><br>
-    <input type="number" name="r" placeholder="APR" step="0.01"  min = 0 required="required">
+    <input type="number" name="r" placeholder="APR" step="0.001"  min = 0 required="required">
     <br><br>
     <input type="number" name="n" placeholder="Compound Per Year" min = 0 required="required">
     <br><br>
