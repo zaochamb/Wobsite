@@ -194,6 +194,14 @@ form, input {
 }
 
 
+/* List Items that are actually Options*/
+#options {
+    text-align: justify;
+    text-align-last: center;
+    width: 100% ;
+}
+
+
 /* Buttons */
 #button, select {
     border: none;
