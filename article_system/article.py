@@ -98,7 +98,7 @@ def re_routearticles():
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
     filename, links, page_name = deal_with_path(path)
-        return f.render_template(filename,links = links, page_name = page_name)
+    return f.render_template(filename,links = links, page_name = page_name)
 
 
 
