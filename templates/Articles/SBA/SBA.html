@@ -32,10 +32,9 @@
     <a href="{{ url_for('product.products')}}">Aldora Products</a>
 </article>
 
-<div class="light">
-    Links for SBA Loans:
+    <h1 class="dark"> Other Options for SBA loans </h1>
 
-    <ul>
+    <ul class="light">
     {% for item in links%}
     <li>
         <h3>
@@ -45,5 +44,4 @@
     {% endfor %}
     </ul>
 
-</div>
 {% endblock %}
