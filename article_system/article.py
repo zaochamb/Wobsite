@@ -70,7 +70,7 @@ def deal_with_path(path):
     filename = ''
     page_name = ''
     links = get_links(path)
-
+    last_modified_date =  get_last_modified_date(path)
 
     if '.html' in path:
         last_modified_date = get_last_modified_date(path)
@@ -97,8 +97,8 @@ def re_routearticles():
 @app.route('/Articles/<path:path>')
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
-    filename, links, page_name = deal_with_path(path)
-    return f.render_template(filename,links = links, page_name = page_name)
+    filename, links, page_name, last_modified_date = deal_with_path(path)
+    return f.render_template(filename,links = links, page_name = page_name, last_modified_date = last_modified_date)
 
 
 
