@@ -36,9 +36,10 @@ def get_hub_name(path):
 @app.route('/Articles/<path:path>')
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
-    links = get_links(path)
 
     path = path.replace('+', ' ')
+
+    links = get_links(path)
     if '.html' in path:
 
 
