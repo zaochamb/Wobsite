@@ -36,15 +36,17 @@ def get_hub_name(path):
 @app.route('/Articles/<path:path>')
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
+    links = get_links(path)
+
     path = path.replace('+', ' ')
     if '.html' in path:
 
 
         last_modified_date = get_last_modified_date(path)
-        return f.render_template(base_folder + '/' +  path, last_modified_date = last_modified_date)
+        return f.render_template(base_folder + '/' +  path, links = links, last_modified_date = last_modified_date)
 
     if '.html' not in path:
-        links = get_links(path)
+
 
         try:
             hubname = get_hub_name(path)
@@ -60,6 +62,10 @@ def articles(path):
 
 
 def get_links(subcategory):
+    if subcategory.endswith('.html'):
+        subcategory = subcategory.replace('\\', '/')
+        subcategory = '/'.join(subcategory.split('/')[:-1])
+
     path = settings.add_paths(base_folder, subcategory)
     path = settings.get_dir_templates(pathlib.Path(path))
 
