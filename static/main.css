@@ -147,7 +147,7 @@ body {
 }
 
 .light a{
-    color:deepskyblue;
+    color: var(--darkback);
 }
 .light a:hover{
     color: var(--lightheader)
