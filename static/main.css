@@ -245,3 +245,15 @@ h4, h5, h6{
     font-size: medium;
     padding-top:1em;
 }
+
+/* Searchbox */
+#searchbox {
+    margin-left:1%;
+    margin-right:1%;
+}
+
+@media (min-width: 25cm) {
+    #searchbox {
+        margin-left: 60%;
+    }
+}
