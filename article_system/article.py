@@ -44,14 +44,16 @@ def articles(path):
         return f.render_template(base_folder + '/' +  path, last_modified_date = last_modified_date)
 
     if '.html' not in path:
+        links = get_links(path)
+
         try:
             hubname = get_hub_name(path)
             last_modified_date = get_last_modified_date(hubname)
-            return f.render_template(base_folder+'/' + hubname, last_modified_date = last_modified_date)
+            return f.render_template(base_folder+'/' + hubname, links = links, last_modified_date = last_modified_date)
         except FileNotFoundError:
             pass
 
-        links = get_links(path)
+
         if path == '':
             path = 'Articles'
         return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )

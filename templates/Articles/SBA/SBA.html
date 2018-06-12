@@ -6,9 +6,10 @@
 {% endblock %}
 
 
-{% block article %}
+{% block article_style %}
 
-<h1> Everything you need to know about SBA Loans.</h1>
+<h1 class="dark"> Everything you need to know about SBA Loans.</h1>
+    <article class="light">
 <h2>What is an SBA Loan?</h2>
     <p> In Summary an SBA Loan is: </p>
     <ul>
@@ -29,8 +30,20 @@
     <p> Generally it's safe to assume that you need to have 620 + Credit Score and make over 150k per year.
     If you don't meet these criteria don't worry, we have other products for you, find out by clicking here:
     <a href="{{ url_for('product.products')}}">Aldora Products</a>
-    Aditionally you can get information on the
-    <a href="{{ url_for('article.articles', path = 'SBA/Different+Types+of+SBA+Loans.html')}}">tge different types of SBA loans.</a> You can also find out
-    <a href="{{ url_for('article.articles', path = 'SBA/Why+are+SBA+Loans+Cheaper.html')}}">why SBA loans are cheaper than regular loans.</a>
-</p>
+</article>
+
+<div class="light">
+    Links for SBA Loans:
+
+    <ul>
+    {% for item in links%}
+    <li>
+        <h3>
+            <a href="{{ url_for('article.articles', path = item.filename) }}"> {{item.name}} </a>
+        </h3>
+    </li>
+    {% endfor %}
+    </ul>
+
+</div>
 {% endblock %}
