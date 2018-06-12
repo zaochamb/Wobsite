@@ -26,6 +26,13 @@ def get_last_modified_date(path):
     return x
 
 
+def get_hub_name(path):
+    x = path.replace('\\', '/')
+    last_name = path.split('/')[-1]
+    x = x + '/' + last_name + '.html'
+    return x
+
+
 @app.route('/Articles/<path:path>')
 @app.route('/Articles', defaults={'path': ''})
 def articles(path):
@@ -37,6 +44,13 @@ def articles(path):
         return f.render_template(base_folder + '/' +  path, last_modified_date = last_modified_date)
 
     if '.html' not in path:
+        try:
+            hubname = get_hub_name(path)
+            last_modified_date = get_last_modified_date(hubname)
+            return f.render_template(base_folder+'/' + hubname, last_modified_date = last_modified_date)
+        except FileNotFoundError:
+            pass
+
         links = get_links(path)
         if path == '':
             path = 'Articles'
