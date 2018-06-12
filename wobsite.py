@@ -78,7 +78,9 @@ def partners():
 def privacy_policy():
     return render_template('privacy_policy.html')
 
-
+@app.route('/search')
+def search(query = ''):
+    return render_template('search_results.html', query = query)
 
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')
