@@ -20,7 +20,7 @@ def products(product=''):
             'https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
 
     prod_text = product.replace('_', ' ').title()
-    return f.redirect(f.url_for('contact', msg = 'STEP 1: Begin Your Application for {} by filling out this form:'.format(prod_text)  ))
+    return f.redirect('/contact', msg = 'STEP 1: Begin Your Application for {} by filling out this form:'.format(prod_text))
 
 
 def get_product_list():
