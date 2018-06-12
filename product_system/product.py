@@ -18,7 +18,9 @@ def products(product=''):
     if product == 'revenue_funding':
         return f.redirect(
             'https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
-    return render_template('product_system/{}.html'.format(product))
+
+    prod_text = product.replace('_', ' ').title()
+    return f.redirect(f.url_for('contact', msg = 'STEP 1: Begin Your Application for {} by filling out this form:'.format(prod_text)  ))
 
 
 def get_product_list():
