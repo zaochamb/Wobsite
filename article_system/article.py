@@ -8,14 +8,19 @@ import datetime
 app = f.Blueprint('article', __name__)
 base_folder = 'Articles'
 
+class Article():
+    name = None
+    filename = None
+
+    def __init__(self, name, filename):
+        self.name = name
+        self.filename = filename.replace(' ', '+')
+        return
+
+
 
 def get_main_template():
     return base_folder + '/main.html'
-
-
-@app.route('/articles')
-def re_routearticles():
-    return f.redirect('/Articles')
 
 
 def get_last_modified_date(path):
@@ -31,36 +36,6 @@ def get_hub_name(path):
     last_name = path.split('/')[-1]
     x = x + '/' + last_name + '.html'
     return x
-
-
-@app.route('/Articles/<path:path>')
-@app.route('/Articles', defaults={'path': ''})
-def articles(path):
-
-    path = path.replace('+', ' ')
-
-    links = get_links(path)
-    if '.html' in path:
-
-
-        last_modified_date = get_last_modified_date(path)
-        return f.render_template(base_folder + '/' +  path, links = links, last_modified_date = last_modified_date)
-
-    if '.html' not in path:
-
-
-        try:
-            hubname = get_hub_name(path)
-            last_modified_date = get_last_modified_date(hubname)
-            return f.render_template(base_folder+'/' + hubname, links = links, last_modified_date = last_modified_date)
-        except FileNotFoundError:
-            pass
-
-
-        if path == '':
-            path = 'Articles'
-        return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
-
 
 def get_links(subcategory):
     if subcategory.endswith('.html'):
@@ -90,12 +65,40 @@ def get_links(subcategory):
         arts.append(Article(index, filename))
     return arts
 
+def deal_with_path(path):
+    path = path.replace('+', ' ')
+    filename = ''
+    page_name = ''
+    links = get_links(path)
 
-class Article():
-    name = None
-    filename = None
 
-    def __init__(self, name, filename):
-        self.name = name
-        self.filename = filename.replace(' ', '+')
-        return
+    if '.html' in path:
+        last_modified_date = get_last_modified_date(path)
+        filename = base_folder + '/' +  path
+
+    if '.html' not in path:
+        try:
+            hubname = get_hub_name(path)
+            last_modified_date = get_last_modified_date(hubname)
+            filename = base_folder+'/' + hubname
+        except FileNotFoundError:
+            pass
+
+    if path == '':
+        filename = get_main_template()
+        page_name = path.replace('.html', '')
+
+    return filename, links, page_name, last_modified_date
+
+@app.route('/articles')
+def re_routearticles():
+    return f.redirect('/Articles')
+
+@app.route('/Articles/<path:path>')
+@app.route('/Articles', defaults={'path': ''})
+def articles(path):
+    filename, links, page_name = deal_with_path(path)
+        return f.render_template(filename,links = links, page_name = page_name)
+
+
+
