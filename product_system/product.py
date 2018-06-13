@@ -19,6 +19,8 @@ def products(product=''):
         return f.redirect(
             'https://forms.zohopublic.com/virtualoffice9660/form/CommonApp/formperma/CA7AF9_f11jAbB47fmCb4Jham')
 
+    if product == 'small_business_line_of_credit':
+        return f.render_template('product_system/' + product + '.html')
     prod_text = product.replace('_', ' ').title()
     return f.redirect(f.url_for('contact', greeting = '{} - Lets Begin Your Application'.format(prod_text)))
 
