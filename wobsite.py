@@ -56,13 +56,12 @@ def home():
 
 @app.route('/apply')
 def apply():
-    return contact(msg = "Apply Now!")
-
+    return contact(greeting = "Apply Now!")
 
 @app.route('/contact')
-def contact(msg = False):
-    if msg != False:
-        return render_template('contact.html', greeting = msg)
+def contact(greeting = False):
+    if greeting != False:
+        return render_template('contact.html', greeting = greeting)
     return render_template('contact.html')
 
 
@@ -78,7 +77,9 @@ def partners():
 def privacy_policy():
     return render_template('privacy_policy.html')
 
-
+@app.route('/search')
+def search(query = ''):
+    return render_template('search_results.html', query = query)
 
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')

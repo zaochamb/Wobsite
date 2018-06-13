@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+<div class="dark">
+<h1> Search Results </h1>
+</div>
+
+<div class="light" >
+<script>
+  (function() {
+    var cx = '008443956938634855336:03wjrtfgp_u';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchresults-only></gcse:searchresults-only>
+</div>
+{% endblock %}

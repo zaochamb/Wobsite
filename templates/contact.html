@@ -22,13 +22,13 @@
 {% block content %}
 <div class="dark">
 
-<h1>
+<h2>
     {% if greeting is defined %}
         {{  greeting }}
     {% else %}
         Contact
     {% endif %}
-</h1>
+</h2>
 </div>
 
     <div class="light" >
@@ -43,7 +43,7 @@
 
         <input type="tel" name="Phone" placeholder="Phone*" required>
     <br><br>
-        <input type="email" name="Email" placeholder="Email*" required>
+        <input type="email" name="email" placeholder="Email*" required>
     <br><br>
             <select name="Product" required>
                 <option value="" disabled selected>Select your Product</option>
@@ -57,6 +57,9 @@
                 <option value="Other/Unsure">Other/Unsure</option>
             </select>
 <br><br>
+
+    <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
+
       <input type="submit" value="Enter" id="button">
 </form>
 </div>

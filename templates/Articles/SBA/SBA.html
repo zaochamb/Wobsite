@@ -1,0 +1,47 @@
+{% extends "article_layout.html" %}
+
+
+{% block article_head %}
+    <title> SBA Loan Explanation</title>
+{% endblock %}
+
+
+{% block article_style %}
+
+<h1 class="dark"> Everything you need to know about SBA Loans.</h1>
+    <article class="light">
+<h2>What is an SBA Loan?</h2>
+    <p> In Summary an SBA Loan is: </p>
+    <ul>
+    <li>- Like regular loan for businesses</li>
+    <li>- Long term rather than short term debt</li>
+    <li>- Obtained from a private lender (not from the government)</li>
+    <li>- Cheaper than a regular loan because if you default the SBA will pay off some of the debt for you</li>
+    </ul>
+
+<h2> What are the qualification criteria for SBA Loans? </h2>
+    <p> That depends on which specific loan you're getting and that depends on the following factors: </p>
+    <ul>
+        <li>- What your business size is</li>
+        <li>- If you qualify for any special aid</li>
+        <li>- How quickly you want the money</li>
+    </ul>
+
+    <p> Generally it's safe to assume that you need to have 620 + Credit Score and make over 150k per year.
+    If you don't meet these criteria don't worry, we have other products for you, find out by clicking here:
+    <a href="{{ url_for('product.products')}}">Aldora Products</a>
+</article>
+
+    <h3 class="dark"> SBA Loan Articles </h3>
+
+    <ul class="light">
+    {% for item in links%}
+    <li>
+        <h3>
+            <a href="{{ url_for('article.articles', path = item.filename) }}"> {{item.name}} </a>
+        </h3>
+    </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -59,7 +59,6 @@ header h1, header h2, header h3 {
 }
 
 header a{
-    align:right ;
     text-align:right;
     display:block;
 }
@@ -128,7 +127,6 @@ body {
 
 }
 
-
 /* Light and Dark Color Systems */
 
 .light, .dark {
@@ -148,7 +146,9 @@ body {
     color: var(--lightheader);
 }
 
-
+.light a{
+    color: var(--darkback);
+}
 .light a:hover{
     color: var(--lightheader)
 }
@@ -195,6 +195,13 @@ form, input {
     }
 }
 
+input, select {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+
+
 
 /* Buttons */
 #button, select {
@@ -239,4 +246,17 @@ h3{
 h4, h5, h6{
     font-size: medium;
     padding-top:1em;
+}
+
+/* Searchbox */
+#searchbox {
+    margin-left:1%;
+    margin-right:1%;
+}
+
+@media (min-width: 25cm) {
+    #searchbox {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
 }
