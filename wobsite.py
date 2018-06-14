@@ -1,5 +1,6 @@
 import random
 import flask as f
+import settings
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
 
@@ -86,6 +87,31 @@ def search(query = ''):
 def static_from_root():
     return f.send_from_directory(app.static_folder, request.path[1:])
 
+
+def get_links():
+    import xml.etree.ElementTree as ET
+    import pathlib
+    file = settings.get_dir_static(pathlib.Path('sitemap.xml'))
+    links = []
+
+    root = ET.parse(file).getroot()
+    for child in root:
+        for subchild in child:
+            if 'https' in subchild.text:
+                links.append(subchild.text)
+
+    return links
+
+@app.errorhandler(404)
+def page_not_found(e):
+    links = get_links()
+    import difflib
+    result = difflib.get_close_matches(request.url, links, n = 1, cutoff= 0)
+    if len(result) == 1:
+        result = result[0]
+        return f.redirect(result, 301)
+    if len(result) == 0:
+        return 'Page Not Found', 404
 
 if __name__ == "__main__":
         app.run(debug = True)
