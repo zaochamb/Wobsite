@@ -45,6 +45,17 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
+
+@media (min-width: 25cm) {
+    #content nav hr {
+            width: 38.19%;
+            margin-right:61.81%;
+            background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgb(75, 75, 75) 38.19%,rgba(0,0,0,0) 100%);
+    }
+
+
+}
+
 /* HEADER RELATED*/
 header {
     background-color: var(--headerback);
