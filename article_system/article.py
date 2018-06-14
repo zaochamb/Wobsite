@@ -38,7 +38,7 @@ def get_hub_name(path):
 def articles(path):
 
     path = path.replace('+', ' ')
-
+    path = path.replace('%20', ' ')
     links = get_links(path)
     if '.html' in path:
 
