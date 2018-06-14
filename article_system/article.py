@@ -40,27 +40,27 @@ def articles(path):
     path = path.replace('+', ' ')
     path = path.replace('%20', ' ')
     links = get_links(path)
-    if '.html' in path:
+    try:
+        if '.html' in path:
+            last_modified_date = get_last_modified_date(path)
+            return f.render_template(base_folder + '/' +  path, links = links, last_modified_date = last_modified_date)
+
+        if '.html' not in path:
+    
+
+            try:
+                hubname = get_hub_name(path)
+                last_modified_date = get_last_modified_date(hubname)
+                return f.render_template(base_folder+'/' + hubname, links = links, last_modified_date = last_modified_date)
+            except FileNotFoundError:
+                pass
 
 
-        last_modified_date = get_last_modified_date(path)
-        return f.render_template(base_folder + '/' +  path, links = links, last_modified_date = last_modified_date)
-
-    if '.html' not in path:
-
-
-        try:
-            hubname = get_hub_name(path)
-            last_modified_date = get_last_modified_date(hubname)
-            return f.render_template(base_folder+'/' + hubname, links = links, last_modified_date = last_modified_date)
-        except FileNotFoundError:
-            pass
-
-
-        if path == '':
-            path = 'Articles'
-        return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
-
+            if path == '':
+                path = 'Articles'
+            return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
+    except FileNotFoundError:
+        f.abort(404)
 
 def get_links(subcategory):
     if subcategory.endswith('.html'):
