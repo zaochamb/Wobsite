@@ -40,6 +40,7 @@ def articles(path):
     path = path.replace('+', ' ')
     path = path.replace('%20', ' ')
     links = get_links(path)
+
     try:
         if '.html' in path:
             last_modified_date = get_last_modified_date(path)
@@ -60,7 +61,7 @@ def articles(path):
                 path = 'Articles'
             return f.render_template(get_main_template(),links = links, page_name = path.replace('.html', '') )
     except FileNotFoundError:
-        f.abort(404)
+        return f.abort(404)
 
 def get_links(subcategory):
     if subcategory.endswith('.html'):
