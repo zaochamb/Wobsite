@@ -14,20 +14,30 @@
     <h3 class="dark"> Calculators </h3>
     <nav class="light">
         <ul>
+
             <li class="showhim">
                 <a href="{{ url_for('resources.compound_interest_calculator') }}">Compound Interest Calculator</a>
-                <div class="showme">
-                    <p> This Calculator Shows you the following information:
+
+                    <p class="showme"> This Calculator Shows you the following information:
                     Gross total cost, payment sized, money saved by inflation, real cost after accounting for inflation.
                     </p>
-                </div>
 
             </li>
+
             <hr>
-            <li><a href="{{ url_for('resources.convert_revenue_funding_to_apr') }}">Convert Revenue Funding to APR</a></li>
+            <li class="showhim">
+                <a href="{{ url_for('resources.convert_revenue_funding_to_apr') }}">Convert Revenue Funding to APR</a>
+
+            </li>
+
             <hr>
-            <li><a href="{{ url_for('resources.calculate_mca_costs') }}">Compare Two Revenue Funding Deals</a></li>
+
+            <li class="showhim">
+                <a href="{{ url_for('resources.calculate_mca_costs') }}">Compare Two Revenue Funding Deals</a>
+            </li>
+
             <hr>
+
             <li><a href="{{ url_for('resources.mca_calc') }}">Revenue Funding/MCA Cost and Payments calculator</a></li>
         </ul>
     </nav>
