@@ -42,18 +42,15 @@ p, a, li, ul{
 hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(40, 40, 40, 0.75), rgba(0, 0, 0, 0));
 }
 
-#content nav hr {
-    border: 0;
-    height: 0;
-    width: 38.19%;
-    text-align: left;
-    margin-right:61.81%;
-    border-top: 1px solid rgba(43, 140, 186, 0.1);
-    border-bottom: 1px solid rgba(172, 231, 241, 0.3);
 
+@media (min-width: 25cm) {
+    #content nav hr {
+            width: 38.19%;
+            margin-right:61.81%;
+    }
 }
 
 /* HEADER RELATED*/
