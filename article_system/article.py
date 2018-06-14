@@ -39,9 +39,9 @@ def articles(path):
 
     path = path.replace('+', ' ')
     path = path.replace('%20', ' ')
-    links = get_links(path)
-
     try:
+        links = get_links(path)
+
         if '.html' in path:
             last_modified_date = get_last_modified_date(path)
             return f.render_template(base_folder + '/' +  path, links = links, last_modified_date = last_modified_date)
