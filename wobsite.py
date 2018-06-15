@@ -59,11 +59,11 @@ def home():
 def apply():
     return contact(greeting = "Apply Now!")
 
-@app.route('/contact')
+@app.route('/apply')
 def contact(greeting = False):
     if greeting != False:
-        return render_template('contact.html', greeting = greeting)
-    return render_template('contact.html')
+        return render_template('apply.html', greeting = greeting)
+    return render_template('apply.html')
 
 
 @app.route('/employee')
@@ -101,6 +101,15 @@ def get_links():
                 links.append(subchild.text)
 
     return links
+
+
+@app.route('/address')
+
+def get_address():
+
+    mailing = ''''''
+    package = ''''''
+    return render_template('address.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
