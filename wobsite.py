@@ -104,11 +104,7 @@ def get_links():
 
 
 @app.route('/address')
-
 def get_address():
-
-    mailing = ''''''
-    package = ''''''
     return render_template('address.html')
 
 @app.errorhandler(404)
