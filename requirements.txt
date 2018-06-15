@@ -4,3 +4,4 @@ numpy
 pandas
 git+https://github.com/plivo/plivo-python
 requests
+plaid-python
