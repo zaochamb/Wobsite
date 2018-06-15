@@ -59,7 +59,7 @@ def home():
 def apply():
     return contact(greeting = "Apply Now!")
 
-@app.route('/apply')
+@app.route('/contact')
 def contact(greeting = False):
     if greeting != False:
         return render_template('apply.html', greeting = greeting)
