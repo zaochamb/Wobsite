@@ -10,7 +10,7 @@ from login_system import login
 from article_system import article
 from product_system import product
 from resource_system import resources
-from bank_statement_system import plaid
+from bank_system import plaid
 
 # Register blueprints
 def get_app():
