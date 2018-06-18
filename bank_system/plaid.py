@@ -18,7 +18,7 @@ client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
 
 @app.route("/begin")
 def begin():
-   return render_template('bank_system/index.ejs', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV)
+   return render_template('bank_system/begin.html', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV)
 
 
 access_token = None
@@ -37,36 +37,8 @@ def get_access_token():
 
   return jsonify(exchange_response)
 
-@app.route("/accounts", methods=['GET'])
-def accounts():
-  global access_token
-  accounts = client.Auth.get(access_token)
-  return jsonify(accounts)
 
-@app.route("/item", methods=['GET', 'POST'])
-def item():
-  global access_token
-  item_response = client.Item.get(access_token)
-  institution_response = client.Institutions.get_by_id(item_response['item']['institution_id'])
-  return jsonify({'item': item_response['item'], 'institution': institution_response['institution']})
-
-@app.route("/transactions", methods=['GET', 'POST'])
-def transactions():
-  global access_token
-  # Pull transactions for the last 30 days
-  start_date = "{:%Y-%m-%d}".format(datetime.datetime.now() + datetime.timedelta(-30))
-  end_date = "{:%Y-%m-%d}".format(datetime.datetime.now())
-
-  try:
-    response = client.Transactions.get(access_token, start_date, end_date)
-    return jsonify(response)
-  except plaid.errors.PlaidError as e:
-    return jsonify({'error': {'error_code': e.code, 'error_message': str(e)}})
-
-@app.route("/create_public_token", methods=['GET'])
-def create_public_token():
-  global access_token
-  # Create a one-time use public_token for the Item. This public_token can be used to
-  # initialize Link in update mode for the user.
-  response = client.Item.public_token.create(access_token)
-  return jsonify(response)
+@app.route("/test")
+def test():
+    global access_token
+    return access_token
