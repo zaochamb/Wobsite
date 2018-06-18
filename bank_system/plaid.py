@@ -63,7 +63,7 @@ def get_banks():
             'end_date': end_date,
 
             }
-    x = requests.post(host + '/transactions/get', json=data, verify=False).json()
+    x = requests.post(host + '/transactions/get', json=data).json()
     x = pd.DataFrame(x['transactions'])
 
     buffer = StringIO()
