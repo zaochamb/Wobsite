@@ -43,7 +43,7 @@ def get_bank_suggestions(text):
                 'products': ['transactions', 'auth'],
                 'public_key': PLAID_PUBLIC_KEY,
                 }
-        x = requests.post(host + '/institutions/search', json=data, headers=headers, verify=False)
+        x = requests.post(host + '/institutions/search', json=data, headers=headers)
         return x.json()
 
     x = search(text)
@@ -54,7 +54,7 @@ def get_bank_suggestions(text):
     for result in results:
         name = result['name']
         iden = result['institution_id']
-        Insitution(name, iden)
-        insitutions.append(iden)
+        inst = Insitution(name, iden)
+        insitutions.append(inst)
 
     return insitutions
