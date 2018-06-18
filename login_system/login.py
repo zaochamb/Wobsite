@@ -30,11 +30,10 @@ def logout():
         return f.render_template('login_system/logout.html')
 
 
-def requires_login(todo):
-    def login_wrap():
-        name = login_tools.get_username()
-        if name:
-            return todo()
-
-        return f.redirect('/login')
-    return login_wrap
+def requires_login(func):
+    def decorated_view(*args, **kwargs):
+            name = login_tools.get_username()
+            if name:
+                return func(*args, **kwargs)
+            return f.redirect('/login')
+    return decorated_view
