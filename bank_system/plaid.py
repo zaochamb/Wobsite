@@ -64,7 +64,10 @@ def get_banks():
 
             }
     x = requests.post(host + '/transactions/get', json=data).json()
-    x = pd.DataFrame(x['transactions'])
+    try:
+        x = pd.DataFrame(x['transactions'])
+    except KeyError:
+        x = pd.DataFrame({'data':{'Transactions':'None'}})
 
     buffer = StringIO()
     x.to_csv(buffer)
