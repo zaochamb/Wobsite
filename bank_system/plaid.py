@@ -72,4 +72,4 @@ def get_banks():
     buffer = StringIO()
     x.to_csv(buffer)
     buffer.seek(0)
-    return f.send_file(buffer, attachment_filename='Transactions.csv', mimetype='text/csv')
+    return f.send_file(buffer, attachment_filename='Transactions.csv', mimetype='text/csv', as_attachment=True)
