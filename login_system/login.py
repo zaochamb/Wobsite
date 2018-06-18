@@ -32,9 +32,9 @@ def logout():
 
 def requires_login(todo):
     def wrapper():
-        try:
-            login_tools.get_username()
+        name = login_tools.get_username()
+        if name == True:
             return todo()
-        except KeyError:
-            return f.redirect('/login')
+
+        return f.redirect('/login')
     return wrapper
