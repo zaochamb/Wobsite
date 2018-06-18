@@ -55,7 +55,7 @@ def get_creds():
     global item_id
     return access_token, item_id
 
-@app.route('/get_banks')
+@app.route('/get_banks', methods=['POST'])
 def get_banks():
     start_date = request.form['user_name']
     end_date = request.form['password']
