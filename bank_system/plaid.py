@@ -16,8 +16,8 @@ PLAID_ENV  = 'sandbox'
 client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
                   public_key=PLAID_PUBLIC_KEY, environment=PLAID_ENV)
 
-@app.route("/")
-def index():
+@app.route("/begin")
+def begin():
    return render_template('index.ejs', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV)
 
 
