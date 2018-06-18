@@ -67,7 +67,6 @@ def get_banks():
 
             }
 
-    return str(data)
     x = requests.post(host + '/transactions/get', json=data).json()
     try:
         x = pd.DataFrame(x['transactions'])
