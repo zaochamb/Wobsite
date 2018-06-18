@@ -31,10 +31,10 @@ def logout():
 
 
 def requires_login(todo):
-    def wrapper():
+    def login_wrap():
         name = login_tools.get_username()
         if name:
             return todo()
 
         return f.redirect('/login')
-    return wrapper
+    return login_wrap
