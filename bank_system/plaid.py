@@ -67,7 +67,7 @@ def get_banks():
     try:
         x = pd.DataFrame(x['transactions'])
     except KeyError:
-        x = pd.DataFrame({'data':{'Transactions':'None'}})
+        return 'NO TRANSACTIONS FOUND'
 
     buffer = StringIO()
     x.to_csv(buffer)
