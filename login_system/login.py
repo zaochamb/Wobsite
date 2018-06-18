@@ -38,3 +38,5 @@ def requires_login(func):
                 return func(*args, **kwargs)
             return f.redirect('/login')
     return decorated_view
+
+
