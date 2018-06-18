@@ -30,6 +30,8 @@ def logout():
         return f.render_template('login_system/logout.html')
 
 
+
+
 def requires_login(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):

@@ -1,10 +1,18 @@
-{% extends "article_layout.html" %}
-{% block article %}
+{% extends "layout.html.html" %}
+{% block content %}
+
+
+
+
 
 <div class="light">
 <form action="/logout" method="post" >
 <input type="submit" value="Logout" id="button">
-
 </form>
+
+
+
+<a href="{{ url_for('bank.begin') }}" > GET BANK DETAILS </a>
+
 </div>
 {% endblock %}
