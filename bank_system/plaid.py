@@ -3,9 +3,10 @@ from flask import render_template
 from flask import request
 from flask import jsonify
 import os
-import datetime
+import requests
 import plaid
-
+import pandas as pd
+from io import StringIO
 
 app = f.Blueprint('bank', __name__)
 
@@ -13,6 +14,10 @@ PLAID_CLIENT_ID = os.getenv('PLAID_CLIENT_ID')
 PLAID_SECRET = os.getenv('PLAID_SECRET')
 PLAID_PUBLIC_KEY = os.getenv('PLAID_PUBLIC_KEY')
 PLAID_ENV  = 'sandbox'
+host = 'https://sandbox.plaid.com'
+
+
+
 client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
                   public_key=PLAID_PUBLIC_KEY, environment=PLAID_ENV)
 
@@ -39,13 +44,29 @@ def get_access_token():
 
   return jsonify(exchange_response)
 
-
-@app.route("/test")
-def test():
+def get_creds():
     global access_token
     global public_token
     global item_id
-    result = ''' accesstoken:{}
-     publictoken:{}
-      item_id: {}'''.format(access_token, public_token, item_id)
-    return  result
+    return access_token, item_id
+
+@app.route('/get_banks')
+def get_banks():
+    access_token, item_id = get_creds()
+
+    start_date = '2018-01-01'
+    end_date = '2018-03-01'
+
+    data = {'client_id': PLAID_CLIENT_ID,
+            'secret': PLAID_SECRET,
+            'access_token': access_token,
+            'start_date': start_date,
+            'end_date': end_date,
+
+            }
+    x = requests.post(host + '/transactions/get', json=data, verify=False).json()
+    x = pd.DataFrame(x['transactions'])
+    buffer = StringIO()
+    x.to_csv(buffer)
+    buffer.seek(0)
+    return f.send_file(x)

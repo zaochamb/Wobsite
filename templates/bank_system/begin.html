@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <h1 class="dark"> Pull bank statements</h1>
+    <h1 class="dark"> SEND bank statements to your servicer from here.</h1>
     <div class="light">
 
     <button id="link-btn">Link Account</button>
@@ -32,7 +32,8 @@
             });
     })(jQuery);
     </script>
-    <a href="{{ url_for('bank.test') }}"> CHECK TOKEN</a>
+        <br><br>
+    <a href="{{ url_for('bank.get_banks') }}"> SEND DOCUMENTS</a>
     </div>
 
 {% endblock %}
