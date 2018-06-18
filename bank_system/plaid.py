@@ -1,64 +1,72 @@
 import flask as f
+from flask import render_template
+from flask import request
+from flask import jsonify
 import os
-from plaid import Client
-import requests
+import datetime
+import plaid
+
 
 app = f.Blueprint('bank', __name__)
 
 PLAID_CLIENT_ID = os.getenv('PLAID_CLIENT_ID')
 PLAID_SECRET = os.getenv('PLAID_SECRET')
 PLAID_PUBLIC_KEY = os.getenv('PLAID_PUBLIC_KEY')
-host = 'https://sandbox.plaid.com'
+PLAID_ENV  = 'sandbox'
+client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
+                  public_key=PLAID_PUBLIC_KEY, environment=PLAID_ENV)
 
-client = Client(client_id=PLAID_CLIENT_ID, secret=PLAID_SECRET, public_key=PLAID_PUBLIC_KEY, environment='sandbox')
-
-@app.route('/find_banks', methods=['GET', 'POST'])
-def find_banks():
-    page = 'bank_system/login_form.html'
-    if f.request.method == 'GET':
-        return f.render_template(page)
-
-    if f.request.method =='POST':
-        search_text = f.request.form['bank_name']
-        institutions = get_bank_suggestions(search_text)
-        return f.render_template(page, options = institutions )
+@app.route("/")
+def index():
+   return render_template('index.ejs', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV)
 
 
-class Insitution:
-    name = None
-    iden = None
-    def __init__(self, name, iden):
-        self.name = name
-        self.iden = iden
+access_token = None
+public_token = None
 
+@app.route("/get_access_token", methods=['POST'])
+def get_access_token():
+  global access_token
+  public_token = request.form['public_token']
+  exchange_response = client.Item.public_token.exchange(public_token)
+  print('public token: ' + public_token)
+  print('access token: ' + exchange_response['access_token'])
+  print('item ID: ' + exchange_response['item_id'])
 
-def get_bank_suggestions(text):
-    headers = {'Content-type': 'application/json'}
+  access_token = exchange_response['access_token']
 
-    def search(text):
-        data = {'query': text,
-                'products': ['transactions', 'auth'],
-                'public_key': PLAID_PUBLIC_KEY,
-                }
-        x = requests.post(host + '/institutions/search', json=data, headers=headers)
-        return x.json()
+  return jsonify(exchange_response)
 
-    x = search(text)
+@app.route("/accounts", methods=['GET'])
+def accounts():
+  global access_token
+  accounts = client.Auth.get(access_token)
+  return jsonify(accounts)
 
-    results = x['institutions']
+@app.route("/item", methods=['GET', 'POST'])
+def item():
+  global access_token
+  item_response = client.Item.get(access_token)
+  institution_response = client.Institutions.get_by_id(item_response['item']['institution_id'])
+  return jsonify({'item': item_response['item'], 'institution': institution_response['institution']})
 
-    insitutions = []
-    for result in results:
-        name = result['name']
-        iden = result['institution_id']
-        inst = Insitution(name, iden)
-        insitutions.append(inst)
+@app.route("/transactions", methods=['GET', 'POST'])
+def transactions():
+  global access_token
+  # Pull transactions for the last 30 days
+  start_date = "{:%Y-%m-%d}".format(datetime.datetime.now() + datetime.timedelta(-30))
+  end_date = "{:%Y-%m-%d}".format(datetime.datetime.now())
 
-    return insitutions
+  try:
+    response = client.Transactions.get(access_token, start_date, end_date)
+    return jsonify(response)
+  except plaid.errors.PlaidError as e:
+    return jsonify({'error': {'error_code': e.code, 'error_message': str(e)}})
 
-
-
-@app.route('/select_bank')
-def select_bank():
-    institution_id = f.request.args.get('iden')
-    return institution_id
+@app.route("/create_public_token", methods=['GET'])
+def create_public_token():
+  global access_token
+  # Create a one-time use public_token for the Item. This public_token can be used to
+  # initialize Link in update mode for the user.
+  response = client.Item.public_token.create(access_token)
+  return jsonify(response)
