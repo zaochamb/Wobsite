@@ -9,10 +9,13 @@
 <form action="/logout" method="post" >
 <input type="submit" value="Logout" id="button">
 </form>
+</div>
 
+    <h3 class="dark"> Options </h3>
+<div class="light">
 
-
-<a href="{{ url_for('bank.begin') }}" > GET BANK DETAILS </a>
+<a href="{{ url_for('bank.begin') }}" > Send Bank Statements </a>
+<hr>
 
 </div>
 {% endblock %}
