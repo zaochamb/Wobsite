@@ -16,8 +16,9 @@
 
 
 <div class="dark">
-    <h1> Pick Your Bank </h1>
+
     {% if options is defined %}
+        <h3> Pick Your Bank </h3>
         {% for option in options %}
             <a href="{{ url_for('bank.select_bank', institution_id = option.iden) }}">{{ option.name }} </a>
             <hr>

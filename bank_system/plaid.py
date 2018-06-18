@@ -58,6 +58,6 @@ def get_bank_suggestions(text):
 
 
 
-@app.route('/select_bank')
+@app.route('/select_bank/<institution_id>')
 def select_bank(institution_id):
     return institution_id
