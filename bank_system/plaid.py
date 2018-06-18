@@ -12,8 +12,8 @@ host = 'https://sandbox.plaid.com'
 
 client = Client(client_id=PLAID_CLIENT_ID, secret=PLAID_SECRET, public_key=PLAID_PUBLIC_KEY, environment='sandbox')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/search', methods=['GET', 'POST'])
+def search():
     page = 'bank_system/login_form.html'
     if f.request.method == 'GET':
         return f.render_template(page)
@@ -30,9 +30,6 @@ class Insitution:
     def __init__(self, name, iden):
         self.name = name
         self.iden = iden
-
-
-
 
 
 def get_bank_suggestions(text):
@@ -58,3 +55,9 @@ def get_bank_suggestions(text):
         insitutions.append(inst)
 
     return insitutions
+
+
+
+@app.route('/select_bank')
+def select_bank(institution_id):
+    return institution_id
