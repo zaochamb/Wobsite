@@ -106,7 +106,6 @@ def get_address():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return 404
     links = get_links()
     import difflib
     result = difflib.get_close_matches(request.url, links, n = 1, cutoff= 0)
