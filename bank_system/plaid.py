@@ -12,8 +12,8 @@ host = 'https://sandbox.plaid.com'
 
 client = Client(client_id=PLAID_CLIENT_ID, secret=PLAID_SECRET, public_key=PLAID_PUBLIC_KEY, environment='sandbox')
 
-@app.route('/search', methods=['GET', 'POST'])
-def search():
+@app.route('/find_banks', methods=['GET', 'POST'])
+def find_banks():
     page = 'bank_system/login_form.html'
     if f.request.method == 'GET':
         return f.render_template(page)

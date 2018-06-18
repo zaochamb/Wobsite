@@ -6,7 +6,7 @@
     <h1 class="dark"> Pull bank statements</h1>
 
 <div class="light">
-    <form action="{{ url_for('bank.search') }}" method="post">
+    <form action="{{ url_for('bank.find_banks') }}" method="post">
       <br>
       <input type="text" name="bank_name" placeholder="Bank Name">
       <br><br>
@@ -19,7 +19,7 @@
     <h1> Pick Your Bank </h1>
     {% if options is defined %}
         {% for option in options %}
-            <a href="{{ url_for('bank.select', institution_id = option.iden) }}">{{ option.name }} </a>
+            <a href="{{ url_for('bank.select_bank', institution_id = option.iden) }}">{{ option.name }} </a>
             <hr>
         {% endfor %}
     {% endif %}
