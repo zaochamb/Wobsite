@@ -74,7 +74,7 @@ def get_banks():
     except KeyError:
         return 'NO TRANSACTIONS FOUND'
 
-    resp = f.make(df.to_csv())
+    resp = f.make(x.to_csv())
     resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
     resp.headers["Content-Type"] = "text/csv"
     return resp
