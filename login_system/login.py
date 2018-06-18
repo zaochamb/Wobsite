@@ -25,7 +25,7 @@ def logout():
             del f.session['username']
         except KeyError:
             pass
-        return 'logged out'
+        return f.redirect('/login')
     if f.request.method == 'GET':
         return f.render_template('login_system/logout.html')
 

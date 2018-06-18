@@ -71,7 +71,7 @@ def login_url(request, session):
     session['username'] = user_name
     session['role'] = role
     reset_attempts(request)
-    return f.redirect('/')
+    return f.redirect(f.url_for('logout'))
 
 
 
