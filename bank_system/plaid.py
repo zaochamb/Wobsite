@@ -22,7 +22,13 @@ client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
 
 @app.route("/begin")
 def begin():
-   return render_template('bank_system/begin.html', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV)
+    token, other = get_creds()
+
+    message = 'bank connected!'
+    if token is None:
+        message = 'Please Connect Bank'
+
+    return render_template('bank_system/begin.html', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV, message = message)
 
 
 access_token = None
