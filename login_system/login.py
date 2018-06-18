@@ -4,6 +4,16 @@ app = f.Blueprint('login', __name__)
 
 from functools import wraps
 
+def requires_login(func):
+    @wraps(func)
+    def decorated_view(*args, **kwargs):
+            name = login_tools.get_username(f.session)
+            if name:
+                return func(*args, **kwargs)
+            return f.redirect('/login')
+    return decorated_view
+
+
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
@@ -19,6 +29,7 @@ def login():
 
 
 @app.route('/logout', methods=['POST', 'GET'])
+@requires_login
 def logout():
     if f.request.method == 'POST':
         try:
@@ -31,14 +42,5 @@ def logout():
 
 
 
-
-def requires_login(func):
-    @wraps(func)
-    def decorated_view(*args, **kwargs):
-            name = login_tools.get_username(f.session)
-            if name:
-                return func(*args, **kwargs)
-            return f.redirect('/login')
-    return decorated_view
 
 
