@@ -53,7 +53,6 @@ def get_creds():
 @app.route('/get_banks')
 def get_banks():
     access_token, item_id = get_creds()
-
     start_date = '2018-01-01'
     end_date = '2018-03-01'
 
@@ -66,7 +65,8 @@ def get_banks():
             }
     x = requests.post(host + '/transactions/get', json=data, verify=False).json()
     x = pd.DataFrame(x['transactions'])
+
     buffer = StringIO()
     x.to_csv(buffer)
     buffer.seek(0)
-    return f.send_file(x)
+    return f.send_file(x, attachment_filename='Transactions.csv')
