@@ -44,7 +44,7 @@ def get_bank_suggestions(text):
                 'public_key': PLAID_PUBLIC_KEY,
                 }
         x = requests.post(host + '/institutions/search', json=data, headers=headers, verify=False)
-        return x
+        return x.json()
 
     x = search(text)
 
