@@ -33,7 +33,7 @@ def logout():
 def requires_login(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
-            name = login_tools.get_username()
+            name = login_tools.get_username(f.session)
             if name:
                 return func(*args, **kwargs)
             return f.redirect('/login')
