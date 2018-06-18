@@ -6,7 +6,6 @@ import os
 import requests
 import plaid
 import pandas as pd
-from io import StringIO
 
 app = f.Blueprint('bank', __name__)
 
@@ -75,7 +74,7 @@ def get_banks():
     except KeyError:
         return 'NO TRANSACTIONS FOUND'
 
-    buffer = StringIO()
-    x.to_csv(buffer)
-    buffer.seek(0)
-    return f.send_file(buffer, attachment_filename='Transactions.csv', mimetype='text/csv', as_attachment=True)
+    resp = f.make(df.to_csv())
+    resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    resp.headers["Content-Type"] = "text/csv"
+    return resp
