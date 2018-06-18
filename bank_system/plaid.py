@@ -1,13 +1,14 @@
 import flask as f
 import os
 from plaid import Client
-
+import requests
 
 app = f.Blueprint('bank', __name__)
 
 PLAID_CLIENT_ID = os.getenv('PLAID_CLIENT_ID')
 PLAID_SECRET = os.getenv('PLAID_SECRET')
 PLAID_PUBLIC_KEY = os.getenv('PLAID_PUBLIC_KEY')
+host = 'https://sandbox.plaid.com'
 
 client = Client(client_id=PLAID_CLIENT_ID, secret=PLAID_SECRET, public_key=PLAID_PUBLIC_KEY, environment='sandbox')
 
@@ -19,9 +20,41 @@ def login():
 
     if f.request.method =='POST':
         search_text = f.request.form['bank_name']
-        bank_suggestions = get_bank_suggestions(search_text)
-        return f.render_template(page, options = bank_suggestions )
+        institutions = get_bank_suggestions(search_text)
+        return f.render_template(page, options = institutions )
+
+
+class Insitution:
+    name = None
+    iden = None
+    def __init__(self, name, iden):
+        self.name = name
+        self.iden = iden
+
+
+
 
 
 def get_bank_suggestions(text):
-    return ['option1', 'option2', text]
+    headers = {'Content-type': 'application/json'}
+
+    def search(text):
+        data = {'query': text,
+                'products': ['transactions', 'auth'],
+                'public_key': PLAID_PUBLIC_KEY,
+                }
+        x = requests.post(host + '/institutions/search', json=data, headers=headers, verify=False)
+        return x
+
+    x = search(text)
+
+    results = x['institutions']
+
+    insitutions = []
+    for result in results:
+        name = result['name']
+        iden = result['institution_id']
+        Insitution(name, iden)
+        insitutions.append(iden)
+
+    return insitutions

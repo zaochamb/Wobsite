@@ -15,7 +15,8 @@
 
     {% if options is defined %}
         {% for option in options %}
-            <p>{{ option }}</p>
+            <p>{{ option.name }}</p>
+            <hr>
         {% endfor %}
     {% endif %}
 {% endblock %}
