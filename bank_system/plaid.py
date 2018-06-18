@@ -52,7 +52,11 @@ def get_creds():
 
 @app.route('/get_banks')
 def get_banks():
+
     access_token, item_id = get_creds()
+    if access_token is None:
+        return 'Connect Bank First'
+
     start_date = '2018-01-01'
     end_date = '2018-03-01'
 
