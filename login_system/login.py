@@ -2,7 +2,7 @@ import flask as f
 from login_system import login_tools
 app = f.Blueprint('login', __name__)
 
-
+from functools import wraps
 
 
 @app.route('/login', methods = ['GET', 'POST'])
@@ -31,6 +31,7 @@ def logout():
 
 
 def requires_login(func):
+    @wraps(func)
     def decorated_view(*args, **kwargs):
             name = login_tools.get_username()
             if name:
