@@ -24,9 +24,9 @@ client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
 def begin():
     token, other = get_creds()
 
-    message = 'bank connected!'
+    message = 'Connected'
     if token is None:
-        message = 'Please Connect Bank'
+        message = 'Not Connected'
 
     return render_template('bank_system/begin.html', plaid_public_key=PLAID_PUBLIC_KEY, plaid_environment=PLAID_ENV, message = message)
 

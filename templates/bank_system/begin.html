@@ -3,10 +3,10 @@
 
 
 {% block content %}
-    <h1 class="dark"> SEND bank statements to your servicer from here.</h1>
+    <h1 class="dark"> Bank Connect </h1>
     <div class="light">
 
-    <button id="link-btn">Link Account</button>
+    <button id="link-btn">Click here to link account</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
@@ -34,15 +34,22 @@
     </script>
         <br><br>
 
-    <form action="{{ url_for('bank.get_banks') }}" method="post">
-        <input type="date" name="start_date" placeholder="Start Date" required="required">>
-        <input type="date" name="end_date" placeholder="End Date" required="required">>
-        <input type="submit" value="Download" id="button">
-    </form>
 
 
-    {% if message is defined %}
-        <p> {{ message }}</p>
+
+    {% if message == 'Connected' %}
+            <h3> Download Statements </h3>
+                <form action="{{ url_for('bank.get_banks') }}" method="post">
+                Start Date
+                <input type="date" name="start_date"  required="required">
+                End Date
+                <input type="date" name="end_date"  required="required">
+                <input type="submit" value="Download" id="button">
+                </form>
+
+            <h3> Get ACH authentication here</h3>
+                <p> TODO: Put Logic Here. </p>
+
     {% endif %}
     </div>
 
