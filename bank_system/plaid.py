@@ -57,20 +57,19 @@ def get_creds():
 
 @app.route('/get_banks')
 def get_banks():
+    start_date = request.form['user_name']
+    end_date = request.form['password']
+
+    start_date = pd.to_datetime(start_date).strftime('%Y-%m-%d')
+    end_date = pd.to_datetime(end_date).strftime('%Y-%m-%d')
 
     access_token, item_id = get_creds()
-
-
-
-    start_date = '2018-01-01'
-    end_date = '2018-03-01'
 
     data = {'client_id': PLAID_CLIENT_ID,
             'secret': PLAID_SECRET,
             'access_token': access_token,
             'start_date': start_date,
             'end_date': end_date,
-
             }
 
     x = requests.post(host + '/transactions/get', json=data).json()

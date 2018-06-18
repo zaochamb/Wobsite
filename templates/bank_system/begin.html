@@ -33,7 +33,13 @@
     })(jQuery);
     </script>
         <br><br>
-    <a href="{{ url_for('bank.get_banks') }}"> SEND DOCUMENTS</a>
+
+    <form action="{{ url_for('bank.get_banks') }}" method="post">
+        Start Date <input type="date" name="start_date" placeholder="Start Date">
+        End Date <input type="date" name="end_date" placeholder="End Date">
+        <input type="submit" value="Download" id="button">
+    </form>
+
 
     {% if message is defined %}
         <p> {{ message }}</p>
