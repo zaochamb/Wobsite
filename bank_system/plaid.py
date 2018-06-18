@@ -57,8 +57,8 @@ def get_creds():
 
 @app.route('/get_banks', methods=['POST'])
 def get_banks():
-    start_date = request.form['user_name']
-    end_date = request.form['password']
+    start_date = request.form['start_date']
+    end_date = request.form['end_date']
 
     start_date = pd.to_datetime(start_date).strftime('%Y-%m-%d')
     end_date = pd.to_datetime(end_date).strftime('%Y-%m-%d')
