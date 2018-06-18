@@ -21,8 +21,9 @@ host = 'https://sandbox.plaid.com'
 client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
                   public_key=PLAID_PUBLIC_KEY, environment=PLAID_ENV)
 
-@requires_login
+
 @app.route("/begin")
+@requires_login
 def begin():
     token, other = get_creds()
 
@@ -37,8 +38,9 @@ access_token = None
 public_token = None
 item_id = None
 
-@requires_login
+
 @app.route("/get_access_token", methods=['POST'])
+@requires_login
 def get_access_token():
   global access_token
   global public_token
@@ -58,8 +60,8 @@ def get_creds():
     global item_id
     return access_token, item_id
 
-@requires_login
 @app.route('/get_banks', methods=['POST'])
+@requires_login
 def get_banks():
     start_date = request.form['start_date']
     end_date = request.form['end_date']

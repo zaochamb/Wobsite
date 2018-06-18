@@ -33,7 +33,7 @@ def logout():
 def requires_login(todo):
     def wrapper():
         name = login_tools.get_username()
-        if name == True:
+        if name:
             return todo()
 
         return f.redirect('/login')
