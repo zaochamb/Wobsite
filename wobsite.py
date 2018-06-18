@@ -48,9 +48,6 @@ def get_image():
 
     return f.send_from_directory('static', filename=kind + '/default.png')
 
-
-
-
 @app.route('/')
 def home():
     return render_template('home.html')

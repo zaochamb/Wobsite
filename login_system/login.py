@@ -28,3 +28,13 @@ def logout():
         return 'logged out'
     if f.request.method == 'GET':
         return f.render_template('login_system/logout.html')
+
+
+def requires_login(todo):
+    def wrapper():
+        try:
+            login_tools.get_username()
+            return todo()
+        except KeyError:
+            return f.redirect('/login')
+    return wrapper
