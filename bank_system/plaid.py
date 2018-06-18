@@ -58,6 +58,7 @@ def get_bank_suggestions(text):
 
 
 
-@app.route('/select_bank/<institution_id>')
-def select_bank(institution_id):
+@app.route('/select_bank')
+def select_bank():
+    institution_id = f.request.args.get('iden')
     return institution_id
