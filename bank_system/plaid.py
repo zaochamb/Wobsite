@@ -47,7 +47,7 @@ def get_access_token():
 
   access_token = exchange_response['access_token']
 
-  return jsonify(exchange_response)
+  return render_template('bank_system/begin.html', message = 'Connected')
 
 def get_creds():
     global access_token
