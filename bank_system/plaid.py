@@ -23,15 +23,17 @@ def begin():
 
 access_token = None
 public_token = None
+item_id = None
 
 @app.route("/get_access_token", methods=['POST'])
 def get_access_token():
   global access_token
+  global public_token
+  global item_id
+
   public_token = request.form['public_token']
   exchange_response = client.Item.public_token.exchange(public_token)
-  print('public token: ' + public_token)
-  print('access token: ' + exchange_response['access_token'])
-  print('item ID: ' + exchange_response['item_id'])
+  item_id = exchange_response['item_id']
 
   access_token = exchange_response['access_token']
 
@@ -41,4 +43,9 @@ def get_access_token():
 @app.route("/test")
 def test():
     global access_token
-    return access_token
+    global public_token
+    global item_id
+    result = ''' accesstoken:{}
+     publictoken:{}
+      item_id: {}'''.format(access_token, public_token, item_id)
+    return  result
