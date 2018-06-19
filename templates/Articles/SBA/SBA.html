@@ -8,11 +8,12 @@
 
 {% block article_style %}
 
-<h1 class="dark"> Everything you need to know about SBA Loans.</h1>
+<h1 class="dark"> Everything you need to know about <a href="{{ url_for('article.articles', path = '/SBA/What+is+the+SBA.html') }}"> SBA </a> Loans.</h1>
     <article class="light">
 <h2>What is an SBA Loan?</h2>
     <p> In Summary an SBA Loan is: </p>
     <ul>
+
     <li>- Like regular loan for businesses</li>
     <li>- Long term rather than short term debt</li>
     <li>- Obtained from a private lender (not from the government)</li>
@@ -27,9 +28,14 @@
         <li>- How quickly you want the money</li>
     </ul>
 
+
+
+
+
     <p> Generally it's safe to assume that you need to have 620 + Credit Score and make over 150k per year.
     If you don't meet these criteria don't worry, we have other products for you, find out by clicking here:
     <a href="{{ url_for('product.products')}}">Aldora Products</a>
+
 </article>
 
     <h3 class="dark"> SBA Loan Articles </h3>
