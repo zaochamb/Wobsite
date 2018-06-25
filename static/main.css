@@ -236,7 +236,7 @@ input, select {
 display: none;
 }
 
-.showhim:hover .showme{
+.showhim:active .showme{
 display : block;
 }
 
