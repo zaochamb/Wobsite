@@ -3,9 +3,14 @@
 {% if request.args.get('greeting') is not none  %}
     {% set greeting =  request.args.get('greeting') %}
 {% endif %}
+
+{% if request.args.get('product') is not none  %}
+    {% set product =  request.args.get('product') %}
+{% endif %}
+
 {% block head %}
 
-    {% if greeting is defined %}
+    {% if greeting != '' %}
     <title> {{  greeting }} </title>
     <meta property="og:title" content="{{  greeting }} ">
     {% else %}
@@ -23,7 +28,7 @@
 <div class="dark">
 
 <h2>
-    {% if greeting is defined %}
+    {% if greeting != '' %}
         {{  greeting }}
     {% else %}
         Contact

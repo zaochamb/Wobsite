@@ -21,6 +21,7 @@ def products(product=''):
 
     if product == 'small_business_line_of_credit':
         return f.render_template('product_system/' + product + '.html')
+
     prod_text = product.replace('_', ' ').title()
     return f.redirect(f.url_for('contact', greeting = '{} - Lets Begin Your Application'.format(prod_text), product = prod_text))
 

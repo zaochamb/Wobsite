@@ -57,17 +57,9 @@ def apply():
     return contact(greeting = "Apply Now!")
 
 @app.route('/contact')
-def contact(greeting = False, product = False):
+def contact(greeting = '', product = ''):
+    return render_template('apply.html', greeting=greeting, product = product)
 
-    if (greeting != False) and (product != False):
-        return render_template('apply.html', greeting=greeting, product = product)
-
-    if greeting != False:
-        return render_template('apply.html', greeting = greeting)
-
-    if product != False:
-        return render_template('apply.html', product=product)
-    return render_template('apply.html')
 
 
 @app.route('/employee')
