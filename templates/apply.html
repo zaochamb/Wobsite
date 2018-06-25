@@ -51,7 +51,7 @@
         <input type="email" name="email" placeholder="Email*" required>
 
     <br><br>
-    {%  if product is defined %}
+    {%  if product != '' %}
         <select name="Product">
             <option value= "{{ product }}" selected>{{ product }}</option>
         </select>
