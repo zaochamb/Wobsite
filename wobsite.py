@@ -58,6 +58,7 @@ def apply():
 
 @app.route('/contact')
 def contact(greeting = '', product = ''):
+    #Make sure you check the top of the apply html to pass the variables correctly
     return render_template('apply.html', greeting=greeting, product = product)
 
 
