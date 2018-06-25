@@ -44,7 +44,13 @@
         <input type="tel" name="Phone" placeholder="Phone*" required>
     <br><br>
         <input type="email" name="email" placeholder="Email*" required>
+
     <br><br>
+    {%  if product is defined %}
+        <select name="Product">
+            <option value= "{{ product }}" selected>{{ product }}</option>
+        </select>
+   {% else %}
             <select name="Product" required>
                 <option value="" disabled selected>Select your Product</option>
                 <option value="Line of Credit">Line of Credit</option>
@@ -52,10 +58,10 @@
                 <option value="Revenue Funding">Revenue Funding</option>
                 <option value="SBA">SBA</option>
                 <option value="Term Loan">Term Loan</option>
-
-                <option value="I am a Broker">I am a Broker</option>
+                <option value="Aeolus Credit Repair">Aeolus Credit Repair</option>
                 <option value="Other/Unsure">Other/Unsure</option>
             </select>
+    {% endif %}
 <br><br>
 
     <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
