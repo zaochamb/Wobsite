@@ -66,4 +66,4 @@ def call_router():
 
     if request.method == 'POST':
         extension = request.form.get('Digits')
-        return phone_tools.get_forward(extension)    
+        return phone_tools.get_forward(request, extension)
