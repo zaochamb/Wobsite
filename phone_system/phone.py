@@ -46,6 +46,9 @@ Please use the contact us page on our website: www.aldora . capital.com
             call_number = phone_tools.get_number(role = 'help')
             return phone_tools.get_forward( request, forward_number = call_number, message = 'Calling Help line.')
 
+        elif len(str(digit)) > 0:
+            return phone_tools.get_forward(request, extension=digit, message='Getting Forward to extension')
+
         else:
             r.add_speak('No input detected, Hanging up.')
         return Response(r.to_string(), mimetype='text/xml')
