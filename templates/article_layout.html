@@ -11,7 +11,7 @@
 {% block article_style %}
 <article class="light">
 
-<img src="{{ url_for('get_image',kind = 'social_images',  image_path = request.path, _external=False) }}" alt="Temp">
+<img src="{{ url_for('get_image',kind = 'social_images',  image_path = request.path, _external=False) }}" alt="Temp"  style="width:100%;height:auto">
 {% block article %}
 
 {% endblock %}
