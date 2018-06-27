@@ -30,7 +30,7 @@ def get_forward(request, extension = False, forward_number = False, message = 'F
         forward_number = get_number(extension)
 
     if forward_number == 'Fail':
-        r.add_speak('No individual found with that extension')
+        r.add_speak('No individual found with that extension Numbered {}'.format(extension))
         return Response(r.to_string(), mimetype='text/xml')
     
     from_number = request.form.get('From')
