@@ -1,8 +1,10 @@
 import random
+import os
 import flask as f
 import settings
 from flask_sslify import SSLify
 from flask import Flask, request, render_template, abort
+import random
 
 # blueprint imports
 from phone_system import phone
@@ -45,6 +47,12 @@ def get_image():
             return f.send_from_directory('static', filename=image_path + ext)
         except Exception as E:
             pass
+
+
+    if request.args.get('random', False):
+        static_dir = settings.get_dir_static('random_images')
+        choice = random.choice(os.listdir(static_dir))
+        return f.send_from_directory('static', filename=  'random_images' + '/' +choice)
 
     return f.send_from_directory('static', filename=kind + '/default.png')
 
