@@ -1,15 +1,16 @@
-{% extends "article_layout.html" %}
+{% extends "layout.html" %}
 
-{% block article_head %}
+{% block head %}
     <title> Revenue Funding Calculator - Compare two Deals</title>
     <meta property="og:title" content=" Revenue Funding Calculator - Compare two Deals">
     <meta property="og:description" content=" Revenue based loan calculator, calculates your payments, and total money owed for two deals.">
 {% endblock %}
 
 
-{% block article %}
+{% block content %}
 
-    <h1>How do my Revenue Funding or MCA Deals compare?  </h1>
+<h1 class="dark">How do my Revenue Funding or MCA Deals compare?  </h1>
+    <div class="light">
 <p>
 Compare Two Revenue Funding Deals with this Calculator.
 </p>
@@ -50,5 +51,5 @@ Compare Two Revenue Funding Deals with this Calculator.
     <p> Daily Payment: {{ mcas[1].daily }} </p>
 {% endif %}
 
-
+</div>
 {% endblock %}
