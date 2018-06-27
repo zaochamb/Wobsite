@@ -2,6 +2,15 @@
 
 
 {% block head %}
+    <script>
+    [].forEach.call(document.querySelectorAll('img[data-src]'),    function(img) {
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.onload = function() {
+        img.removeAttribute('data-src');
+      };
+    });
+    </script>
+
     {% block article_head %}{% endblock %}
 {% endblock %}
 
@@ -11,7 +20,7 @@
 {% block article_style %}
 <article class="light">
 
-<img src="{{ url_for('get_image',kind = 'social_images',  image_path = request.path,  random = True) }}" alt="{{ request.path }}"  style="width:100%;height:auto">
+<img data-src="{{ url_for('get_image',kind = 'social_images',  image_path = request.path,  random = True) }}" alt="{{ request.path }}"  style="width:100%;height:auto">
 {% block article %}
 
 {% endblock %}
