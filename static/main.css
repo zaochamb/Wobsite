@@ -243,20 +243,20 @@ display : block;
 /* Headings Always have headspace */
 h1{
     font-size:xx-large;
-    padding-top: 2em;
+    padding-top: 1.3em;
 }
 h2{
     font-size:x-large;
-    padding-top: 1.5em;
+    padding-top: 1.3em;
 }
 h3{
     font-size:large;
-    padding-top: 1.4em;
+    padding-top: 1.3em;
 }
 
 h4, h5, h6{
     font-size: medium;
-    padding-top:1em;
+    padding-top:1.3em;
 }
 
 /* Searchbox */
