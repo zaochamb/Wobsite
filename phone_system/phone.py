@@ -7,7 +7,7 @@ app = f.Blueprint('phone', __name__)
 
 
 #------------------------------PHONE SYSTEM----------------------#
-@app.route('/ivr')
+@app.route('/ivr', methods = ['GET', 'POST'])
 def ivr():
     r = plivoxml.ResponseElement()
     if request.method == 'GET':
