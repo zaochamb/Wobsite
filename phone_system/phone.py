@@ -2,7 +2,8 @@ from phone_system import phone_tools
 import flask as f
 from flask import request,url_for, Response
 from plivo import plivoxml
-
+import plivo
+from login_system.login import requires_login
 app = f.Blueprint('phone', __name__)
 
 
@@ -70,3 +71,15 @@ def call_router():
     if request.method == 'POST':
         extension = request.form.get('Digits')
         return phone_tools.get_forward(request, extension)
+
+
+
+@app.route('/send_text', methods = ['GET','POST'])
+@requires_login
+def send_text():
+    if request.method == 'GET':
+        return f.render_template('phone_system/phone.html')
+    if request.method == 'POST':
+        number =  request.form['number']
+        text = request.form['text']
+        return '{} - {}'.format(number, text)

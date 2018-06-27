@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title> Phone System </title>
+{% endblock %}
+
+
+{% block content %}
+
+<p class="dark">
+    Send a Message Here
+</p>
+
+    <div class="light">
+<form action="{{ url_for('phone.send_text' }}" method="post">
+      <br>
+      <input type="tel" name="number" placeholder="Phone Number">
+      <br><br>
+      <input type="text" name="text" placeholder="Message">
+      <br><br>
+      <input type="submit" value="SEND" id="button">
+</form>
+    </div>
+{% endblock %}
