@@ -58,16 +58,7 @@ hr {
 
 /* HEADER RELATED*/
 header {
-
-    /*TEST*/
-    /*background-color: var(--headerback);*/
-
-    background-image: url('Logo_compressed.png');
-    background-size: 100vw auto;
-    background-repeat:no-repeat;
-    /* END TEST*/
-
-
+    background-color: var(--headerback);
     color: var(--headertext);
     box-shadow: 2px 4px 21px 0 rgba(0,0,0,0.48);
     padding-bottom:1em;
