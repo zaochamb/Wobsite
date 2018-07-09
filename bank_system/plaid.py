@@ -7,7 +7,8 @@ import requests
 import plaid
 import pandas as pd
 from login_system.login import requires_login
-
+from login_system import login_tools
+from bank_system import bank_sql
 app = f.Blueprint('bank', __name__)
 
 PLAID_CLIENT_ID = os.getenv('PLAID_CLIENT_ID')
@@ -42,9 +43,7 @@ item_id = None
 @app.route("/get_access_token", methods=['POST'])
 @requires_login
 def get_access_token():
-  global access_token
   global public_token
-  global item_id
 
   public_token = request.form['public_token']
   exchange_response = client.Item.public_token.exchange(public_token)
@@ -52,12 +51,12 @@ def get_access_token():
 
   access_token = exchange_response['access_token']
 
+  username = login_tools.get_username(f.session)
+  bank_sql.set_creds(username ,access_token, item_id)
   return render_template('bank_system/begin.html', message = 'Connected')
 
 def get_creds():
-    global access_token
-    global public_token
-    global item_id
+    access_token, item_id = bank_sql.get_creds()
     return access_token, item_id
 
 @app.route('/get_banks', methods=['POST'])

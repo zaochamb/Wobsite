@@ -2,10 +2,10 @@ import hashlib
 from login_system import user_sql as sql
 from flask import render_template
 import flask as f
+from database import admin
 
 def hash(text):
-    text = bytes(text, 'utf-8')
-    return hashlib.sha224(text).hexdigest()
+    return admin.hash(text)
 
 
 def get_ip_address(request):
