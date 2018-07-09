@@ -56,6 +56,7 @@ def get_access_token():
   return render_template('bank_system/begin.html', message = 'Connected')
 
 def get_creds():
+    username = login_tools.get_username(f.session)
     access_token, item_id = bank_sql.get_creds()
     return access_token, item_id
 
@@ -67,7 +68,6 @@ def get_banks():
 
     start_date = pd.to_datetime(start_date).strftime('%Y-%m-%d')
     end_date = pd.to_datetime(end_date).strftime('%Y-%m-%d')
-
     access_token, item_id = get_creds()
 
     data = {'client_id': PLAID_CLIENT_ID,
