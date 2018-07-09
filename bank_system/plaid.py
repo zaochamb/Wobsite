@@ -13,8 +13,8 @@ app = f.Blueprint('bank', __name__)
 PLAID_CLIENT_ID = os.getenv('PLAID_CLIENT_ID')
 PLAID_SECRET = os.getenv('PLAID_SECRET')
 PLAID_PUBLIC_KEY = os.getenv('PLAID_PUBLIC_KEY')
-PLAID_ENV  = 'sandbox'
-host = 'https://sandbox.plaid.com'
+PLAID_ENV  = 'development'
+host = 'https://development.plaid.com'
 
 
 
