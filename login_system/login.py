@@ -38,7 +38,8 @@ def logout():
             pass
         return f.redirect('/login')
     if f.request.method == 'GET':
-        return f.render_template('login_system/logout.html')
+        role = login_tools.get_role(login_tools.get_username(f.session))
+        return f.render_template('login_system/logout.html', role = role )
 
 
 
