@@ -5,35 +5,36 @@
 {% block content %}
     <h1 class="dark"> Bank Connect </h1>
     <div class="light">
-
-    <button id="link-btn">Click here to link account</button>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
-        <script>
-        (function($) {
-            var handler = Plaid.create({
-                apiVersion: 'v2',
-                clientName: 'Aldora Capital - Business Connect',
-                env: '{{ plaid_environment }}',
-                product: ['transactions'],
-                key: '{{ plaid_public_key }}',
-                onSuccess: function(public_token) {
-                    $.post('{{ url_for('bank.get_access_token') }}', {public_token: public_token}, function() {
-                        $('#container').fadeOut('fast', function() {
-                            $('#intro').hide();
-                            $('#app, #steps').fadeIn('slow');
+    {% if message != 'Connected' %}
+        <button id="link-btn">Click here to link account</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+            <script>
+            (function($) {
+                var handler = Plaid.create({
+                    apiVersion: 'v2',
+                    clientName: 'Aldora Capital - Business Connect',
+                    env: '{{ plaid_environment }}',
+                    product: ['transactions'],
+                    key: '{{ plaid_public_key }}',
+                    onSuccess: function(public_token) {
+                        $.post('{{ url_for('bank.get_access_token') }}', {public_token: public_token}, function() {
+                            $('#container').fadeOut('fast', function() {
+                                $('#intro').hide();
+                                $('#app, #steps').fadeIn('slow');
+                            });
                         });
-                    });
-                    location.reload();
-                },
-            });
-            $('#link-btn').on('click', function(e) {
-                handler.open();
-            });
-    })(jQuery);
-    </script>
-        <br><br>
+                        location.reload();
+                    },
+                });
+                $('#link-btn').on('click', function(e) {
+                    handler.open();
+                });
+        })(jQuery);
+        </script>
+    <br><br>
+    {% endif %}
+
 
 
 
@@ -48,9 +49,7 @@
                 <input type="submit" value="Download" id="button">
                 </form>
 
-            <h3> Get ACH authentication here</h3>
-                <p> TODO: Put Logic Here. </p>
-
+            <h3> Thank you for connecting your account with Aldora.</h3>
     {% endif %}
     </div>
 
