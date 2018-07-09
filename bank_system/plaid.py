@@ -57,7 +57,7 @@ def get_access_token():
 
 def get_creds():
     username = login_tools.get_username(f.session)
-    access_token, item_id = bank_sql.get_creds()
+    access_token, item_id = bank_sql.get_creds(username)
     return access_token, item_id
 
 @app.route('/get_banks', methods=['POST'])
