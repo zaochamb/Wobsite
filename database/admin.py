@@ -34,9 +34,6 @@ def make_database():
     do_sql(bank_table)
 
 
-make_database()
-
-
 def do_sql(sql):
     with sqlite3.connect(database_name) as con:
         cur = con.cursor()
@@ -106,7 +103,7 @@ def options():
     return True
 
 
-
+make_database()
 if __name__ == '__main__':
     switch = True
     while switch:
