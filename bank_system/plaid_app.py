@@ -24,7 +24,7 @@ client = plaid.Client(client_id = PLAID_CLIENT_ID, secret=PLAID_SECRET,
 
 
 @app.route("/begin")
-@requires_logins
+@requires_login
 def begin():
     token, other = get_creds()
 
