@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
+<!-- Header with Background Image -->
+    <header class="ac-full-width page-header01 innerheader">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="display-3 text-white">Products</h1>
+      <h2 class="text-white">Aldora Capital Partners</h2>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <ul>
+    <ul class="outofrow">
         {% for item in products %}
             <li class="showhim">
 
@@ -11,7 +22,7 @@
                     </h3> {{ item.description }}
                     <h3> Requirements</h3> {{ item.requirements }}
                     <br>
-                    <a href="{{ item.url }}"><h4>CLICK HERE TO APPLY </h4></a>
+                    <a href="{{ item.url }}" class="btn btn-primary">CLICK HERE TO APPLY </a>
                 </div>
             </li>
         {% endfor %}

@@ -1,113 +1,106 @@
 {% extends "layout.html" %}
 
 {% block head %}
-    <title> Aldora Capital Inc.</title>
-    <meta property="og:title" content=" Aldora Capital Inc.">
-    <meta property="og:description" content="We get your business financed,
+<title> Aldora Capital Inc.</title>
+<meta property="og:title" content=" Aldora Capital Inc.">
+<meta property="og:description" content="We get your business financed,
      we provide unbiased resources for you to compare different deals,
       and we provide clear, honest content to help you learn about the financing industry.">
 {% endblock %}
 
 
-{% block content %}
+{% block content %} 
 
-    <nav class="dark">
-        <ul>
-            <li><a href="{{ url_for('contact', greeting='Begin by contacting us below. We will have an employee reach out to you and help you get started.')  }}"> APPLY NOW </a></li>
-            <hr>
-            <li><a href="/articles">Articles</a></li>
-            <hr>
-            <li><a href="/products">Products</a></li>
-
-        </ul>
-    </nav>
-
-
-    <article class='light'>
-
-        <h2> Why work with Aldora? </h2>
-        <p>Even the best of plans often require a little financing to take flight.
-            In a credit driven society, it can sometimes be surprisingly difficult to find a financing package that
-            works for you or your business
-            --whether you can't find a package you qualify for or can't decide which package will bring you the most
-            value,
-            Aldora Capital is committed to helping you find the financing package that will make your dreams take
-            flight.
-        <h3> Who are we?</h3>
-        <p>
-            Based in the United States, we have a commitment to preserving the financial freedom of American people and
-            businesses. We do a few different things but the main things we do are: Direct business receivable
-            purchases and we also
-            specialize in selecting packages that are tailored to realistically fit the needs of borrowers.
-        </p>
-
-        </article>
-        <hr>
-        <article class='light'>
-        <h2> What do we do?</h2>
-        <h3> Direct micro-financing</h3>
-        <p>
-            This product tends to take a little more time for approval but we can fund people that no one else would be
-            willing to
-            take the time to look at and provide amazing rates while doing that too.
-            We do this in a few ways:
-
-        <ul>
-            <li><h4>We negotiate with brokers to keep the rates low</h4>
-                With most other finance providers your broker will take a 10% cut of the total financed amount.
-                We, if the client is applying for our direct micro financing, do not allow the broker to
-                charge such high fees to the client.
-            </li>
-            <li><h4> We don't charge any surprise closing fees.</h4>
-                Everything is clearly laid out, no surprises.
-            </li>
-            <li><h4>
-                We take the time to analyze each business thoroughly
-            </h4>
-                Even if you just need $2,000 or even $500 dollars. We take the time to listen and understand your
-                business. We understand that business are made of people and can have different special
-                circumstances.
-                There is not such thing as a restricted industry for us, we will take the time to listen to why your
-                business is going to succeed in its goals,
-                we learn everything we can about you. We don't just make you fit into a simple model that rejects
-                you just because you're from one industry or have some unrelated factor.
-            </li>
-            <li><h4>Our qualification criteria is transparent and simple</h4>
-                All we need to do is establish if you are making money consistently OR have a sure fire payment coming
-                in and that's it.
-                Even if your revenue isn't consistent, if your revenue is seasonal and we can see evidence of that, we
-                will likely be happy to fund you.
-            </li>
-        </ul>
-
-        <hr>
+<!-- Header with Background Image -->
+<header class="ac-full-width business-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="display-3 text-center text-white">Aldora Capital Partners</h1>
+        <h2 class="text-center text-white"> Business Financing and Startup Capital</h2>
+      </div>
+    </div>
+  </div>
+</header>
+<article class="row p-5">
+  <h2> Why work with Aldora? </h2>
+  <p>Even the best of plans often require a little financing to take flight.
+    In a credit driven society, it can sometimes be surprisingly difficult to find a financing package that
+    works for you or your business
+    --whether you can't find a package you qualify for or can't decide which package will bring you the most
+    value,
+    Aldora Capital is committed to helping you find the financing package that will make your dreams take
+    flight.</p>
+  <h3> Who are we?</h3>
+  <p> Based in the United States, we have a commitment to preserving the financial freedom of American people and
+    businesses. We do a few different things but the main things we do are: Direct business receivable
+    purchases and we also
+    specialize in selecting packages that are tailored to realistically fit the needs of borrowers. </p>
+</article>
+<div class="ac-full-width acpbgdark text-center p-5 wwd">
+  <div class="container">
+    <h2> What do we do?</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 p-4">
+        <article class=""> <img src="../static/icons/icon-direct.png" width="150" height="100" alt="Direct micro-financing" class="m-3"/>
+          <h3> Direct micro-financing</h3>
+          <p> Usually taking a little more time for approval. We  provide amazing rates while  funding special clients.
+            We do this in a few ways.</p>
+          <a href="#micromore" class="btn btn-primary">Learn More</a> </article>
+      </div>
+      <a name="micromore"></a>
+      <div class="col-md-3 col-sm-6 p-4"> <img src="../static/icons/icon-sbf.png" width="150" height="100" alt="Small business financing" class="m-3" />
         <h3>Small business financing</h3>
-        <p>
-            This is a specialty. Packages range all the way up to 5,000,000 and can be based on cash flow instead of
-            credit history or collateral. Approval in as little as two days!
-        </p>
-        <hr>
-        <h3>SBA
-        </h3>
+        <p> Our specialty. Packages range all the way up to 5,000,000 and can be based on cash flow. Approval in as little as two days! </p>
+        <a href="products" class="btn btn-primary">Learn More</a> </div>
+      <div class="col-md-3 col-sm-6 p-4"> <img src="../static/icons/icon-sba.png" width="150" height="100" alt="SBA" class="m-3" />
+        <h3>SBA </h3>
         <p> We love SBA loans and have a number of resources to help guide you through the process.</p>
-        <hr>
-        <h3>
-            Collateral
-        </h3>
-        <p>
-            Part of the freedom we offer to our clients is the freedom to choose between collateralized or
-            uncollateralized options.
-        </p>
-
-
-    </article>
-
-        <aside class="dark">
-        <h4> and while you're here... </h4>
-        <p>
-            We're here to help you explore your options. Explore our growing library of articles and ask us anything you
-            like. Don't be shy--we won't shoehorn you into anything that doesn't fit your needs. If we don't have the
-            right options for you, we'll know right where to point you.
-        </p>
-        </aside>
+        <a href="products" class="btn btn-primary">Learn More</a> </div>
+      <div class="col-md-3 col-sm-6 p-4"> <img src="../static/icons/icon-collateral.png" width="150" height="100" alt="Collateral" class="m-3" />
+        <h3> Collateral </h3>
+        <p> Part of the freedom we offer to our clients is the freedom to choose between collateralized or
+          uncollateralized options. </p>
+        <a href="products" class="btn btn-primary">Learn More</a> </div>
+    </div>
+  </div>
+</div>
+<div class="row p-5" id="micromore02">
+  <h3> Direct micro-financing</h3>
+  <ul class="productlist">
+    <li>
+      <h4>We negotiate with brokers to keep the rates low</h4>
+      With most other finance providers your broker will take a 10% cut of the total financed amount.
+      We, if the client is applying for our direct micro financing, do not allow the broker to
+      charge such high fees to the client. </li>
+    <li>
+      <h4> We don't charge any surprise closing fees.</h4>
+      Everything is clearly laid out, no surprises. </li>
+    <li>
+      <h4> We take the time to analyze each business thoroughly </h4>
+      Even if you just need $2,000 or even $500 dollars. We take the time to listen and understand your
+      business. We understand that business are made of people and can have different special
+      circumstances.
+      There is not such thing as a restricted industry for us, we will take the time to listen to why your
+      business is going to succeed in its goals,
+      we learn everything we can about you. We don't just make you fit into a simple model that rejects
+      you just because you're from one industry or have some unrelated factor. </li>
+    <li>
+      <h4>Our qualification criteria is transparent and simple</h4>
+      All we need to do is establish if you are making money consistently OR have a sure fire payment coming
+      in and that's it.
+      Even if your revenue isn't consistent, if your revenue is seasonal and we can see evidence of that, we
+      will likely be happy to fund you. </li>
+  </ul>
+</div>
+<div class="ac-full-width bgtexture acpbgteal text-center p-5">
+  <div class="container">
+    <aside class="">
+      <h4> And while you're here... </h4>
+      <p> We're here to help you explore your options. Explore our growing library of articles and ask us anything you
+        like. Don't be shy--we won't shoehorn you into anything that doesn't fit your needs. If we don't have the
+        right options for you, we'll know right where to point you. </p>
+    </aside>
+  </div>
+</div>
 {% endblock %}
