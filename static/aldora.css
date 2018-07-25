@@ -1,0 +1,202 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 100px;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 102px;
+  }
+}
+
+@media (max-width: 600px) {
+.p-5 {
+    padding: 3rem 0.8rem!important;
+}
+.contactstrip { display: none }	
+}
+
+.business-header {
+  height: 70vh;
+  min-height: 300px;
+  background: url('random_images/adrian-161202-unsplash.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-top: -30px
+}
+
+.page-header01 {
+  height: 20vh;
+  background: url('random_images/dan-schiumarini-427777-unsplash.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  border-bottom: 6px solid #75b0b8
+}
+
+.page-header02 {
+  height: 20vh;
+  background: url('random_images/bryan-minear-315773-unsplash.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  border-bottom: 6px solid #75b0b8
+}
+
+.bgtexture {
+  background: url('random_images/bg-texture.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.business-header h1 { margin-top: 15rem;
+    font-weight: bold;
+    text-shadow: 0 0 30px rgb(0, 0, 0);
+}
+.innerheader h1 { margin-top: 1.2rem;
+}
+
+.card {
+  height: 100%;
+}
+
+.ac-full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.tealstrip {
+	background-color: #75b0b8;
+	height: 6px
+}
+
+.top-head a { color:#ffffff }
+
+a { color:#75b0b8 }
+a:hover { color:#545555 }
+
+#searchbox { width: 250px; float: right;
+	height: 40px;
+	margin-top: 8px
+}
+
+#gsc-i-id1 { border-radius: 3px; border: 1px solid #75b0b8 !Important }
+.gsc-input-box {
+    border-width: 0 !Important; 
+    background-color: transparent!Important;
+}
+
+.clear { clear: both }
+
+#content-acp { padding-top: 30px }
+
+.navbar { border-bottom: 1px solid #545555 }
+
+.navbar-nav { margin-top: -30px }
+
+.logosite { max-height: 70px }
+
+.contactstrip { text-align: right;
+    margin-top: -33px;
+    position: relative;
+	font-size: 0.8em
+}
+
+.contactstrip a { margin: 0 6px }
+
+.topicon { width: 20px; margin-right: 5px }
+
+.applymain { background-color: #75b0b8; padding: 8px 15px!important; border-radius: 5px; margin: 0 5px }
+.applymain { color: #ffffff!important }
+
+.acpbgdark { background-color: #545555; color: #cde9f2 }
+.acpbgteal { background-color: #75b0b8; }
+.acpbgdark a.notbutton, .acpbgteal a.notbutton  { text-decoration: underline }
+.acpbgdark a { color: #fff;  }
+.acpbgteal a { color: #545555; }
+
+h2 { /*font-weight: bold*/ }
+.acpbgdark h3 { font-size: 1.4em }
+
+.wwd img { width: 7.8em; height: auto }
+
+.aldorafooticon { max-width: 100px; float: right; margin-left: 20px }
+
+footer a { text-decoration: none }
+footer { font-size: 0.9em }
+
+.btn-primary { background-color: transparent; border: 1px solid #fff;  }
+.btn-primary:hover, .btn-primary:active { background-color: #75b0b8; border-color: #545555; color: #545555 }
+
+/* Hide Show Items */
+
+.showme{
+display: none;
+}
+
+.showhim:hover .showme{
+display : block;
+}
+
+.light, .dark {
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+}
+
+li.showhim { list-style: none }
+
+/* Light and Dark Color Systems */
+
+.light:last-child{
+    padding-bottom: 10em;
+}
+.light {
+    background-color: #fff;
+}
+
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6  {
+	padding-top: 1.3em
+}
+
+.dark{
+    background-color: #545555;
+    color: #fff;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6  {
+	padding-top: 0.5em
+}
+
+.dark p{
+    font-size: smaller;
+}
+
+.dark a:hover{
+    color: var(--darkheader)
+}
+
+.outofrow { padding-left: 0 }
+
+.productlist h2, .productlist h3,.productlist h4 { padding-top: 0.5em }

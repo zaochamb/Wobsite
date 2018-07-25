@@ -110,7 +110,7 @@ footer li, .nav li{
 
 /* BODY & CONTENT RELATED CONTENT IS JUST THE STUFF IN THE SHEETS ON EACH PAGE*/
 body {
-    background-image: url("backgrounds/main.png");
+    /*background-image: url("backgrounds/main.png");*/
     background-size: 300vw 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -120,7 +120,7 @@ body {
 
 #content {
     margin-top:3vh;
-    margin-bottom:60vh;
+    margin-bottom:6vh;
     margin-left:.25em;
     margin-right:.25em;
 }
