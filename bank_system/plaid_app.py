@@ -89,7 +89,7 @@ def get_banks():
     return resp
 
 
-@app.route('/get_banks', methods=['POST'])
+@app.route('/get_balance', methods=['POST'])
 @requires_login
 def get_balance():
     access_token, item_id = get_creds()
