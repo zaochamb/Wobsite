@@ -87,3 +87,21 @@ def get_banks():
     resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
     resp.headers["Content-Type"] = "text/csv"
     return resp
+
+
+@app.route('/get_banks', methods=['POST'])
+@requires_login
+def get_balance():
+    access_token, item_id = get_creds()
+    data = {'client_id': PLAID_CLIENT_ID,
+            'secret': PLAID_SECRET,
+            'access_token': access_token,
+            }
+
+    x = requests.post(host + '/accounts/balance/get', json=data).json()
+    result = ''
+    for account in x['accounts']:
+        name = account['name']
+        balance = account['balances']['available']
+        result = result + '\n  {} : {}'.format(name, balance)
+    return render_template('bank_system/begin.html', message='Connected', balance = result)
