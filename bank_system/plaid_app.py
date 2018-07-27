@@ -60,9 +60,8 @@ def get_creds():
     access_token, item_id = bank_sql.get_creds(username)
     return access_token, item_id
 
-@app.route('/get_banks', methods=['POST'])
-@requires_login
-def get_banks():
+
+def download_transactions(offset = 0):
     start_date = request.form['start_date']
     end_date = request.form['end_date']
 
@@ -75,14 +74,32 @@ def get_banks():
             'access_token': access_token,
             'start_date': start_date,
             'end_date': end_date,
+            'options': {'offset':offset, 'count':500}
             }
-
     x = requests.post(host + '/transactions/get', json=data).json()
     try:
-        x = pd.DataFrame(x['transactions'])
+        x =pd.DataFrame(x['transactions'])
     except KeyError:
-        return 'NO TRANSACTIONS FOUND'
+        return ValueError('Done')
+    return x
+@app.route('/get_banks', methods=['POST'])
+@requires_login
+def get_banks():
 
+
+
+    i = 0
+    done = False
+    files = []
+    done = False
+    while not done:
+        try:
+            files.append(download_transactions(i * 500))
+        except ValueError:
+            done = True
+        i = i + 1
+
+    x = pd.concat(files)
     resp = f.make_response(x.to_csv())
     resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
     resp.headers["Content-Type"] = "text/csv"
