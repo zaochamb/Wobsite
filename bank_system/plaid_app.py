@@ -92,7 +92,8 @@ def get_banks():
     i = 0
     done = False
     files = []
-    done = True
+    good = True
+
     while good:
         x, good = download_transactions(i * 500)
         files.append(x)
