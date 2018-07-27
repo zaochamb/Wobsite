@@ -80,7 +80,7 @@ def download_transactions(offset = 0):
     try:
         x =pd.DataFrame(x['transactions'])
     except KeyError:
-        return ValueError('Done')
+        raise ValueError('Done')
     return x
 @app.route('/get_banks', methods=['POST'])
 @requires_login
