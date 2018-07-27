@@ -4,6 +4,7 @@ from flask import request
 from flask import jsonify
 import os
 import requests
+import json
 import plaid
 import pandas as pd
 from login_system.login import requires_login
@@ -80,8 +81,8 @@ def download_transactions(offset = 0):
     try:
         x =pd.DataFrame(x['transactions'])
     except KeyError:
-        raise ValueError('Done')
-    return x
+        return x, False
+    return x, True
 @app.route('/get_banks', methods=['POST'])
 @requires_login
 def get_banks():
@@ -91,14 +92,13 @@ def get_banks():
     i = 0
     done = False
     files = []
-    done = False
-    while not done:
-        try:
-            files.append(download_transactions(i * 500))
-        except ValueError:
-            done = True
+    done = True
+    while good:
+        x, good = download_transactions(i * 500)
+        files.append(x)
         i = i + 1
-
+    if i == 1 :
+        return json.dumps(x)
     x = pd.concat(files)
     resp = f.make_response(x.to_csv())
     resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
