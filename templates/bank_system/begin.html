@@ -49,6 +49,12 @@
                 <input type="submit" value="Download" id="button">
                 </form>
 
+            <h3> Get current account balance </h3>
+                <form action="{{ url_for('bank.get_balance') }}" method="post">
+                    <input type="submit" value="Get Balance" id="button">
+                </form>
+                <p> {{  balance }}</p>
+
             <h3> Thank you for connecting your account with Aldora.</h3>
     {% endif %}
     </div>
