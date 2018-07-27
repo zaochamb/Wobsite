@@ -96,9 +96,10 @@ def get_banks():
 
     while good:
         x, good = download_transactions(i * 500)
-        files.append(x)
-        i = i + 1
-    if i == 1 :
+        if good:
+            files.append(x)
+            i = i + 1
+    if i == 0 :
         return json.dumps(x)
     x = pd.concat(files)
     resp = f.make_response(x.to_csv())
