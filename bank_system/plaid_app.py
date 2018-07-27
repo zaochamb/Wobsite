@@ -105,3 +105,26 @@ def get_balance():
         balance = account['balances']['available']
         result = result + '\n  {} : {}'.format(name, balance)
     return render_template('bank_system/begin.html', message='Connected', balance = result)
+
+
+@app.route('/get_routing', methods=['POST'])
+@requires_login
+def get_routing():
+    access_token, item_id = get_creds()
+    data = {'client_id': PLAID_CLIENT_ID,
+            'secret': PLAID_SECRET,
+            'access_token': access_token,
+            }
+    x = requests.post(host + '/auth/get', json=data).json()
+    result = str(x['numbers'])
+    '''
+    result = str(x['numbers']['eft'])
+  
+    for ach in x['numbers']['ach']:
+        account = ach['account']
+        routing = ach['routing']
+        wire = ach['wire_routing']
+        result = result + '\naccount:{} \n routing:{} \n wire-routing{}\n'
+        
+    '''
+    return render_template('bank_system/begin.html', message='Connected', routing = result)
