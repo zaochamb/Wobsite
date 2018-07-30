@@ -9,14 +9,14 @@
 {% block content %}
 
 
-<h2 class="dark"> {{ page_name }} </h2>
+<h1 class="dark"> {{ page_name }} </h1>
 
 <ul class="light">
     {% for item in links%}
     <li>
-        <h3>
+        <h2>
             <a href="{{ url_for('article.articles', path = item.filename) }}"> {{item.name}} </a>
-        </h3>
+        </h2>
     </li>
     {% endfor %}
 </ul>
