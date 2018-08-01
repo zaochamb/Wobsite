@@ -11,64 +11,69 @@
 {% block head %}
 
     {% if greeting != '' %}
-<title> {{  greeting }} </title>
-<meta property="og:title" content="{{  greeting }} ">
-{% else %}
-<title> Contact </title>
-<meta property="og:title" content=" Contact  ">
-{% endif %}
-<meta property="og:description" content=" The best place to begin your application with Aldora Capital.">
+    <title> {{  greeting }} </title>
+    <meta property="og:title" content="{{  greeting }} ">
+    {% else %}
+        <title> Contact </title>
+        <meta property="og:title" content=" Contact  ">
+    {% endif %}
+
+
+
+    <meta property="og:description" content=" The best place to begin your application with Aldora Capital.">
 {% endblock %}
 
 
 {% block content %}
-<div class="dark row">
-  <h2> {% if greeting != '' %}
-    {{  greeting }}
+<div class="dark">
+
+<h2>
+    {% if greeting != '' %}
+        {{  greeting }}
     {% else %}
-    Contact
-    {% endif %} </h2>
+        Contact
+    {% endif %}
+</h2>
 </div>
-<div class="light backpage01 row" >
-  <div class="col-md-6">
-    <form action="https://formspree.io/submissions@aldoracap.com" method="post">
-      <input type="text" name="First Name" placeholder="First Name*" required>
-      <br>
-      <br>
-      <input type="text" name="Last Name" placeholder="Last Name*" required>
-      <br>
-      <br>
-      <input type="text" name="Company" placeholder="Company Name">
-      <br>
-      <br>
-      <input type="tel" name="Phone" placeholder="Phone*" required>
-      <br>
-      <br>
-      <input type="email" name="email" placeholder="Email*" required>
-      <br>
-      <br>
-      {%  if product != '' %}
-      <select name="Product">
-        <option value= "{{ product }}" selected>{{ product }}</option>
-      </select>
-      {% else %}
-      <select name="Product" required>
-        <option value="" disabled selected>Select your Product</option>
-        <option value="Aeolus Credit Repair">Aeolus Credit Repair</option>
-        <option value="Line of Credit">Line of Credit</option>
-        <option value="Personal Loan">Personal Loan</option>
-        <option value="Revenue Funding">Revenue Funding</option>
-        <option value="SBA">SBA</option>
-        <option value="Term Loan">Term Loan</option>
-        <option value="Other/Unsure">Other/Unsure</option>
-      </select>
-      {% endif %} <br>
-      <br>
-      <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
+
+    <div class="light backpage01" >
+<form action="https://formspree.io/submissions@aldoracap.com" method="post">
+        <br>
+        <input type="text" name="First Name" placeholder="First Name*" required>
+        <br><br>
+        <input type="text" name="Last Name" placeholder="Last Name*" required>
+        <br><br>
+        <input type="text" name="Company" placeholder="Company Name">
+        <br><br>
+
+        <input type="tel" name="Phone" placeholder="Phone*" required>
+    <br><br>
+        <input type="email" name="email" placeholder="Email*" required>
+
+    <br><br>
+    {%  if product != '' %}
+        <select name="Product">
+            <option value= "{{ product }}" selected>{{ product }}</option>
+        </select>
+   {% else %}
+            <select name="Product" required>
+                <option value="" disabled selected>Select your Product</option>
+                <option value="Aeolus Credit Repair">Aeolus Credit Repair</option>
+                <option value="Line of Credit">Line of Credit</option>
+                <option value="Personal Loan">Personal Loan</option>
+                <option value="Revenue Funding">Revenue Funding</option>
+                <option value="SBA">SBA</option>
+                <option value="Term Loan">Term Loan</option>
+                <option value="Other/Unsure">Other/Unsure</option>
+            </select>
+    {% endif %}
+<br><br>
+
+    <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
+
       <input type="submit" value="Enter" id="button">
-    </form>
-  </div>
-  <div class="col-md-6"> <span class="applytext">Aldora Capital is committed to helping you find the financing package that will make your dreams take flight.</span> </div>
+</form>
 </div>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script> 
+
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 {% endblock %}
