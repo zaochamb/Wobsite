@@ -14,11 +14,17 @@ body {
 .display-3 {
     font-size: 3rem;
 }
+	
+article img { width: 100% }
+	
 }
 
 @media (max-width: 500px) {
 .business-header h2, .innerheader h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+}
+.business-header h1 {
+    font-size: 1.7rem;
 }
 .innerheader h1 {
     font-size: 2rem!Important;
@@ -35,6 +41,8 @@ body {
 .navbar-nav {
     margin-top: 0!important
 }
+
+	
 }
 .business-header {
     height: 70vh;
@@ -74,6 +82,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+	padding: 4em!Important
 }
 .bgtexture {
     background: url('random_images/bg-texture.jpg') center center no-repeat scroll;
@@ -294,8 +303,12 @@ input, select {
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     letter-spacing: .15rem;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+	width: 100%
 }
 input[type="submit"], button {
     color: #fff;
     font-weight: bold
 }
+
+.applytext { font-size: 1.8em; line-height: 1.2; font-style: italic; display: block; margin: 0 1.5em;  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); }
+.backpage01 form { margin-bottom: 30px }
