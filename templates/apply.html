@@ -25,18 +25,33 @@
 
 
 {% block content %}
-<div class="dark">
+<div class="ac-full-width apply-back">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        
 
-<h2>
+
+			<div class="applytext">
+				<h2>
     {% if greeting != '' %}
         {{  greeting }}
     {% else %}
-        Contact
+        Contact Us
     {% endif %}
 </h2>
-</div>
+				Aldora Capital is committed to helping you find the financing package that will make your dreams take flight.
+		  </div>
 
-    <div class="light backpage01" >
+      </div>
+		<div class="col-md-5 col-sm-12">
+        
+      
+   
+
+
+    <div class="formfloat" >
+		<h3>Apply Now</h3>
 <form action="https://formspree.io/submissions@aldoracap.com" method="post">
         <br>
         <input type="text" name="First Name" placeholder="First Name*" required>
@@ -75,5 +90,19 @@
 </form>
 </div>
 
+			
+</div>			
+ </div>
+  </div>
+</div>		
+<div class="ac-full-width apply-moreinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+		  Any extra info you want to include about the product - write functionality to hide when no product applies.
+		</div>
+	  </div>
+	</div>
+</div>
 <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 {% endblock %}
