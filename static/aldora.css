@@ -18,6 +18,11 @@ body {
 article img { width: 100% }
 
 .applytext h2 { font-size: 1.8em!important }	
+	
+div.mensub img{ display:none; }
+div.mensub .mensubtext{ display:block;	color: #555555 }
+.prodmenuitemstip { margin-left: 0!important }
+.prodmenuitemstip a { text-decoration: underline }	
 }
 
 @media (max-width: 500px) {
@@ -41,10 +46,13 @@ article img { width: 100% }
 }
 .navbar-nav {
     margin-top: 0!important
+}	
 }
 
-	
-}
+.mensubtext{
+        display:none;
+    } 
+
 .business-header {
     height: 70vh;
     min-height: 300px;
@@ -94,14 +102,36 @@ article img { width: 100% }
 }
 .apply-back {
     height: 100%;
-    background: url('random_images/apply-back.jpg') top center no-repeat;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;*/
+    background: #497980 url('random_images/apply-back.jpg') top center no-repeat;
     margin-top: -30px;
 	padding: 4em 0
 }
+
+.prodsaround {
+    height: 100%;
+    margin-top: -30px;
+	padding: 4em 0
+}
+.aeolus-back {
+    background: #497980 url('random_images/aeolus-back.jpg') top center no-repeat;
+}
+
+.revenue-back {
+    background: #497980 url('random_images/revenue-back.jpg') top center no-repeat;
+}
+
+.sba-back {
+    background: #497980 url('random_images/sba-back.jpg') top center no-repeat;
+}
+
+.sbcredit-back {
+    background: #497980 url('random_images/sbcredit-back.jpg') top center no-repeat;
+}
+
+.termloan-back {
+    background: #497980 url('random_images/termloan-back.jpg') top center no-repeat;
+}
+
 .business-header h1 {
     margin-top: 15rem;
     font-weight: bold;
@@ -321,9 +351,15 @@ input[type="submit"], button {
     font-weight: bold
 }
 
+.productapplytext { color: #ffffff; }
+.productapplytext h1 { font-size: 3.2em; font-weight: 800 }
 .applytext { font-size: 1.8em; line-height: 1.2; display: block; margin: 1.5em 0;  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); color: #ffffff }
 .applytext h2 { font-size: 2.2em; font-weight: 800 }
 .backpage01 form { margin-bottom: 30px }
 
 .formfloat { background-color: rgb(255,255,255,0.7); padding: 2em; margin: 2em 0 }
 .apply-moreinfo { background-color: #9cced6; padding: 2em; text-align: center }
+
+.prodmenustrip {  background-color: rgb(85,85,85,0.6); color: #fff; padding: 8px 20px; margin-top: 50px }
+.prodmenuitemstip { background-color: rgb(255,255,255,0.6); padding: 15px 0; margin-left: -50px }
+div.mensub img{ margin: 5px 20px }
