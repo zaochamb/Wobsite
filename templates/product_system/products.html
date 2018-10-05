@@ -14,10 +14,10 @@
 
     <ul class="outofrow">
         {% for item in products %}
-            <li class="showhim">
+            <li class="showhim" onclick="toggle_visibility('{{ item.url }}');">
 
                 <div class="light">{{ item.name }}</div>
-                <div class="showme dark">
+                <div class="showme dark" id="{{ item.url }}">
                     <h3>Description
                     </h3> {{ item.description }}
                     <h3> Requirements</h3> {{ item.requirements }}
@@ -27,4 +27,18 @@
             </li>
         {% endfor %}
     </ul>
+<script>
+function toggle_visibility(id) {
+    	var thelist = document.getElementsByClassName("showme");
+    	for (var i = 0; i < thelist.length; i++) {
+    		thelist[i].style.display = 'none';
+    	}
+    	var e = document.getElementById(id);
+    	if(e.style.display == 'block') {
+    		e.style.display = 'none';
+    	} else {
+    		e.style.display = 'block';
+    	}
+    }
+</script>
 {% endblock %}
