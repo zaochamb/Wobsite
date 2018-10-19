@@ -41,7 +41,8 @@ def get_product_list():
 def make_product(name, series):
     requirements = series['requirements']
     description = series['description']
-    prod = Product(name, requirements, description)
+    url = series['url']
+    prod = Product(name, requirements, description, url)
     return prod
 
 
@@ -51,8 +52,8 @@ class Product():
     description = None
     url = None
 
-    def __init__(self, name, requirements, description):
+    def __init__(self, name, requirements, description, url):
         self.name = name
         self.requirements = requirements
         self.description = description
-        self.url = 'products/' + name.lower().replace(' ', '_') + ''
+        self.url = url
