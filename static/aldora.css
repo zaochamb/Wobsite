@@ -264,7 +264,7 @@ footer {
     display: none;
 }
 .showhim:hover .showme {
-    display : block;
+   /* display : block;*/
 }
 .light, .dark {
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
@@ -272,7 +272,8 @@ footer {
     padding: 1.5em;
 }
 li.showhim {
-    list-style: none
+    list-style: none;
+	cursor: pointer
 }
 /* Light and Dark Color Systems */
 
