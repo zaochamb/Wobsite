@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% if request.args.get('greeting') is not none  %}
+    {% set greeting =  request.args.get('greeting') %}
+{% endif %}
+
+{% if request.args.get('product') is not none  %}
+    {% set product =  request.args.get('product') %}
+{% endif %}
+
+{% block head %}
+
+    {% if greeting != '' %}
+<title> {{  greeting }} </title>
+<meta property="og:title" content="{{  greeting }} ">
+{% else %}
+<title> Contact </title>
+<meta property="og:title" content=" Contact  ">
+{% endif %}
+<meta property="og:description" content=" The best place to begin your application with Aldora Capital.">
+{% endblock %}
+
+
+{% block content %}
+<div class="ac-full-width prodsaround termloan-back">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <div class="productapplytext">
+          <h1>Term Loan</h1>
+<p>Increase your working capital or purchase more assets with our available Term Loans. If you have an established business (at least two years in operation), 650+ credit score and $15,000 revenue per month, you may qualify for our business loans with up to five years in term.</p>
+<p><strong>Smart entrepreneurs take out business loans for these reasons:</strong></p>
+<h2>Acquire real estate for business expansions</h2>
+<p>Expansion usually means the business is doing good. When the company is making a profit, the only next thing to do is expand to increase more sales.</p>
+<h2>More inventory</h2>
+<p>If you own a seasonal business, you may need to take out loans to purchase more inventory.</p>
+<h2>Building a strong credit</h2>
+<p>Businesses planning for more expansions in the future take out smaller loans to build a good credit rating. This technique can help you build working relationships with lenders like us.</p>
+<p><strong>For terms loans or other financial needs, contact us today!</strong></p>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12">
+        <div class="formfloat" >
+          <h3>Apply Now</h3>
+          <form action="https://formspree.io/submissions@aldoracap.com" method="post">
+            <br>
+            <input type="text" name="First Name" placeholder="First Name*" required>
+            <br>
+            <br>
+            <input type="text" name="Last Name" placeholder="Last Name*" required>
+            <br>
+            <br>
+            <input type="text" name="Company" placeholder="Company Name">
+            <br>
+            <br>
+            <input type="tel" name="Phone" placeholder="Phone*" required>
+            <br>
+            <br>
+            <input type="email" name="email" placeholder="Email*" required>
+            <br>
+            <br>
+            {%  if product != '' %}
+            <select name="Product">
+              <option value= "{{ product }}" selected>{{ product }}</option>
+            </select>
+            {% else %}
+            <select name="Product" required>
+              <option value="" disabled selected>Select your Product</option>
+              <option value="Aeolus Credit Repair">Aeolus Credit Repair</option>
+              <option value="Line of Credit">Line of Credit</option>
+              <option value="Personal Loan">Personal Loan</option>
+              <option value="Revenue Funding">Revenue Funding</option>
+              <option value="SBA">SBA</option>
+              <option value="Term Loan">Term Loan</option>
+              <option value="Other/Unsure">Other/Unsure</option>
+            </select>
+            {% endif %} <br>
+            <br>
+            <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
+            <input type="submit" value="Next" id="button">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prodmenustrip">
+    <div class="container"> <strong>Other Products; </strong></div>
+  </div>
+  <div class="prodmenuitemstip">
+    <div class="container mensub"> <a href="Aeolus Credit Repair.html"><img src="/static/articles/aeolus.png" alt="Aeolus Credit Repair"/><span class="mensubtext">Aeolus Credit Repair</span></a> <a href="Revenue Funding.html"><img src="/static/articles/revenue-funding.png" alt="Revenue Funding"/><span class="mensubtext">Revenue Funding</span></a> <a href="SBA loan.html"><img src="/static/articles/sba-loan.png" alt="SBA Loan"/><span class="mensubtext">SBA Loan</span></a> <a href="SB Credit.html"><img src="/static/articles/small-business-credit.png" alt="Small Business Line of Credit"/><span class="mensubtext">Small Business Line of Credit</span></a> </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script> 
+{% endblock %}
