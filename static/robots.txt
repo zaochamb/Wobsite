@@ -1,1 +1,1 @@
-Sitemap: https://www.aldoracapital.com/sitemap.xml
+Sitemap: https://www.aldoracapital.com/static/sitemap.xml
