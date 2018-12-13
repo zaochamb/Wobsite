@@ -118,11 +118,13 @@ def get_balance():
             }
 
     x = requests.post(host + '/accounts/balance/get', json=data).json()
-    result = ''
-    for account in x['accounts']:
-        name = account['name']
-        balance = account['balances']['available']
-        result = result + '\n  {} : {}'.format(name, balance)
+    
+    # result = ''
+    # for account in x['accounts']:
+    #    name = account['name']
+    #    balance = account['balances']['available']
+    #    result = result + '\n  {} : {}'.format(name, balance)
+    result = x
     return render_template('bank_system/begin.html', message='Connected', balance = result)
 
 
