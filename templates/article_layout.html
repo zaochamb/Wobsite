@@ -14,6 +14,46 @@
 <img src="{{ url_for('get_image',kind = 'social_images',  image_path = request.path,  random = True) }}" alt="{{ request.path }}"  style="width:100%;height:auto">
 
 
+    <div class="formfloat" >
+		<h3>Apply Now</h3>
+<form action="https://formspree.io/submissions@aldoracap.com" method="post">
+        <br>
+        <input type="text" name="First Name" placeholder="First Name*" required>
+        <br><br>
+        <input type="text" name="Last Name" placeholder="Last Name*" required>
+        <br><br>
+        <input type="text" name="Company" placeholder="Company Name">
+        <br><br>
+
+        <input type="tel" name="Phone" placeholder="Phone*" required>
+    <br><br>
+        <input type="email" name="email" placeholder="Email*" required>
+
+    <br><br>
+    {%  if product != '' %}
+        <select name="Product">
+            <option value= "{{ product }}" selected>{{ product }}</option>
+        </select>
+   {% else %}
+            <select name="Product" required>
+                <option value="" disabled selected>Select your Product</option>
+                <option value="Aeolus Credit Repair">Aeolus Credit Repair</option>
+                <option value="Invoice Financing">Invoice Financing</option>
+                <option value="Line of Credit">Line of Credit</option>
+                <option value="Revenue Funding">Revenue Funding</option>
+                <option value="SBA">SBA</option>
+                <option value="Term Loan">Term Loan</option>
+                <option value="Other/Unsure">Other/Unsure</option>
+            </select>
+    {% endif %}
+<br><br>
+
+    <input type="hidden" name="_subject" value="NEW ORGANIC LEAD" />
+
+      <input type="submit" value="Next" id="button">
+</form>
+</div>
+
     {% block article %}
 
 {% endblock %}
